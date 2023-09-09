@@ -26,7 +26,7 @@
           <div slot="left">
             <!-- liveMode is the state variable, its value is obtained from backend app, depend on the odafile it loads-->
             <div v-if="liveMode">
-              <FileSideBar2 />
+              <FileSideBar2 v-if="liveMode" :currentDiffItem="selectedDiffItem" />
             </div>
             <div v-else>
               <FileSidebar />
@@ -56,54 +56,55 @@
               </b-tabs>
             </b-card>  -->
 
-            <b-tabs
-              v-model="tabIndex"
-              style="margin-left:5px;"
-              @input="onInput"
-            >
-              <b-tab
-                title="Disassembly"
-                active
-              >
-                <div style="position:absolute; left:0;right:0;top:45px;bottom:0;">
-                  <!-- Listing.vue show the disassembly information under Disassembly section -->
+            <b-tabs v-model="tabIndex" style="margin-left:5px;" @input="onInput">
+              <b-tab title="Disassembly" active>
+                <div class="tab-view">
                   <Listing />
                 </div>
               </b-tab>
               <b-tab title="Graph">
-                <div style="position:absolute; left:0;right:0;top:45px;bottom:0;">
+                <div class="tab-view">
                   <GraphView :visible="graphVisible" />
                 </div>
               </b-tab>
               <b-tab title="Hex">
-                <HexView />
+                <div class="tab-view">
+                  <HexView />
+                </div>
               </b-tab>
               <b-tab title="Sections">
-                <div style="position:absolute; top:42px; left:0; right:0; bottom:0; overflow: scroll;">
+                <div class="tab-view">
                   <Sections />
                 </div>
               </b-tab>
               <b-tab title="File Info">
-                <div style="position:absolute; top:32px; left:0; right:0; bottom:0; overflow: scroll;">
+                <div class="tab-view">
                   <FileInfo />
                 </div>
               </b-tab>
               <KeepAlive>
-              <b-tab title="Call Graph">
-                <div style="position:absolute; top:32px; left:0; right:0; bottom:0; overflow: scroll;">
-                  <div v-if="visitedTabs.includes(5)">
-                    <CallGraph/>
+                <b-tab title="Call Graph">
+                  <div class="tab-view">
+                    <div v-if="visitedTabs.includes(5)">
+                      <CallGraph/>
+                    </div>
                   </div>
-                </div>
-              </b-tab>
-              </KeepAlive> 
-              <!-- KeepAlive a built-in component that allows us to conditionally cache component instances 
+                </b-tab>
+              </KeepAlive>
+              <!-- KeepAlive a built-in component that allows us to conditionally cache component instances
                    when dynamically switching between multiple components.-->
               <b-tab title="Code Diff">
-                <div style="position:absolute; top:32px; left:0; right:0; bottom:0; overflow: scroll;">
-                    <CodeDiff />
+                <div class="tab-view">
+                  <CodeDiff :diffItem="selectedDiffItem" />
                 </div>
               </b-tab>
+              <KeepAlive>
+                <b-tab title="Diff History">
+                  <div class="tab-view">
+                    <DiffHistory @show-diff="handleShowDiff" />
+                  </div>
+                </b-tab>
+              </KeepAlive>
             </b-tabs>
 
             <!-- <SplitBox splitX="600">
@@ -145,6 +146,8 @@ import * as types from '@/store/mutation-types.js'
 import { mapState } from 'vuex'
 import { copyOdaMaster, canEdit } from '../api/oda'
 import { OPEN_LISTING_TAB, bus } from '../bus'
+// import DiffHistory from './DiffHistory'
+
 
 export default {
   name: 'DisassemblerView',
@@ -167,6 +170,7 @@ export default {
     CommentModal: () => import('@/components/modals/CommentModal'),
     FileSideBar2: () => import('@/components/FileSideBar2'),
     CodeDiff: () => import('@/components/tabs/CodeDiff'),
+    DiffHistory: () => import('@/components/tabs/DiffHistory'),
     // Decompiler,
     Loading,
     GotoAddressModal,
@@ -180,7 +184,8 @@ export default {
       loading: true,
       tabIndex: 0,
       graphVisible: false,
-      visitedTabs: []
+      visitedTabs: [],
+      selectedDiffItem: null
     }
   },
   computed: mapState([
@@ -232,12 +237,18 @@ export default {
           return
         }
       }
-  
+
       this.$store.commit(types.SET_SHORTNAME, { shortName: shortName })
       console.log("disassembler - shortName: " + this.$store.getters.getShortName())
       await this.$store.dispatch('loadOdbFile')
       this.loading = false
       this.notFound = false
+    },
+    handleShowDiff(item) {
+      this.selectedDiffItem = item;
+      // console.log("disassembler - item: ", item)
+      console.log("disassembler - item: " + JSON.stringify(item, null, 2));
+
     }
   }
 }
@@ -245,7 +256,18 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+  /* 在 <style scoped> 标签内增加以下内容 */
+  ::v-deep .nav-item {
+    min-width: 120px; /* 设置一个合适的最小宽度，你可以根据需要调整 */
+  }
+
   ::v-deep .nav-link {
+    white-space: nowrap; /* 防止标题文本换行 */
+    overflow: hidden;
+    text-overflow: ellipsis; /* 当标题文本超出最大长度时显示省略号 */
+  /*}*/
+
+  /*::v-deep .nav-link {*/
     padding: 3px 18px;
     font-size: 14px;
   }
@@ -262,5 +284,14 @@ export default {
 
   ::v-deep .card-header {
     padding: 0.15rem 1.25rem 0.75rem 1.25rem;
+  }
+
+  .tab-view {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: scroll;
   }
 </style>

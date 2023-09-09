@@ -44,14 +44,14 @@
             </tr>
           </tbody>
         </table>
-  
+
         <div v-if="filteredFunctions.length === 0">
           <em>No Function availables</em>
         </div>
       </div>
     </div>
   </template>
-  
+
   <script>
   import _ from 'lodash'
   import { bus, NAVIGATE_TO_ADDRESS } from '../../bus'
@@ -68,6 +68,12 @@
         pname: null,
       }
     },
+    props: {
+      diffItem: {
+        type: Object,
+        required: true
+      }
+    },
     created() {
       this.pname = this.$store.state.projectName
     },
@@ -76,7 +82,7 @@
         let functions = this.$store.state.code_diff_function_list
         if (this.filterValue) {
           let fv = this.filterValue
-          return functions.filter(function (str) { 
+          return functions.filter(function (str) {
             return str === fv
           })
         }
@@ -89,7 +95,8 @@
         $('.diff-content').replaceWith(`<div class="diff-content"></div>`)
         this.$store.commit(SET_CODE_DIFF_LOADING,{ loadingState: true })
         let selected_function = e.target.innerHTML
-        let response = await getCodeDiffResult(selected_function)
+        console.log('this.diffItem', this.diffItem)
+        let response = await getCodeDiffResult(selected_function, this.diffItem)
         this.pname = selected_function
         this.$store.commit(SET_CODE_DIFF_LOADING,{ loadingState: false })
         if(response && this.$store.state.code_diff_loading == false) {
@@ -99,24 +106,23 @@
     }
   }
   </script>
-  
+
   <style scoped>
     .clickable {
       color: #0088CC;
       text-decoration: none;
       cursor: pointer;
     }
-  
+
     .clickable:hover {
       text-decoration: underline;
     }
-  
+
     #symbol-table {
       font-size: 0.85rem;
     }
-  
+
     .table td {
       padding: 3px 8px;
     }
   </style>
-  

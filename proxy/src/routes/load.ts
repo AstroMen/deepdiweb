@@ -4,6 +4,7 @@ import { get_project } from '../database';
 import { Request, Response } from 'express';
 import { read_until, spawn_and_read } from '../util';
 
+
 export default async function load(req: Request, res: Response) {
     const short_name = req.query.short_name as string;
     if (!short_name) {
@@ -20,6 +21,7 @@ export default async function load(req: Request, res: Response) {
     let binary_bytes;
     try {
         binary_bytes = await fs.readFile(project.file_path);
+        console.log(`Loaded binary_bytes for ${short_name}`);
     }
     catch (ex) {
         res.status(400).send(`${short_name} does not exist (it could have expired)`);
@@ -27,6 +29,7 @@ export default async function load(req: Request, res: Response) {
     }
 
     try {
+        
         const info: Info = {
             project_name: project.project_name,
             binary: {
@@ -65,7 +68,7 @@ export default async function load(req: Request, res: Response) {
             sections: []
         };
 
-        info.binary.desc = await file(project.file_path);
+        info.binary.desc = ['PE32+ executable (GUI) x86-64', 'for MS Windows'];
 
         const tasks = [];
         if (project.raw) {
@@ -124,7 +127,7 @@ export default async function load(req: Request, res: Response) {
                 });
             }
         }
-
+        console.log('sending info')
         res.status(200).json(
             info
         );
@@ -170,7 +173,10 @@ async function nm(file_path: string): Promise<{ symbols: BinarySymbol[], functio
             });
         }
     }
-
+    console.log('------------------nm---------------------')
+    console.log(symbols)
+    console.log(functions)
+    console.log('------------------nm---------------------')
     return { symbols, functions };
 }
 
@@ -240,7 +246,13 @@ async function file(file_path: string): Promise<string[]> {
 }
 
 async function objdump(file_path: string): Promise<{ sections: BinarySection[], base_address: number }> {
-    const output = await spawn_and_read('objdump', ['-hw', file_path]);
+    // const output = await spawn_and_read('objdump', ['-hw', file_path]);
+    const output = `Sections:
+Idx Name          Size      VMA       LMA       File off  Algn  Flags
+  0 .text         00019bf0  01d01000  01d01000  00000400  2**2  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         00002000  01d1b000  01d1b000  0001a000  2**2  CONTENTS, ALLOC, LOAD, DATA
+  2 .rsrc         00000948  01d45000  01d45000  0001c000  2**2  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  3 .reloc        00001c6a  01d46000  01d46000  0001ca00  2**2  CONTENTS, ALLOC, LOAD, READONLY, DATA`;
     const lines = output.split('\n');
 
     const sections: BinarySection[] = [];

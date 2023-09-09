@@ -31,13 +31,13 @@
 
         </ul>
       </div>
-  
+
       <div style="position: absolute; left: 41px; right: 0px; top: 0px; bottom: 0px; padding: 10px; overflow:scroll;">
         <div v-if="selectedPanel == 'LiveEntry'">
           <LiveEntry />
         </div>
         <div v-if="selectedPanel == 'FunctionList'">
-          <FunctionList />
+          <FunctionList :diffItem="currentDiffItem" />
         </div>
         <div v-if="selectedPanel == 'findBytes'">
           <FindBytes />
@@ -45,7 +45,7 @@
       </div>
     </div>
   </template>
-  
+
   <script>
   import { bus, CLOSE_SIDEBAR, SHOW_FINDBYTES_PANEL, SHOW_RAWVIEWFORM_PANEL, SHOW_RAWMODE_PANEL } from '../bus'
   import LiveEntry from './sidebar/LiveEntry'
@@ -53,7 +53,7 @@
   import FindBytes from './panels/FindBytes'
   // import Structures from './panels/Structures'
   // import Operations from './panels/Operations'
-  
+
   export default {
     name: 'FileSidebar_liveMode',
     components: {
@@ -63,6 +63,9 @@
       return {
         selectedPanel: 'LiveEntry'
       }
+    },
+    props: {
+      currentDiffItem: Object
     },
     created () {
       bus.$on(SHOW_FINDBYTES_PANEL, () => {
@@ -74,7 +77,7 @@
       bus.$on(SHOW_RAWMODE_PANEL, () => {
         this.selectedPanel = 'LiveEntry'
       })
-  
+
       // icons
     },
     methods: {
@@ -88,14 +91,14 @@
     }
   }
   </script>
-  
+
   <style scoped>
     .icon-list {
       list-style: none;
       margin: 0;
       padding: 0;
     }
-  
+
     .icon-list li {
       text-align: center;
       font-size: 16px;
@@ -103,7 +106,7 @@
       margin: 0px;
       padding: 0px;
     }
-  
+
     .icon-list li a {
       display: inline-block;
       width: 40px;
@@ -115,13 +118,13 @@
       font-size: 20px;
       padding: 0;
     }
-  
+
     .active-link {
       text-shadow: rgba(0, 0, 0, 0.2) 0px -1px 0px !important;
       background-color: rgb(0, 92, 230) !important;
       color: white !important;
     }
-  
+
     ::v-deep .oda-sidebar-title {
       font-size: 16px;
       font-weight: bold;
@@ -129,4 +132,3 @@
       margin-bottom: 10px;
     }
   </style>
-  

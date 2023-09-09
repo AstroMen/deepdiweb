@@ -212,8 +212,8 @@ export async function canEdit (shortName) {
 
 export async function copyOdaMaster (shortName) {
   try {
-    const response = await odaAxios.get(`/odaweb/api/masters/${shortName}/clone/`)
     console.log('call copyOdaMaster project: ' + shortName)
+    const response = await odaAxios.get(`/odaweb/api/masters/${shortName}/clone/`)
     return response.data // { short_name, binary_bytes, raw }
   } catch (e) {
     error({ e, message: e.resp.data })
@@ -454,13 +454,20 @@ export async function sendTwoFileNames (f1, f2) {
     console.log('call sendTwoFileNames')
     return response.data
   } catch (e) {
-    error({ e, message: e.response.data.detail })
+    console.log('[sendTwoFileNames]', e)
+    error({ e, message: e ? e.response.data.detail : 'Unknown error' })// emit an API_ERROR event
+    return null
   }
 }
 
-export async function getFunctionList () {
+export async function getFunctionList (filename1, filename2) {
   try {
-    const response = await odaAxios.get('/odaweb/api/getFunctionList/')
+    const response = await odaAxios.get('/odaweb/api/getFunctionList/', {
+      params: {
+        filename1: filename1,
+        filename2: filename2
+      }
+    })
     console.log('call getFunctionList')
     return response.data
   } catch (e) {
@@ -468,10 +475,11 @@ export async function getFunctionList () {
   }
 }
 
-export async function getCodeDiffResult (filename) {
+export async function getCodeDiffResult (filename, diffItem) {
   try {
     const response = await odaAxios.post('/odaweb/api/getCodeDiffResult/', {
-      name: filename
+      name: filename,
+      diffItem: diffItem
     })
     console.log('call getCodeDiffResult')
     return response.data
@@ -489,6 +497,17 @@ export async function getScript () {
     error({ e, message: e.response.data.detail })
   }
 }
+
+export async function getJsonContent () {
+  try {
+    const response = await odaAxios.get('/odaweb/api/getJsonContent/')
+    console.log('call getJsonContent')
+    return response.data
+  } catch (e) {
+    error({ e, message: e.response.data.detail })
+  }
+}
+
 // export async function createStructure(name) {
 //   try {
 //     const response = await odaAxios.post('/odaweb/api/cstructs/', {
