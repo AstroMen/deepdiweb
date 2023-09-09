@@ -24,8 +24,9 @@
       >
         <SplitBox split-x="400">
           <div slot="left">
+            <!-- liveMode is the state variable, its value is obtained from backend app, depend on the odafile it loads-->
             <div v-if="liveMode">
-              <LiveEntry />
+              <FileSideBar2 />
             </div>
             <div v-else>
               <FileSidebar />
@@ -58,12 +59,14 @@
             <b-tabs
               v-model="tabIndex"
               style="margin-left:5px;"
+              @input="onInput"
             >
               <b-tab
                 title="Disassembly"
                 active
               >
                 <div style="position:absolute; left:0;right:0;top:45px;bottom:0;">
+                  <!-- Listing.vue show the disassembly information under Disassembly section -->
                   <Listing />
                 </div>
               </b-tab>
@@ -83,6 +86,22 @@
               <b-tab title="File Info">
                 <div style="position:absolute; top:32px; left:0; right:0; bottom:0; overflow: scroll;">
                   <FileInfo />
+                </div>
+              </b-tab>
+              <KeepAlive>
+              <b-tab title="Call Graph">
+                <div style="position:absolute; top:32px; left:0; right:0; bottom:0; overflow: scroll;">
+                  <div v-if="visitedTabs.includes(5)">
+                    <CallGraph/>
+                  </div>
+                </div>
+              </b-tab>
+              </KeepAlive> 
+              <!-- KeepAlive a built-in component that allows us to conditionally cache component instances 
+                   when dynamically switching between multiple components.-->
+              <b-tab title="Code Diff">
+                <div style="position:absolute; top:32px; left:0; right:0; bottom:0; overflow: scroll;">
+                    <CodeDiff />
                 </div>
               </b-tab>
             </b-tabs>
@@ -121,7 +140,6 @@ import Loading from './Loading'
 import EditFunctionModal from './modals/EditFunctionModal'
 import DefinedDataModal from './modals/DefinedDataModal'
 import NotFound from './NotFound'
-
 import * as types from '@/store/mutation-types.js'
 
 import { mapState } from 'vuex'
@@ -143,9 +161,12 @@ export default {
     UploadFileModal: () => import('@/components/modals/UploadFileModal'),
     ConfigureUploadModal: () => import('@/components/modals/ConfigureUploadModal'),
     GraphView: () => import('@/components/tabs/GraphView'),
+    CallGraph: () => import('@/components/tabs/CallGraph'),
     SharingModal: () => import('@/components/modals/SharingModal'),
     StatusBar: () => import('./StatusBar'),
     CommentModal: () => import('@/components/modals/CommentModal'),
+    FileSideBar2: () => import('@/components/FileSideBar2'),
+    CodeDiff: () => import('@/components/tabs/CodeDiff'),
     // Decompiler,
     Loading,
     GotoAddressModal,
@@ -158,7 +179,8 @@ export default {
       notFound: null,
       loading: true,
       tabIndex: 0,
-      graphVisible: false
+      graphVisible: false,
+      visitedTabs: []
     }
   },
   computed: mapState([
@@ -179,10 +201,16 @@ export default {
     bus.$on(OPEN_LISTING_TAB, () => { this.tabIndex = 0 })
   },
   methods: {
+    onInput(value) {
+        if(!this.visitedTabs.includes(value)){
+          this.visitedTabs.push(value)
+        }
+      },
     async fetchData () {
       this.loading = true
       const shortName = this.$route.params.shortName
       let own = null
+      let function_list = null
       try {
         own = await canEdit(shortName)
       } catch (e) {
@@ -190,9 +218,11 @@ export default {
         this.notFound = true
         return
       }
+      console.log('own: ' + own)
 
       if (!own) {
         try {
+          console.log('calling copyOdaMaster')
           const { short_name: copiedShortName, binary_bytes: binaryBytes } = await copyOdaMaster(shortName)
           this.$store.commit(types.LOAD_BINARY, { binaryBytes })
           this.$router.replace('/odaweb/' + copiedShortName)
@@ -202,8 +232,9 @@ export default {
           return
         }
       }
-
+  
       this.$store.commit(types.SET_SHORTNAME, { shortName: shortName })
+      console.log("disassembler - shortName: " + this.$store.getters.getShortName())
       await this.$store.dispatch('loadOdbFile')
       this.loading = false
       this.notFound = false
