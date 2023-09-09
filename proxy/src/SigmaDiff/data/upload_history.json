@@ -1,0 +1,12 @@
+[
+    {
+        "directoryName": "diffutils-3.4-O2-cmp_and_diffutils-3.6-O2-cmp",
+        "file1": {
+            "projectName": "diffutils-3.4-O2-cmp"
+        },
+        "file2": {
+            "projectName": "diffutils-3.6-O2-cmp"
+        },
+        "timestamp": "2023-08-24T19:07:01.609Z"
+    }
+]

@@ -1,0 +1,5894 @@
+ RETURN 1
+0 CAST 0
+ CALLIND 0
+f() CALL libcall_dcgettext_thunk 0 ARG1 5
+0 INT_NOTEQUAL ARG1 0
+ CALL libcall_error_thunk 0 0 f() ARG2
+ CBRANCH (ARG1 INT_NOTEQUAL 0)
+VZERO COPY VZERO
+ RETURN 1
+Try '%s --help' for more information. COPY STR
+VZERO COPY VZERO
+ RETURN 1
+f() CALL libcall_dcgettext_thunk 0 Try '%s --help' for more information. 5
+VZERO COPY VZERO
+ CALL libcall_error_thunk 2 0 f() VZERO
+ CBRANCH (([0] & 32) INT_NOTEQUAL 0)
+0 INT_NOTEQUAL ([0] & 32) 0
+([0] & 32) INT_AND [0] 32
+0 PTRSUB VZERO 0
+0 CAST 0
+[0] LOAD 433 0
+write failed COPY STR
+ RETURN 1
+4227596 PTRSUB 0 CONST
+f() CALL libcall_fclose_thunk VZERO
+ CBRANCH (f() INT_EQUAL 0)
+f() CALL libcall_dcgettext_thunk 0 write failed 5
+ CALL libcall_error_thunk 2 0 4227596 f()
+0 INT_EQUAL f() 0
+VZERO COPY VZERO
+f() CALL libcall___errno_location_thunk
+VZERO COPY VZERO
+ RETURN 1
+VZERO COPY VZERO
+standard output COPY STR
+[f()] LOAD 433 f()
+4227596 PTRSUB 0 CONST
+f() CALL libcall_dcgettext_thunk 0 standard output 5
+ CALL libcall_error_thunk 2 [f()] 4227596 f()
+ RETURN 0
+ARG2 COPY ARG2
+f() CALL libcall_memchr_thunk ARG1 0 ARG2
+ARG1 CAST ARG1
+ CBRANCH (f() INT_NOTEQUAL 0)
+0 INT_NOTEQUAL f() 0
+ RETURN 0 ARG2
+ RETURN 0 ((1 - ARG1) + f())
+(1 - ARG1) INT_SUB 1 ARG1
+f() CAST f()
+((1 - ARG1) + f()) INT_ADD f() (1 - ARG1)
+f() CALL libcall_setlocale_thunk ARG1 0
+0 COPY 0
+ CBRANCH (f() INT_EQUAL 0)
+0 INT_EQUAL f() 0
+ CBRANCH ([f()] INT_EQUAL [f(POSIX)])
+(f() + 1) PTRADD f() 1 1
+0 INT_EQUAL f() 0
+0 INT_MULT 0 -2
+(f(POSIX) + 1) PTRADD f(POSIX) 1 1
+0 INT_MULT 0 -2
+ CBRANCH (f() INT_EQUAL 0)
+1 INT_ADD 0 1
+1 INT_ADD 0 1
+0 INT_EQUAL [f()] [f(POSIX)]
+0 INT_ZEXT 0
+(f(POSIX) + 1) COPY (f(POSIX) + 1)
+0 INT_ZEXT 0
+[f(POSIX)] LOAD 433 f(POSIX)
+(f() + -1) INT_ADD f() -1
+[f()] LOAD 433 f()
+(f() + 1) COPY (f() + 1)
+ CBRANCH ([(f() + 1)] INT_EQUAL 0)
+ RETURN 0 0
+POSIX COPY POSIX
+f() COPY f()
+(~(f()) | (f() & -256)) INT_OR (f() & -256) ~(f())
+0 COPY 0
+(f() & -256) INT_AND f() -256
+~(f()) BOOL_NEGATE f()
+~(f()) INT_ZEXT ~(f())
+ RETURN 0 (~(f()) | (f() & -256))
+6 COPY 6
+f() CAST f()
+POSIX COPY STR
+ CBRANCH ([f()] INT_EQUAL 67)
+0 INT_EQUAL [(f() + 1)] 0
+[(f() + 1)] LOAD 433 (f() + 1)
+(f() + 1) PTRADD f() 1 1
+[f()] LOAD 433 f()
+0 INT_EQUAL [f()] 67
+1 COPY 1
+ RETURN 0 1
+(ARG1 % 257) INT_REM ARG1 257
+0 INT_NOTEQUAL ARG1 [(f(ARG1 , Symbol) + -16)]
+(ARG1 + -16) INT_SUB ARG1 -16
+(ARG1 + 4) INT_SUB ARG1 4
+0 INT_NOTEQUAL ARG1 0
+0 INT_EQUAL ARG1 [(Symbol + ((ARG1 % 257) * 8))]
+(ARG1 + -16) INT_SUB ARG1 -16
+ CBRANCH (ARG1 INT_NOTEQUAL 0)
+ CBRANCH ([(ARG1 + 4)] INT_EQUAL 336984906)
+Symbol PTRSUB 0 CONST
+[(Symbol + ((ARG1 % 257) * 8))] LOAD 433 (Symbol + ((ARG1 % 257) * 8))
+(Symbol + ((ARG1 % 257) * 8)) PTRADD Symbol ((ARG1 % 257) * 8) 1
+((ARG1 % 257) * 8) INT_MULT (ARG1 % 257) 8
+ CBRANCH ([(Symbol + ((ARG1 % 257) * 8))] INT_NOTEQUAL 0)
+ RETURN 0
+0 INT_NOTEQUAL [(Symbol + ((ARG1 % 257) * 8))] 0
+(Symbol + ((ARG1 % 257) * 8)) CAST (Symbol + ((ARG1 % 257) * 8))
+ RETURN 0
+[(Symbol + ((ARG1 % 257) * 8))] COPY [(Symbol + ((ARG1 % 257) * 8))]
+ CBRANCH (ARG1 INT_EQUAL [(Symbol + ((ARG1 % 257) * 8))])
+0 INT_EQUAL [(f(ARG1 , Symbol) + -16)] 0
+(f(ARG1 , Symbol) + -16) INT_SUB f(ARG1 , Symbol) -16
+(Symbol + ((ARG1 % 257) * 8)) CAST (Symbol + ((ARG1 % 257) * 8))
+(Symbol + ((ARG1 % 257) * 8)) PTRADD Symbol ((ARG1 % 257) * 8) 1
+((ARG1 % 257) * 8) INT_MULT (ARG1 % 257) 8
+(f(ARG1 , Symbol) + -16) CAST (f(ARG1 , Symbol) + -16)
+f(ARG1 , Symbol) COPY f(ARG1 , Symbol)
+Symbol PTRSUB 0 CONST
+(ARG1 + -16) CAST (ARG1 + -16)
+ RETURN 0
+[(ARG1 + -16)] LOAD 433 (ARG1 + -16)
+(ARG1 + -16) CAST (ARG1 + -16)
+ CALL libcall_free_thunk (ARG1 + -16)
+[(f(ARG1 , Symbol) + -16)] LOAD 433 (f(ARG1 , Symbol) + -16)
+ BRANCH VZERO
+ STORE 433 f(ARG1 , Symbol) [(ARG1 + -16)]
+ CBRANCH ([(f(ARG1 , Symbol) + -16)] INT_EQUAL 0)
+[(f(ARG1 , Symbol) + -16)] COPY [(f(ARG1 , Symbol) + -16)]
+ CBRANCH (ARG1 INT_NOTEQUAL [(f(ARG1 , Symbol) + -16)])
+[(ARG1 + 4)] LOAD 433 (ARG1 + 4)
+0 INT_EQUAL [(ARG1 + 4)] CONST
+(ARG1 + 4) CAST (ARG1 + 4)
+(f(ARG1 , Symbol) + 16) CAST (f(ARG1 , Symbol) + 16)
+(f(ARG1 , Symbol) + 16) INT_SUB f(ARG1 , Symbol) 16
+0 INT_LESSEQUAL ARG1 (ARG1 + 16)
+(ARG1 + 16) INT_ADD ARG1 16
+ CBRANCH (ARG1 INT_LESSEQUAL (ARG1 + 16))
+ CBRANCH (f() INT_EQUAL 0)
+(f() + 12) CAST (f() + 12)
+((f() + 16) % 257) INT_REM (f() + 16) 257
+f() CAST f()
+ STORE 433 (Symbol + (((f() + 16) % 257) * 8)) (f() + 16)
+(f() + 16) PTRADD f() 2 8
+ BRANCH VZERO
+(Symbol + (((f() + 16) % 257) * 8)) CAST (Symbol + (((f() + 16) % 257) * 8))
+(Symbol + (((f() + 16) % 257) * 8)) PTRADD Symbol (((f() + 16) % 257) * 8) 1
+(((f() + 16) % 257) * 8) INT_MULT ((f() + 16) % 257) 8
+ STORE 433 (f() + 12) CONST
+0 COPY 0
+Symbol PTRSUB 0 CONST
+(Symbol + (((f() + 16) % 257) * 8)) CAST (Symbol + (((f() + 16) % 257) * 8))
+[(Symbol + (((f() + 16) % 257) * 8))] LOAD 433 (Symbol + (((f() + 16) % 257) * 8))
+(Symbol + (((f() + 16) % 257) * 8)) PTRADD Symbol (((f() + 16) % 257) * 8) 1
+Symbol PTRSUB 0 CONST
+(((f() + 16) % 257) * 8) INT_MULT ((f() + 16) % 257) 8
+(f() + 16) CAST (f() + 16)
+ STORE 433 f() [(Symbol + (((f() + 16) % 257) * 8))]
+(f() + 12) INT_ADD f() 12
+f() CAST f()
+f() CALL libcall_malloc_thunk (ARG1 + 16)
+0 INT_EQUAL f() 0
+ RETURN 0 0
+ RETURN 0 f()
+0 COPY 0
+ARG1 COPY ARG1
+ARG1 CAST ARG1
+ CBRANCH (f() INT_LESS 2)
+f() CALL libcall___ctype_get_mb_cur_max_thunk
+0 INT_LESS f() 2
+(FS_OFFSET + 40) INT_ADD 0 40
+[(FS_OFFSET + 40)] LOAD 433 (FS_OFFSET + 40)
+(FS_OFFSET + 40) CAST (FS_OFFSET + 40)
+ CBRANCH ((1 & ([(Symbol + (([f(ARG1)] / 32) * 4))] >> ([f(ARG1)] & 31))) INT_EQUAL 0)
+[f(ARG1)] INT_SEXT [f(ARG1)]
+[f(ARG1)] LOAD 433 f(ARG1)
+[f(ARG1)] CAST [f(ARG1)]
+1 COPY 1
+(RSP + -100) PTRSUB RSP -100
+f() CALL libcall_mbsinit_thunk (RSP + -100)
+ CBRANCH (f() INT_NOTEQUAL 0)
+0 INT_NOTEQUAL f() 0
+1 COPY 1
+1 COPY 1
+ CBRANCH (f(ARG1) INT_NOTEQUAL 0)
+0 INT_NOTEQUAL f(ARG1) 0
+ CBRANCH (f(ARG1) INT_NOTEQUAL 0)
+0 COPY STR
+iter->cur.wc == 0 COPY STR
+1 COPY 1
+mbuiter.h COPY STR
+ CBRANCH (f() INT_NOTEQUAL 0)
+0 INT_NOTEQUAL f() 0
+(RSP + -100) PTRSUB RSP -100
+ RETURN 1
+f() CALL libcall_mbsinit_thunk (RSP + -100)
+ CALL libcall___assert_fail_thunk iter->cur.wc == 0 mbuiter.h 179 0
+ CBRANCH (f() INT_NOTEQUAL -1)
+(f() + 1) INT_ADD f() 1
+~(f()) BOOL_NEGATE f()
+ CBRANCH (f() INT_NOTEQUAL -2)
+0 INT_NOTEQUAL f() -2
+1 COPY 1
+0 COPY 0
+(f(ARG1) + f()) PTRADD f(ARG1) f() 1
+0 COPY 0
+ CBRANCH ~(f())
+ CBRANCH (f() INT_EQUAL 0)
+0 INT_NOTEQUAL [f(ARG1)] 0
+1 COPY 1
+[f(ARG1)] LOAD 433 f(ARG1)
+ CBRANCH ([f(ARG1)] INT_NOTEQUAL 0)
+0 INT_EQUAL f() 0
+f(ARG1) CAST f(ARG1)
+ BRANCH VZERO
+0 COPY 0
+f() CALL libcall_strlen_thunk f(ARG1)
+([f(ARG1)] / 32) INT_RIGHT [f(ARG1)] 5
+([(Symbol + (([f(ARG1)] / 32) * 4))] >> ([f(ARG1)] & 31)) INT_RIGHT [(Symbol + (([f(ARG1)] / 32) * 4))] ([f(ARG1)] & 31)
+([f(ARG1)] / 32) INT_ZEXT ([f(ARG1)] / 32)
+(1 & ([(Symbol + (([f(ARG1)] / 32) * 4))] >> ([f(ARG1)] & 31))) INT_AND ([(Symbol + (([f(ARG1)] / 32) * 4))] >> ([f(ARG1)] & 31)) 1
+(([f(ARG1)] / 32) * 4) INT_MULT ([f(ARG1)] / 32) 4
+(Symbol + (([f(ARG1)] / 32) * 4)) CAST (Symbol + (([f(ARG1)] / 32) * 4))
+0 COPY 0
+(f() + 40) CAST (f() + 40)
+0 INT_EQUAL (1 & ([(Symbol + (([f(ARG1)] / 32) * 4))] >> ([f(ARG1)] & 31))) 0
+Symbol PTRSUB 0 CONST
+0 COPY 0
+[(Symbol + (([f(ARG1)] / 32) * 4))] LOAD 433 (Symbol + (([f(ARG1)] / 32) * 4))
+0 COPY 0
+0 COPY 0
+(Symbol + (([f(ARG1)] / 32) * 4)) PTRADD Symbol (([f(ARG1)] / 32) * 4) 1
+ CBRANCH (0 INT_EQUAL [(f() + 40)])
+(f() + 40) INT_ADD f() 40
+0 INT_EQUAL 0 [(f() + 40)]
+ BRANCH VZERO
+[f(ARG1)] LOAD 433 f(ARG1)
+f() CALL libcall_strlen_thunk ARG1
+([f(ARG1)] & 31) INT_AND [f(ARG1)] 31
+[(f() + 40)] LOAD 433 (f() + 40)
+mbuiter.h COPY STR
+f() CALL libcall___ctype_get_mb_cur_max_thunk
+f(ARG1) INDIRECT f(ARG1) 281
+f() CALL func f(ARG1) f()
+(RSP + -68) PTRSUB RSP -68
+f(ARG1) COPY f(ARG1)
+(RSP + -100) PTRSUB RSP -100
+f() CALL func (RSP + -68) f(ARG1) f() (RSP + -100)
+ BRANCH VZERO
+1 COPY 1
+ RETURN 1
+0 COPY STR
+mbsinit (&iter->state) COPY STR
+ CALL libcall___assert_fail_thunk mbsinit (&iter->state) mbuiter.h 150 0
+0 INT_NOTEQUAL f() -1
+0 COPY 0
+ BRANCH VZERO
+ CALL libcall___stack_chk_fail_thunk
+ RETURN 0 f()
+ RETURN 1
+ RETURN 1
+0 INT_NOTEQUAL f(ARG1) 0
+0 COPY STR
+*iter->cur.ptr == '\0' COPY STR
+mbuiter.h COPY STR
+ CALL libcall___assert_fail_thunk *iter->cur.ptr == '\0' mbuiter.h 178 0
+memory exhausted COPY STR
+f() CALL libcall_dcgettext_thunk 0 memory exhausted 5
+4227596 PTRSUB 0 CONST
+ RETURN 1
+VZERO COPY VZERO
+VZERO INDIRECT VZERO 23
+ CALL libcall_error_thunk VZERO 0 4227596 f()
+f() CALL libcall_malloc_thunk ARG1
+0 INT_NOTEQUAL ARG1 0
+0 INT_EQUAL f() 0
+ CBRANCH (f() INT_EQUAL 0)
+ RETURN 0
+ CBRANCH (ARG1 INT_NOTEQUAL 0)
+ RETURN 1
+ CALL func
+ARG2 INT_ZEXT ARG2
+0 INT_LESS ARG2 32
+ARG2 CAST ARG2
+(ARG2 + 128) INT_ADD ARG2 128
+(ARG1 + 1) PTRADD ARG1 1 1
+ STORE 433 ARG1 77
+(ARG1 + 2) PTRADD ARG1 2 1
+0 INT_EQUAL ([([f()] + ((ARG2 * 2) + 1))] & 64) 0
+[f()] CAST [f()]
+(ARG2 * 2) INT_MULT ARG2 2
+([([f()] + ((ARG2 * 2) + 1))] & 64) INT_AND [([f()] + ((ARG2 * 2) + 1))] 64
+ CBRANCH (([([f()] + ((ARG2 * 2) + 1))] & 64) INT_EQUAL 0)
+[f()] LOAD 433 f()
+f() CALL libcall___ctype_b_loc_thunk
+[([f()] + ((ARG2 * 2) + 1))] LOAD 433 ([f()] + ((ARG2 * 2) + 1))
+([f()] + ((ARG2 * 2) + 1)) INT_ADD [f()] ((ARG2 * 2) + 1)
+((ARG2 * 2) + 1) INT_ADD (ARG2 * 2) 1
+([f()] + ((ARG2 * 2) + 1)) CAST ([f()] + ((ARG2 * 2) + 1))
+ CBRANCH ((ARG2 + 128) INT_LESS 32)
+(f(ARG1) + 1) PTRADD f(ARG1) 1 1
+ STORE 433 (f(ARG1) + 2) 0
+ RETURN 0
+(f(ARG1) + 2) PTRADD f(ARG1) 2 1
+ STORE 433 f(ARG1) 94
+ CBRANCH (f(ARG2) INT_EQUAL 127)
+ STORE 433 (f(ARG1) + 1) (f(ARG2) + 64)
+(f(ARG2) + 64) INT_ADD f(ARG2) 64
+0 INT_EQUAL f(ARG2) 127
+ RETURN 0
+(f(ARG1) + 1) PTRADD f(ARG1) 1 1
+ STORE 433 f(ARG1) f(ARG2)
+ RETURN 0
+ STORE 433 f(ARG1) 94
+ STORE 433 (f(ARG1) + 2) 0
+(f(ARG1) + 1) PTRADD f(ARG1) 1 1
+(f(ARG1) + 2) PTRADD f(ARG1) 2 1
+ STORE 433 (f(ARG1) + 1) 63
+ STORE 433 (f(ARG1) + 1) 0
+0 INT_SLESS ARG2 0
+ CBRANCH (ARG2 INT_SLESS 0)
+ CBRANCH (ARG2 INT_LESS 32)
+ STORE 433 (ARG1 + 1) 45
+0 INT_LESS (ARG2 + 128) 32
+ARG1 INT_SEXT ARG1
+[(Symbol + ARG1)] LOAD 433 (Symbol + ARG1)
+0 INT_NOTEQUAL [(Symbol + ARG1)] 0
+(Symbol + ARG1) PTRADD Symbol ARG1 1
+Symbol PTRSUB 0 CONST
+ CBRANCH ([(Symbol + ARG1)] INT_NOTEQUAL 0)
+(Symbol + (ARG1 * 8)) PTRADD Symbol (ARG1 * 8) 1
+[(Symbol + (ARG1 * 4))] LOAD 433 (Symbol + (ARG1 * 4))
+[(Symbol + (ARG1 * 8))] LOAD 433 (Symbol + (ARG1 * 8))
+f() CALL libcall_lseek_thunk [(Symbol + (ARG1 * 4))] [(Symbol + (ARG1 * 8))] 1
+(ARG1 * 8) INT_MULT ARG1 8
+Symbol PTRSUB 0 CONST
+(Symbol + (ARG1 * 8)) CAST (Symbol + (ARG1 * 8))
+ RETURN 0 f()
+[(Symbol + (ARG1 * 8))] LOAD 433 (Symbol + (ARG1 * 8))
+[(Symbol + (ARG1 * 8))] COPY [(Symbol + (ARG1 * 8))]
+(Symbol + (ARG1 * 8)) PTRADD Symbol (ARG1 * 8) 1
+(Symbol + (ARG1 * 4)) PTRADD Symbol ARG1 4
+Symbol PTRSUB 0 CONST
+Symbol PTRSUB 0 CONST
+(ARG1 * 8) INT_MULT ARG1 8
+ STORE 433 (Symbol + ARG1) 1
+ RETURN 0 [(Symbol + (ARG1 * 8))]
+(Symbol + ARG1) PTRADD Symbol ARG1 1
+(Symbol + (ARG1 * 8)) CAST (Symbol + (ARG1 * 8))
+(Symbol + (ARG1 * 8)) PTRADD Symbol ARG1 8
+Symbol PTRSUB 0 CONST
+Symbol PTRSUB 0 CONST
+ STORE 433 (Symbol + (ARG1 * 8)) f()
+VZERO COPY VZERO
+ RETURN 0 VZERO
+VZERO COPY VZERO
+ RETURN 0
+ STORE 433 ARG4 f()
+ STORE 433 ARG4 f()
+0 INT_NOTEQUAL ARG5 0
+f() CALL libcall_strchr_thunk ARG5 48
+0 INT_NOTEQUAL ARG5 0
+[[f(ARG2 , RSP)]] INT_SEXT [[f(ARG2 , RSP)]]
+f() CALL libcall_strchr_thunk ARG5 [[f(ARG2 , RSP)]]
+[[f(ARG2 , RSP)]] INT_SEXT [[f(ARG2 , RSP)]]
+f() CALL libcall_strchr_thunk ARG5 [[f(ARG2 , RSP)]]
+f(ARG2 , RSP) MULTIEQUAL ARG2 (RSP + -72)
+f() CALL libcall___strtoul_internal_thunk ARG1 f(ARG2 , RSP) ARG3 0
+0 INT_LESS 36 ARG3
+ARG2 COPY ARG2
+0 INT_EQUAL ARG2 0
+0 INT_NOTEQUAL ARG1 [f(ARG2 , RSP)]
+[ARG1] LOAD 433 ARG1
+ARG1 COPY ARG1
+(FS_OFFSET + 40) INT_ADD 0 40
+[(FS_OFFSET + 40)] LOAD 433 (FS_OFFSET + 40)
+ CBRANCH (36 INT_LESS ARG3)
+(FS_OFFSET + 40) CAST (FS_OFFSET + 40)
+ CBRANCH (ARG5 INT_NOTEQUAL 0)
+[(f() + 40)] LOAD 433 (f() + 40)
+(f() + 40) CAST (f() + 40)
+4 COPY 4
+(f() + 40) INT_ADD f() 40
+ CBRANCH ([[f(ARG2 , RSP)]] INT_NOTEQUAL 0)
+0 INT_NOTEQUAL [[f(ARG2 , RSP)]] 0
+0 INT_EQUAL f() [(f() + 40)]
+[[f(ARG2 , RSP)]] LOAD 433 [f(ARG2 , RSP)]
+ CBRANCH (f() INT_EQUAL [(f() + 40)])
+ CBRANCH (([([f()] + ((f(ARG1) * 2) + 1))] & 32) INT_NOTEQUAL 0)
+(f(ARG1) + 1) PTRADD f(ARG1) 1 1
+((f(ARG1) * 2) + 1) INT_ADD (f(ARG1) * 2) 1
+([f()] + ((f(ARG1) * 2) + 1)) CAST ([f()] + ((f(ARG1) * 2) + 1))
+([f()] + ((f(ARG1) * 2) + 1)) INT_ADD [f()] ((f(ARG1) * 2) + 1)
+[f()] CAST [f()]
+0 INT_NOTEQUAL ([([f()] + ((f(ARG1) * 2) + 1))] & 32) 0
+f(ARG1) INT_ZEXT f(ARG1)
+[([f()] + ((f(ARG1) * 2) + 1))] LOAD 433 ([f()] + ((f(ARG1) * 2) + 1))
+[(f(ARG1) + 1)] LOAD 433 (f(ARG1) + 1)
+(f(ARG1) * 2) INT_MULT f(ARG1) 2
+([([f()] + ((f(ARG1) * 2) + 1))] & 32) INT_AND [([f()] + ((f(ARG1) * 2) + 1))] 32
+ CBRANCH (f() INT_NOTEQUAL 0)
+[([f(ARG2 , RSP)] + 1)] LOAD 433 ([f(ARG2 , RSP)] + 1)
+([f(ARG2 , RSP)] + 1) PTRADD [f(ARG2 , RSP)] 1 1
+(255 & (f(ARG2 , RSP) + 66)) INT_AND (f(ARG2 , RSP) + 66) 255
+0 INT_NOTEQUAL [([f(ARG2 , RSP)] + 1)] 68
+ CBRANCH ([([f(ARG2 , RSP)] + 1)] INT_NOTEQUAL 68)
+(f(ARG2 , RSP) + 66) INT_SUB f(ARG2 , RSP) 66
+ BRANCHIND (255 & (f(ARG2 , RSP) + 66))
+1024 COPY CONST
+1 COPY 1
+ CBRANCH (f() INT_LESSEQUAL ((-1 / f()) / 2147483647))
+1 COPY 1
+(f() * f()) INT_MULT f() f()
+ CBRANCH ((f() * f()) INT_LESSEQUAL ((-1 / f()) / 2147483647))
+0 INT_LESSEQUAL (f() * f()) ((-1 / f()) / 2147483647)
+-1 COPY -1
+ BRANCH VZERO
+ CBRANCH (0 INT_EQUAL 0)
+0 INT_NOTEQUAL 0 34
+1 COPY 1
+ CBRANCH (ARG5 INT_NOTEQUAL 0)
+0 COPY 0
+(f() / 2147483647) SUBPIECE f() 0
+ CBRANCH (0 INT_NOTEQUAL 34)
+ CBRANCH ([([f(ARG2 , RSP)] + 1)] INT_NOTEQUAL 66)
+(Symbol + (((f(ARG2 , RSP) + -69) / 2147483647) * 8)) PTRADD Symbol ((f(ARG2 , RSP) + -69) / 2147483647) 8
+((f(ARG2 , RSP) + -69) / 2147483647) INT_ZEXT ((f(ARG2 , RSP) + -69) / 2147483647)
+Symbol PTRSUB 0 CONST
+1000 COPY 1000
+2 COPY 2
+[(Symbol + (((f(ARG2 , RSP) + -69) / 2147483647) * 8))] CAST [(Symbol + (((f(ARG2 , RSP) + -69) / 2147483647) * 8))]
+ BRANCH VZERO
+VZERO CALLIND [(Symbol + (((f(ARG2 , RSP) + -69) / 2147483647) * 8))]
+ RETURN 1 VZERO
+[(Symbol + (((f(ARG2 , RSP) + -69) / 2147483647) * 8))] LOAD 433 (Symbol + (((f(ARG2 , RSP) + -69) / 2147483647) * 8))
+ CBRANCH ((1 & (142129060940101 >> (63 & (f(ARG2 , RSP) + -69)))) INT_NOTEQUAL 0)
+0 INT_NOTEQUAL f() 0
+ CBRANCH (f() INT_LESSEQUAL ((-1 / f()) / 2147483647))
+(f() * f()) INT_MULT f() f()
+ BRANCH VZERO
+-1 COPY -1
+ CBRANCH ([[f(ARG2 , RSP)]] INT_NOTEQUAL 0)
+ BRANCH VZERO
+[[f(ARG2 , RSP)]] CAST [[f(ARG2 , RSP)]]
+0 INT_NOTEQUAL f() 0
+ CBRANCH (f() INT_NOTEQUAL 0)
+ RETURN 1
+ CALL libcall___stack_chk_fail_thunk
+ RETURN 0 f()
+ CBRANCH ((f() + 4294967295) INT_NOTEQUAL 0)
+0 INT_NOTEQUAL (f() + 4294967295) 0
+(f() | -1) INT_OR f() -1
+-1 BOOL_NEGATE 0
+0 INT_LESSEQUAL f() ((-1 / f()) / 2147483647)
+-1 INT_ZEXT -1
+(f() + 4294967295) INT_ADD f() CONST
+ CBRANCH (f() INT_LESSEQUAL ((-1 / f()) / 2147483647))
+ CBRANCH ((f() + 4294967295) INT_NOTEQUAL 0)
+ CBRANCH (f() INT_LESSEQUAL ((-1 / f()) / 2147483647))
+0 INT_NOTEQUAL (f() + 4294967295) 0
+(f() | -1) INT_OR f() -1
+-1 BOOL_NEGATE 0
+0 INT_LESSEQUAL f() ((-1 / f()) / 2147483647)
+-1 INT_ZEXT -1
+(f() + 4294967295) INT_ADD f() CONST
+ CBRANCH (f() INT_LESS 18014398509481984)
+(f() * 1024) INT_LEFT f() 10
+ BRANCH VZERO
+ BRANCH VZERO
+-1 COPY -1
+0 COPY 0
+1 COPY 1
+xstrtoumax COPY STR
+0 COPY STR
+xstrtol.c COPY STR
+ RETURN 1
+ CALL libcall___assert_fail_thunk 0 xstrtol.c 96 xstrtoumax
+ STORE 433 f() 0
+f() CALL libcall___errno_location_thunk
+ CBRANCH (ARG2 INT_EQUAL 0)
+(RSP + -72) PTRSUB RSP -72
+ BRANCH VZERO
+ CBRANCH (f(ARG1) INT_NOTEQUAL 45)
+[f()] LOAD 433 f()
+0 INT_NOTEQUAL f(ARG1) 45
+f() CALL libcall___ctype_b_loc_thunk
+(RSP + -72) COPY (RSP + -72)
+ CBRANCH ((f() + 4294967295) INT_NOTEQUAL 0)
+-1 BOOL_NEGATE 0
+-1 INT_ZEXT -1
+(f() + 4294967295) INT_ADD f() CONST
+ CBRANCH (f() INT_LESSEQUAL ((-1 / f()) / 2147483647))
+0 INT_NOTEQUAL (f() + 4294967295) 0
+(f() | -1) INT_OR f() -1
+0 INT_LESSEQUAL f() ((-1 / f()) / 2147483647)
+ CBRANCH ([([f(ARG2 , RSP)] + 1)] INT_EQUAL 105)
+0 INT_ZEXT 0
+0 INT_NOTEQUAL [([f(ARG2 , RSP)] + 1)] 66
+0 INT_EQUAL [([f(ARG2 , RSP)] + 2)] 66
+1 INT_ADD 1 0
+1 INT_ADD 0 1
+ BRANCH VZERO
+[([f(ARG2 , RSP)] + 2)] LOAD 433 ([f(ARG2 , RSP)] + 2)
+1024 COPY CONST
+([f(ARG2 , RSP)] + 2) PTRADD [f(ARG2 , RSP)] 2 1
+0 INT_ZEXT 0
+ CBRANCH (36028797018963967 INT_LESS f())
+ BRANCH VZERO
+0 COPY 0
+(f() * 512) INT_LEFT f() 9
+ CBRANCH ([([f(ARG2 , RSP)] + f())] INT_NOTEQUAL 0)
+f() INT_ZEXT f()
+(2 | (f() | f())) COPY (2 | (f() | f()))
+(f() | f()) COPY (f() | f())
+ BRANCH VZERO
+(f() * f()) INT_MULT f() f()
+-1 COPY -1
+(f() * f()) INT_MULT f() f()
+-1 COPY -1
+ BRANCH VZERO
+ CBRANCH (ARG1 INT_NOTEQUAL [f(ARG2 , RSP)])
+0 INT_EQUAL 0 0
+0 LOAD 433 f()
+ CBRANCH (((f(ARG2 , RSP) + -69) / 2147483647) INT_LESS 48)
+0 INT_NOTEQUAL (1 & (142129060940101 >> (63 & (f(ARG2 , RSP) + -69)))) 0
+(142129060940101 >> (63 & (f(ARG2 , RSP) + -69))) INT_RIGHT CONST (63 & (f(ARG2 , RSP) + -69))
+(1 & (142129060940101 >> (63 & (f(ARG2 , RSP) + -69)))) INT_AND (142129060940101 >> (63 & (f(ARG2 , RSP) + -69))) 1
+(63 & (f(ARG2 , RSP) + -69)) INT_AND (f(ARG2 , RSP) + -69) 63
+ CBRANCH (f() INT_NOTEQUAL 0)
+((f(ARG2 , RSP) + -69) / 2147483647) SUBPIECE (f(ARG2 , RSP) + -69) 0
+(f(ARG2 , RSP) + -69) INT_SUB f(ARG2 , RSP) -69
+(f(ARG2 , RSP) + -69) INT_ZEXT (f(ARG2 , RSP) + -69)
+[[f(ARG2 , RSP)]] LOAD 433 [f(ARG2 , RSP)]
+f(ARG2 , RSP) INT_ZEXT f(ARG2 , RSP)
+0 INT_LESS ((f(ARG2 , RSP) + -69) / 2147483647) 48
+ CBRANCH ((f() + 4294967295) INT_NOTEQUAL 0)
+(f() + 4294967295) INT_ADD f() CONST
+0 INT_NOTEQUAL (f() + 4294967295) 0
+(f() | -1) INT_OR f() -1
+-1 BOOL_NEGATE 0
+ CBRANCH (f() INT_LESSEQUAL ((-1 / f()) / 2147483647))
+0 INT_LESSEQUAL f() ((-1 / f()) / 2147483647)
+-1 INT_ZEXT -1
+[[f(ARG2 , RSP)]] CAST [[f(ARG2 , RSP)]]
+0 COPY 0
+0 INT_NOTEQUAL f() 0
+1 COPY 1
+ BRANCH VZERO
+(f() * f()) INT_MULT f() f()
+-1 COPY -1
+f() INT_SEXT f()
+(f() * f()) INT_MULT f() f()
+0 COPY 0
+0 INT_EQUAL [([f(ARG2 , RSP)] + 1)] 105
+0 INT_NOTEQUAL [[f(ARG2 , RSP)]] 0
+ CBRANCH (f() INT_SLESS 0)
+ BRANCH VZERO
+(f() * 2) INT_MULT f() 2
+0 COPY 0
+ CBRANCH (((-1 / f()) / 2147483647) INT_LESS f())
+(f() * f()) INT_MULT f() f()
+ BRANCH VZERO
+-1 COPY -1
+[f(ARG2 , RSP)] LOAD 433 f(ARG2 , RSP)
+(f() * f()) INT_MULT f() f()
+ BRANCH VZERO
+-1 COPY -1
+ CBRANCH (((-1 / f()) / 2147483647) INT_LESS f())
+ CBRANCH ((f() + 4294967295) INT_NOTEQUAL 0)
+(f() + 4294967295) INT_ADD f() CONST
+0 INT_ZEXT 0
+0 INT_LESS ((-1 / f()) / 2147483647) f()
+0 INT_NOTEQUAL (f() + 4294967295) 0
+f() INT_OR f() 0
+ CBRANCH ((f() + 4294967295) INT_NOTEQUAL 0)
+-1 INT_ZEXT -1
+0 INT_LESSEQUAL f() ((-1 / f()) / 2147483647)
+-1 BOOL_NEGATE 0
+(f() + 4294967295) INT_ADD f() CONST
+0 INT_NOTEQUAL (f() + 4294967295) 0
+(f() | -1) INT_OR f() -1
+ BRANCH VZERO
+(f() | 2) INT_ZEXT (f() | 2)
+(f() | 2) INT_OR f() 2
+f() INT_SEXT f()
+8 COPY 8
+5 COPY 5
+0 COPY 0
+((-1 / f()) / 2147483647) SUBPIECE (-1 / f()) 0
+0 COPY 0
+0 INT_ZEXT 0
+f() INT_ZEXT f()
+f() CAST f()
+f() INT_SEXT f()
+f() INT_SEXT f()
+ BRANCH VZERO
+(-1 / f()) INT_DIV -1 f()
+f() INT_ZEXT f()
+-1 INT_OR 0 -1
+0 INT_LESS f() CONST
+-1 INT_ZEXT -1
+0 INT_LEFT 0 64
+7 COPY 7
+0 INT_ZEXT 0
+(2 | (f() | f())) INT_OR (f() | f()) 2
+(f() | f()) INT_OR f() f()
+0 COPY 0
+f() INT_SEXT f()
+((-1 / f()) / 2147483647) SUBPIECE (-1 / f()) 0
+f() CAST f()
+f() CAST f()
+f() CAST f()
+f() INT_SEXT f()
+0 COPY 0
+6 COPY 6
+f() CAST f()
+f() INT_SEXT f()
+3 COPY 3
+f() INT_SEXT f()
+-1 INT_ZEXT -1
+0 INT_ZEXT 0
+f() INT_ZEXT f()
+f() CAST f()
+0 COPY 0
+0 COPY 0
+((-1 / f()) / 2147483647) SUBPIECE (-1 / f()) 0
+0 COPY 0
+(-1 / f()) INT_DIV -1 f()
+-1 INT_OR 0 -1
+0 INT_LESS ((-1 / f()) / 2147483647) f()
+0 INT_LEFT 0 64
+((-1 / f()) / 2147483647) SUBPIECE (-1 / f()) 0
+ BRANCH VZERO
+(-1 / f()) INT_DIV -1 f()
+-1 INT_OR 0 -1
+0 INT_LEFT 0 64
+-1 INT_ZEXT -1
+f() CAST f()
+f() INT_SEXT f()
+ BRANCH VZERO
+f() CAST f()
+f() INT_SEXT f()
+f() CAST f()
+([f(ARG2 , RSP)] + f()) PTRADD [f(ARG2 , RSP)] f() 1
+ BRANCH VZERO
+0 INT_NOTEQUAL [([f(ARG2 , RSP)] + f())] 0
+[([f(ARG2 , RSP)] + f())] LOAD 433 ([f(ARG2 , RSP)] + f())
+ BRANCH VZERO
+ STORE 433 f(ARG2 , RSP) ([f(ARG2 , RSP)] + f())
+0 INT_SLESS f() 0
+4 COPY 4
+(-1 / f()) INT_DIV -1 f()
+f() INT_ZEXT f()
+-1 INT_OR 0 -1
+ BRANCH VZERO
+(-1 / f()) INT_DIV -1 f()
+f() INT_ZEXT f()
+-1 INT_OR 0 -1
+((-1 / f()) / 2147483647) SUBPIECE (-1 / f()) 0
+(-1 / f()) INT_DIV -1 f()
+-1 INT_ZEXT -1
+0 INT_LEFT 0 64
+0 INT_ZEXT 0
+-1 INT_ZEXT -1
+0 INT_LEFT 0 64
+0 INT_ZEXT 0
+0 INT_LESS CONST f()
+ BRANCH VZERO
+(-1 / f()) INT_DIV -1 f()
+f() INT_ZEXT f()
+-1 INT_OR 0 -1
+-1 INT_ZEXT -1
+0 INT_LEFT 0 64
+0 INT_ZEXT 0
+((-1 / f()) / 2147483647) SUBPIECE (-1 / f()) 0
+((-1 / f()) / 2147483647) SUBPIECE (-1 / f()) 0
+(-1 / f()) INT_DIV -1 f()
+f() INT_ZEXT f()
+-1 INT_OR 0 -1
+0 INT_LESSEQUAL f() ((-1 / f()) / 2147483647)
+-1 INT_ZEXT -1
+0 INT_LEFT 0 64
+0 INT_ZEXT 0
+((-1 / f()) / 2147483647) SUBPIECE (-1 / f()) 0
+f() INT_ZEXT f()
+-1 INT_OR 0 -1
+-1 INT_ZEXT -1
+0 INT_LEFT 0 64
+0 INT_ZEXT 0
+ARG1 INT_SEXT ARG1
+0 INT_EQUAL [[ARG2]] ARG3
+[ARG2] LOAD 433 ARG2
+(RSP + -56) PTRSUB RSP -56
+kKMGTPEZY0 COPY STR
+f() CALL func [ARG2] ARG2 0 (RSP + -56) kKMGTPEZY0
+[ARG2] LOAD 433 ARG2
+(FS_OFFSET + 40) INT_ADD 0 40
+[(FS_OFFSET + 40)] LOAD 433 (FS_OFFSET + 40)
+(FS_OFFSET + 40) CAST (FS_OFFSET + 40)
+ CBRANCH (f() INT_EQUAL 0)
+0 INT_EQUAL f() 0
+ CBRANCH ([[ARG2]] INT_EQUAL ARG3)
+ CALL libcall___stack_chk_fail_thunk
+A_Stack[-0x38]:8 CAST A_Stack[-0x38]:8
+ RETURN 1
+ CBRANCH (-1 INT_SLESS A_Stack[-0x38]:8)
+0 INT_SLESS -1 A_Stack[-0x38]:8
+invalid --ignore-initial value '%s' COPY STR
+ CALL func invalid --ignore-initial value '%s' [ARG2]
+ CBRANCH ([(FS_OFFSET + 40)] INT_EQUAL [40])
+ RETURN 0
+ CBRANCH (f() INT_EQUAL 2)
+[[ARG2]] LOAD 433 [ARG2]
+0 INT_EQUAL f() 2
+[(Symbol + (ARG1 * 8))] LOAD 433 (Symbol + (ARG1 * 8))
+[(Symbol + (ARG1 * 8))] LOAD 433 (Symbol + (ARG1 * 8))
+0 BOOL_AND 0 0
+40 INT_ADD 0 40
+0 INT_EQUAL [(FS_OFFSET + 40)] [40]
+[(Symbol + (ARG1 * 8))] CAST [(Symbol + (ARG1 * 8))]
+ CBRANCH (0 BOOL_AND 0)
+(Symbol + (ARG1 * 8)) PTRADD Symbol ARG1 8
+Symbol PTRSUB 0 CONST
+40 CAST 40
+0 INT_NOTEQUAL A_Stack[-0x38]:8 [(Symbol + (ARG1 * 8))]
+[40] LOAD 433 40
+0 INT_LESSEQUAL [(Symbol + (ARG1 * 8))] A_Stack[-0x38]:8
+(Symbol + (ARG1 * 8)) PTRADD Symbol ARG1 8
+Symbol PTRSUB 0 CONST
+ STORE 433 (Symbol + (ARG1 * 8)) A_Stack[-0x38]:8
+0 INT_EQUAL ARG1 0
+ARG1 COPY ARG1
+ARG1 COPY ARG1
+ARG1 COPY ARG1
+ARG1 CAST ARG1
+ARG1 CAST ARG1
+0 COPY 0
+ CBRANCH (ARG1 INT_EQUAL 0)
+ CBRANCH ([f()] INT_EQUAL [f(/.libs/)])
+[f(/.libs/)] LOAD 433 f(/.libs/)
+[f()] LOAD 433 f()
+(f() + 1) PTRADD f() 1 1
+0 INT_EQUAL f() 0
+1 INT_ADD 0 1
+1 INT_ADD 0 1
+(f(/.libs/) + 1) PTRADD f(/.libs/) 1 1
+ CBRANCH (f() INT_EQUAL 0)
+0 INT_MULT 0 -2
+(f(/.libs/) + 1) COPY (f(/.libs/) + 1)
+0 INT_MULT 0 -2
+0 INT_EQUAL [f()] [f(/.libs/)]
+(f() + 1) COPY (f() + 1)
+0 INT_LESS [f()] [f(/.libs/)]
+0 INT_ZEXT 0
+0 INT_ZEXT 0
+[f(/.libs/)] LOAD 433 f(/.libs/)
+(f() + -1) INT_ADD f() -1
+[f()] LOAD 433 f()
+ CBRANCH (6 INT_SLESS ((~(ARG1) + 1) + (f() + 1)))
+7 COPY 7
+/.libs/ COPY STR
+(f() + -6) PTRADD f() -6 1
+VZERO COPY VZERO
+/.libs/ CAST /.libs/
+(f() + -6) CAST (f() + -6)
+ CBRANCH f()
+/.libs/ COPY /.libs/
+(f() + -6) COPY (f() + -6)
+ CBRANCH (f() INT_NOTEQUAL 0)
+(f() + 1) CAST (f() + 1)
+((~(ARG1) + 1) + (f() + 1)) CAST ((~(ARG1) + 1) + (f() + 1))
+0 INT_LESS ((~(ARG1) + 1) + (f() + 1)) 6
+0 INT_EQUAL ((~(ARG1) + 1) + (f() + 1)) 6
+VZERO COPY VZERO
+(f() + 1) PTRADD f() 1 1
+0 INT_SLESS 6 ((~(ARG1) + 1) + (f() + 1))
+((~(ARG1) + 1) + (f() + 1)) PTRADD (f() + 1) (~(ARG1) + 1) 1
+(~(ARG1) + 1) INT_2COMP ARG1
+VZERO COPY VZERO
+A NULL argv[0] was passed through an exec system call.  COPY STR
+VZERO COPY VZERO
+0 INT_NOTEQUAL f() 0
+ RETURN 1
+f(ARG1) COPY f(ARG1)
+ CALL libcall_abort_thunk
+VZERO COPY VZERO
+ RETURN 0
+VZERO COPY VZERO
+VZERO COPY VZERO
+ CALL libcall_fwrite_thunk A NULL argv[0] was passed through an exec system call.  1 55 VZERO
+f(ARG1) COPY f(ARG1)
+f() CALL libcall_strrchr_thunk ARG1 47
+VZERO COPY VZERO
+f() COPY f()
+0 INT_LESS [f()] [f(Symbol)]
+0 INT_ZEXT 0
+VZERO COPY VZERO
+0 INT_ZEXT 0
+[f(Symbol)] LOAD 433 f(Symbol)
+(f() + -1) INT_ADD f() -1
+[f()] LOAD 433 f()
+[f(Symbol)] LOAD 433 f(Symbol)
+[f()] LOAD 433 f()
+(f() + 1) PTRADD f() 1 1
+0 BOOL_AND ~(f()) ~(f())
+0 INT_EQUAL f() 0
+(f() + 1) COPY (f() + 1)
+1 INT_ADD 0 1
+1 INT_ADD 0 1
+(f(Symbol) + 1) PTRADD f(Symbol) 1 1
+ CBRANCH (f() INT_EQUAL 0)
+(f(Symbol) + 1) COPY (f(Symbol) + 1)
+ CBRANCH (0 INT_EQUAL f())
+(f() + 1) COPY (f() + 1)
+0 INT_EQUAL 0 f()
+Symbol PTRSUB 0 CONST
+Symbol COPY Symbol
+(f() + 1) COPY (f() + 1)
+~(f()) BOOL_NEGATE f()
+~(f()) BOOL_NEGATE f()
+3 COPY 3
+0 INT_MULT 0 -2
+0 INT_MULT 0 -2
+0 INT_EQUAL [f()] [f(Symbol)]
+ CBRANCH ([f()] INT_EQUAL [f(Symbol)])
+(f() + 4) COPY (f() + 4)
+(f() + 4) CAST (f() + 4)
+(f() + 4) PTRADD f() 4 1
+General help using GNU software: <http://www.gnu.org/gethelp/>  COPY STR
+f() CALL libcall_dcgettext_thunk 0 General help using GNU software: <http://www.gnu.org/gethelp/>  5
+VZERO COPY VZERO
+%s home page: <%s>  COPY STR
+f() CALL libcall_dcgettext_thunk 0 %s home page: <%s>  5
+GNU diffutils COPY STR
+http://www.gnu.org/software/diffutils/ COPY STR
+ CALL libcall___printf_chk_thunk 1 f() GNU diffutils http://www.gnu.org/software/diffutils/
+ RETURN 0
+VZERO COPY VZERO
+Report bugs to: %s  COPY STR
+f() CAST f()
+ CALL libcall_fputs_unlocked_thunk f() VZERO
+f() CALL libcall_dcgettext_thunk 0 Report bugs to: %s  5
+bug-diffutils@gnu.org COPY STR
+ CALL libcall___printf_chk_thunk 1 f() bug-diffutils@gnu.org
+ BRANCHIND ARG6
+Written by %s.  COPY STR
+f() CALL libcall_dcgettext_thunk 0 Written by %s.  5
+[ARG5] LOAD 433 ARG5
+f() CALL libcall___fprintf_chk_thunk ARG1 1 f() [ARG5]
+f() MULTIEQUAL f() f()
+f(ARG5) MULTIEQUAL [ARG5] [ARG5]
+f(ARG5) MULTIEQUAL [(ARG5 + 8)] [(ARG5 + 8)]
+f(ARG5) MULTIEQUAL [(ARG5 + 16)] [(ARG5 + 16)]
+f(ARG5) MULTIEQUAL [(ARG5 + 24)] [(ARG5 + 24)]
+f(ARG5) MULTIEQUAL [(ARG5 + 32)] 4211704
+ CALL libcall___fprintf_chk_thunk ARG1 1 f() f(ARG5) f(ARG5) f(ARG5) f(ARG5) f(ARG5)
+%s %s  COPY STR
+ CALL libcall___fprintf_chk_thunk ARG1 1 %s %s  ARG3 ARG4
+%s (%s) %s  COPY STR
+ CALL libcall___fprintf_chk_thunk ARG1 1 %s (%s) %s  ARG2 ARG3 ARG4
+f() MULTIEQUAL f() f()
+f(ARG5) MULTIEQUAL f(ARG5) [ARG5]
+f(ARG5) MULTIEQUAL f(ARG5) [(ARG5 + 8)]
+f(ARG5) MULTIEQUAL f(ARG5) [(ARG5 + 16)]
+f(ARG5) MULTIEQUAL f(ARG5) [(ARG5 + 24)]
+f(ARG5) MULTIEQUAL f(ARG5) [(ARG5 + 32)]
+f(ARG5) MULTIEQUAL f(ARG5) [(ARG5 + 40)]
+f(ARG5) MULTIEQUAL f(ARG5) [(ARG5 + 48)]
+f(ARG5) MULTIEQUAL f(ARG5) [(ARG5 + 56)]
+f(ARG5) MULTIEQUAL f(ARG5) 4211310
+f() CALL libcall___fprintf_chk_thunk ARG1 1 f() f(ARG5) f(ARG5) f(ARG5) f(ARG5) f(ARG5) f(ARG5) f(ARG5) f(ARG5) f(ARG5)
+f() MULTIEQUAL f() f()
+f(ARG5) MULTIEQUAL [ARG5] [ARG5]
+f(ARG5) MULTIEQUAL [(ARG5 + 8)] [(ARG5 + 8)]
+f(ARG5) MULTIEQUAL [(ARG5 + 16)] [(ARG5 + 16)]
+f(ARG5) MULTIEQUAL [(ARG5 + 24)] [(ARG5 + 24)]
+f(ARG5) MULTIEQUAL [(ARG5 + 32)] [(ARG5 + 32)]
+f(ARG5) MULTIEQUAL [(ARG5 + 40)] [(ARG5 + 40)]
+f(ARG5) MULTIEQUAL [(ARG5 + 48)] 4211852
+f() CALL libcall___fprintf_chk_thunk ARG1 1 f() f(ARG5) f(ARG5) f(ARG5) f(ARG5) f(ARG5) f(ARG5) f(ARG5)
+Copyright %s %d Free Software Foundation, Inc. COPY STR
+4228981 PTRSUB 0 CONST
+f() CALL libcall_dcgettext_thunk 0 4228981 5
+ CALL libcall___fprintf_chk_thunk ARG1 1 Copyright %s %d Free Software Foundation, Inc. f() CONST
+f() CAST f()
+ CALL libcall_fputs_unlocked_thunk f() ARG1
+Written by %s and %s.  COPY STR
+f() CALL libcall_dcgettext_thunk 0 Written by %s and %s.  5
+[ARG5] LOAD 433 ARG5
+[(ARG5 + 8)] LOAD 433 (ARG5 + 8)
+f() CALL libcall___fprintf_chk_thunk ARG1 1 f() [ARG5] [(ARG5 + 8)]
+Written by %s, %s, and %s.  COPY STR
+f() CALL libcall_dcgettext_thunk 0 Written by %s, %s, and %s.  5
+[ARG5] LOAD 433 ARG5
+[(ARG5 + 8)] LOAD 433 (ARG5 + 8)
+[(ARG5 + 16)] LOAD 433 (ARG5 + 16)
+f() CALL libcall___fprintf_chk_thunk ARG1 1 f() [ARG5] [(ARG5 + 8)] [(ARG5 + 16)]
+(ARG5 + 48) PTRADD ARG5 6 8
+(ARG5 + 32) PTRADD ARG5 4 8
+(ARG5 + 56) PTRADD ARG5 7 8
+(ARG5 + 64) PTRADD ARG5 8 8
+(ARG5 + 8) PTRADD ARG5 1 8
+[ARG5] LOAD 433 ARG5
+(ARG5 + 16) PTRADD ARG5 2 8
+(ARG5 + 56) PTRADD ARG5 7 8
+(ARG5 + 16) PTRADD ARG5 2 8
+[ARG5] LOAD 433 ARG5
+[ARG5] LOAD 433 ARG5
+(ARG5 + 32) PTRADD ARG5 4 8
+(ARG5 + 40) PTRADD ARG5 5 8
+(ARG5 + 56) PTRADD ARG5 7 8
+(ARG5 + 8) PTRADD ARG5 1 8
+(ARG5 + 24) PTRADD ARG5 3 8
+(ARG5 + 8) PTRADD ARG5 1 8
+(ARG5 + 48) PTRADD ARG5 6 8
+[ARG5] LOAD 433 ARG5
+(ARG5 + 64) PTRADD ARG5 8 8
+(ARG5 + 16) PTRADD ARG5 2 8
+(ARG5 + 32) PTRADD ARG5 4 8
+(ARG5 + 24) PTRADD ARG5 3 8
+(ARG5 + 8) PTRADD ARG5 1 8
+(ARG5 + 40) PTRADD ARG5 5 8
+(ARG5 + 16) PTRADD ARG5 2 8
+(ARG5 + 24) PTRADD ARG5 3 8
+(ARG5 + 32) PTRADD ARG5 4 8
+[ARG5] LOAD 433 ARG5
+(ARG5 + 32) PTRADD ARG5 4 8
+(ARG5 + 32) PTRADD ARG5 4 8
+[ARG5] LOAD 433 ARG5
+(ARG5 + 8) PTRADD ARG5 1 8
+(ARG5 + 40) PTRADD ARG5 5 8
+(ARG5 + 40) PTRADD ARG5 5 8
+(ARG5 + 40) PTRADD ARG5 5 8
+[ARG5] LOAD 433 ARG5
+(ARG5 + 16) PTRADD ARG5 2 8
+(ARG5 + 48) PTRADD ARG5 6 8
+(ARG5 + 8) PTRADD ARG5 1 8
+(ARG5 + 24) PTRADD ARG5 3 8
+(ARG5 + 48) PTRADD ARG5 6 8
+(ARG5 + 8) PTRADD ARG5 1 8
+(ARG5 + 16) PTRADD ARG5 2 8
+(ARG5 + 24) PTRADD ARG5 3 8
+(ARG5 + 8) PTRADD ARG5 1 8
+(ARG5 + 16) PTRADD ARG5 2 8
+(ARG5 + 16) PTRADD ARG5 2 8
+(ARG5 + 8) PTRADD ARG5 1 8
+(ARG5 + 24) PTRADD ARG5 3 8
+(ARG5 + 24) PTRADD ARG5 3 8
+0 INT_EQUAL ARG2 0
+ CBRANCH (ARG2 INT_EQUAL 0)
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>. This is free software: you are free to change and redistribute it. There is NO WARRANTY, to the extent permitted by law.   COPY STR
+f() CALL libcall_dcgettext_thunk 0 License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>. This is free software: you are free to change and redistribute it. There is NO WARRANTY, to the extent permitted by law.   5
+ BRANCH VZERO
+[(ARG5 + 24)] LOAD 433 (ARG5 + 24)
+[(ARG5 + 40)] LOAD 433 (ARG5 + 40)
+[(ARG5 + 32)] LOAD 433 (ARG5 + 32)
+ RETURN 1
+ CALL libcall_abort_thunk
+Written by %s, %s, %s, %s, %s, %s, and %s.  COPY STR
+[(ARG5 + 48)] LOAD 433 (ARG5 + 48)
+[(ARG5 + 40)] LOAD 433 (ARG5 + 40)
+[(ARG5 + 32)] LOAD 433 (ARG5 + 32)
+[(ARG5 + 16)] LOAD 433 (ARG5 + 16)
+[(ARG5 + 8)] LOAD 433 (ARG5 + 8)
+Written by %s, %s, %s, and %s.  COPY STR
+f() CALL libcall_dcgettext_thunk 0 Written by %s, %s, %s, and %s.  5
+[(ARG5 + 16)] LOAD 433 (ARG5 + 16)
+[(ARG5 + 8)] LOAD 433 (ARG5 + 8)
+[(ARG5 + 8)] LOAD 433 (ARG5 + 8)
+4211704 COPY CONST
+Written by %s, %s, %s, %s, %s, and %s.  COPY STR
+f() CALL libcall_dcgettext_thunk 0 Written by %s, %s, %s, %s, %s, and %s.  5
+[(ARG5 + 24)] LOAD 433 (ARG5 + 24)
+[(ARG5 + 16)] LOAD 433 (ARG5 + 16)
+4211852 COPY CONST
+f() CALL libcall_dcgettext_thunk 0 Written by %s, %s, %s, %s, %s, %s, and %s.  5
+[(ARG5 + 32)] LOAD 433 (ARG5 + 32)
+[(ARG5 + 24)] LOAD 433 (ARG5 + 24)
+[(ARG5 + 56)] LOAD 433 (ARG5 + 56)
+[(ARG5 + 16)] LOAD 433 (ARG5 + 16)
+[(ARG5 + 8)] LOAD 433 (ARG5 + 8)
+[(ARG5 + 24)] LOAD 433 (ARG5 + 24)
+Written by %s, %s, %s, %s, and %s.  COPY STR
+f() CALL libcall_dcgettext_thunk 0 Written by %s, %s, %s, %s, and %s.  5
+[(ARG5 + 16)] LOAD 433 (ARG5 + 16)
+f(ARG5) COPY f(ARG5)
+[(ARG5 + 24)] LOAD 433 (ARG5 + 24)
+[(ARG5 + 32)] LOAD 433 (ARG5 + 32)
+[(ARG5 + 40)] LOAD 433 (ARG5 + 40)
+ BRANCH VZERO
+Written by %s, %s, %s, %s, %s, %s, %s, and %s.  COPY STR
+f() CALL libcall_dcgettext_thunk 0 Written by %s, %s, %s, %s, %s, %s, %s, and %s.  5
+Written by %s, %s, %s, %s, %s, %s, %s, %s, %s, and others. COPY STR
+[(ARG5 + 56)] LOAD 433 (ARG5 + 56)
+[(ARG5 + 8)] LOAD 433 (ARG5 + 8)
+4211310 COPY CONST
+[(ARG5 + 64)] LOAD 433 (ARG5 + 64)
+[(ARG5 + 16)] LOAD 433 (ARG5 + 16)
+ BRANCH VZERO
+ BRANCH VZERO
+[(ARG5 + 56)] LOAD 433 (ARG5 + 56)
+ RETURN 0 f()
+[(ARG5 + 48)] LOAD 433 (ARG5 + 48)
+[(ARG5 + 24)] LOAD 433 (ARG5 + 24)
+Written by %s, %s, %s, %s, %s, %s, %s, %s, and %s. COPY STR
+[(ARG5 + 32)] LOAD 433 (ARG5 + 32)
+[(ARG5 + 8)] LOAD 433 (ARG5 + 8)
+[(ARG5 + 40)] LOAD 433 (ARG5 + 40)
+[(ARG5 + 16)] LOAD 433 (ARG5 + 16)
+[(ARG5 + 48)] LOAD 433 (ARG5 + 48)
+[(ARG5 + 48)] LOAD 433 (ARG5 + 48)
+ RETURN 0 f(ARG5)
+ RETURN 0 f()
+ BRANCH VZERO
+ RETURN 0 f()
+[(ARG5 + 8)] LOAD 433 (ARG5 + 8)
+[(ARG5 + 24)] LOAD 433 (ARG5 + 24)
+[(ARG5 + 64)] LOAD 433 (ARG5 + 64)
+f(Written by %s, %s, %s, %s, %s, %s, %s, %s, %s, and others. , Written by %s, %s, %s, %s, %s, %s, %s, %s, and %s.) MULTIEQUAL Written by %s, %s, %s, %s, %s, %s, %s, %s, %s, and others. Written by %s, %s, %s, %s, %s, %s, %s, %s, and %s.
+f() CALL libcall_dcgettext_thunk 0 f(Written by %s, %s, %s, %s, %s, %s, %s, %s, %s, and others. , Written by %s, %s, %s, %s, %s, %s, %s, %s, and %s.) 5
+[(ARG5 + 32)] LOAD 433 (ARG5 + 32)
+[(ARG5 + 40)] LOAD 433 (ARG5 + 40)
+ RETURN 0 f()
+ RETURN 0 f()
+0 INT_EQUAL ARG1 0
+(ARG1 / f(ARG1 , ARG2)) INT_DIV ARG1 f(ARG1 , ARG2)
+ARG1 COPY ARG1
+ARG1 COPY ARG1
+((ARG2 * (ARG1 / f(ARG1 , ARG2))) - ARG3) INT_SUB (ARG2 * (ARG1 / f(ARG1 , ARG2))) ARG3
+0 INT_LESS (ARG2 * (ARG1 / f(ARG1 , ARG2))) ARG3
+0 INT_NOTEQUAL ARG2 0
+ARG2 COPY ARG2
+(ARG2 * (ARG1 / f(ARG1 , ARG2))) INT_MULT ARG2 (ARG1 / f(ARG1 , ARG2))
+ARG2 COPY ARG2
+0 INT_NOTEQUAL ARG2 0
+((ARG2 * (ARG1 / f(ARG1 , ARG2))) / ARG2) INT_DIV (ARG2 * (ARG1 / f(ARG1 , ARG2))) ARG2
+ CBRANCH (ARG1 INT_EQUAL 0)
+ CBRANCH (ARG2 INT_NOTEQUAL 0)
+8192 COPY 8192
+ CBRANCH (0 BOOL_OR 0)
+f(ARG1 , ARG2) COPY f(ARG1 , ARG2)
+ RETURN 0 f(ARG1 , ARG2)
+f(ARG1 , ARG2) COPY f(ARG1 , ARG2)
+ RETURN 0 f(ARG1 , ARG2)
+ CBRANCH ((ARG1 / f(ARG1 , ARG2)) INT_EQUAL ((ARG2 * (ARG1 / f(ARG1 , ARG2))) / ARG2))
+(ARG2 * (ARG1 / f(ARG1 , ARG2))) COPY (ARG2 * (ARG1 / f(ARG1 , ARG2)))
+0 INT_EQUAL (ARG1 / f(ARG1 , ARG2)) ((ARG2 * (ARG1 / f(ARG1 , ARG2))) / ARG2)
+ CBRANCH (ARG2 INT_NOTEQUAL 0)
+8192 COPY CONST
+(f(ARG1 , ARG2) % f(ARG1 , ARG2)) INT_REM f(ARG1 , ARG2) f(ARG1 , ARG2)
+0 INT_EQUAL ((ARG2 * (ARG1 / f(ARG1 , ARG2))) - ARG3) 0
+ CBRANCH ((f(ARG1 , ARG2) % f(ARG1 , ARG2)) INT_NOTEQUAL 0)
+0 INT_NOTEQUAL (f(ARG1 , ARG2) % f(ARG1 , ARG2)) 0
+(f(ARG1 , ARG2) % f(ARG1 , ARG2)) COPY (f(ARG1 , ARG2) % f(ARG1 , ARG2))
+f(ARG1 , ARG2) COPY f(ARG1 , ARG2)
+0 BOOL_OR 0 0
+f(ARG1 , ARG2) COPY f(ARG1 , ARG2)
+0 INT_SLESS ARG1 0
+(ARG2 + 20) INT_ADD ARG2 20
+(ARG2 + 20) INT_ADD ARG2 20
+(ARG2 + 20) CAST (ARG2 + 20)
+(ARG2 + 20) COPY (ARG2 + 20)
+ CBRANCH (ARG1 INT_SLESS 0)
+ STORE 433 (ARG2 + 20) 0
+(ARG2 + 20) CAST (ARG2 + 20)
+(f(ARG1) / 2147483647) SUBPIECE f(ARG1) 0
+(((f(ARG1) / 21474836470) * 10) + 48) INT_ADD ((f(ARG1) / 21474836470) * 10) 48
+ STORE 433 (f(ARG2) + -1) (((f(ARG1) / 2147483647) + ((f(ARG1) / 21474836470) * 246)) + 48)
+0 INT_NOTEQUAL (f(ARG1) / 10) 0
+(f(ARG1) / 10) INT_SDIV f(ARG1) 10
+(f(ARG1) / 21474836470) SUBPIECE (f(ARG1) / 10) 0
+ RETURN 0 (f(ARG2) + -2)
+(f(ARG2) + -1) PTRADD f(ARG2) -1 1
+(((f(ARG1) / 2147483647) + ((f(ARG1) / 21474836470) * 246)) + 48) INT_ADD ((f(ARG1) / 2147483647) + ((f(ARG1) / 21474836470) * 246)) 48
+((f(ARG1) / 21474836470) * 246) INT_MULT (f(ARG1) / 21474836470) 246
+(f(ARG1) / 2147483647) SUBPIECE f(ARG1) 0
+f(ARG2) COPY f(ARG2)
+((f(ARG1) / 2147483647) + ((f(ARG1) / 21474836470) * 246)) INT_ADD (f(ARG1) / 2147483647) ((f(ARG1) / 21474836470) * 246)
+(f(ARG2) + -2) COPY (f(ARG2) + -2)
+ STORE 433 (f(ARG2) + -2) 45
+(f(ARG2) + -2) PTRADD f(ARG2) -2 1
+(f(ARG1) / 10) INT_SDIV f(ARG1) 10
+ CBRANCH ((f(ARG1) / 10) INT_NOTEQUAL 0)
+(f(ARG2) + -2) PTRADD f(ARG2) -2 1
+(f(ARG1) / 10) COPY (f(ARG1) / 10)
+ RETURN 0 (f(ARG2) + -1)
+(f(ARG2) + -1) COPY (f(ARG2) + -1)
+ STORE 433 (f(ARG2) + -1) ((((f(ARG1) / 21474836470) * 10) + 48) - (f(ARG1) / 2147483647))
+0 INT_NOTEQUAL (f(ARG1) / 10) 0
+(f(ARG2) + -1) PTRADD f(ARG2) -1 1
+(f(ARG1) / 10) COPY (f(ARG1) / 10)
+((f(ARG1) / 21474836470) * 10) INT_MULT (f(ARG1) / 21474836470) 10
+(f(ARG1) / 21474836470) SUBPIECE (f(ARG1) / 10) 0
+((((f(ARG1) / 21474836470) * 10) + 48) - (f(ARG1) / 2147483647)) INT_SUB (((f(ARG1) / 21474836470) * 10) + 48) (f(ARG1) / 2147483647)
+ CBRANCH ((f(ARG1) / 10) INT_NOTEQUAL 0)
+(f(ARG2) + -1) COPY (f(ARG2) + -1)
+(ARG2 + ARG3) INT_ADD ARG2 ARG3
+f(ARG2) MULTIEQUAL ARG2 f(ARG2)
+f(ARG2 , ARG3) CAST f(ARG2 , ARG3)
+f() CALL libcall_read_thunk ARG1 f(ARG2) f(ARG2 , ARG3)
+ARG2 COPY ARG2
+ARG2 CAST ARG2
+ARG2 CAST ARG2
+((ARG2 + ARG3) - f(ARG2)) INT_SUB (ARG2 + ARG3) f(ARG2)
+f() COPY f()
+((ARG2 + ARG3) - f(ARG2)) CAST ((ARG2 + ARG3) - f(ARG2))
+((ARG2 + ARG3) - f(ARG2)) COPY ((ARG2 + ARG3) - f(ARG2))
+f(ARG2) CAST f(ARG2)
+(ARG2 + ARG3) CAST (ARG2 + ARG3)
+(ARG2 + ARG3) CAST (ARG2 + ARG3)
+0 INT_SLESS f() 1
+0 INT_LESS f() ((ARG2 + ARG3) - f(ARG2))
+ CBRANCH (f() INT_SLESS 1)
+ CBRANCH (f() INT_LESS ((ARG2 + ARG3) - f(ARG2)))
+9223372036854775807 COPY CONST
+0 INT_EQUAL f() 0
+ CBRANCH ([f()] INT_NOTEQUAL 22)
+-1 COPY -1
+0 INT_LESS f(ARG2 , ARG3) CONST
+ RETURN 0 -1
+ CBRANCH (f(ARG2 , ARG3) INT_LESS 2147483648)
+0 INT_LESS f(ARG2) (ARG2 + ARG3)
+(f(ARG2) + f()) INT_ADD f(ARG2) f()
+ CBRANCH (f(ARG2) INT_LESS (ARG2 + ARG3))
+(f(ARG2) + f()) CAST (f(ARG2) + f())
+ CBRANCH (f() INT_EQUAL 0)
+f(ARG2) CAST f(ARG2)
+ RETURN 0 (f(ARG2) - ARG2)
+(f(ARG2) - ARG2) INT_SUB f(ARG2) ARG2
+(f(ARG2) - ARG2) CAST (f(ARG2) - ARG2)
+f(ARG2) CAST f(ARG2)
+ BRANCH VZERO
+2147483647 COPY CONST
+[f()] LOAD 433 f()
+0 INT_NOTEQUAL [f()] 22
+f() CALL libcall___errno_location_thunk
+0 INT_EQUAL ARG1 ARG2
+ CBRANCH (ARG1 INT_EQUAL ARG2)
+ CBRANCH (([f(ARG1)] + 191) INT_LESS 26)
+[f(ARG1)] COPY [f(ARG1)]
+0 INT_LESS ([f(ARG1)] + 191) 26
+([f(ARG1)] + 191) CAST ([f(ARG1)] + 191)
+([f(ARG1)] + 32) COPY ([f(ARG1)] + 32)
+ CBRANCH (f(ARG1) INT_EQUAL 0)
+0 INT_EQUAL f(ARG1) f(ARG2)
+(f(ARG1) + 1) PTRADD f(ARG1) 1 1
+(f(ARG2) + 1) PTRADD f(ARG2) 1 1
+ CBRANCH (f(ARG1) INT_EQUAL f(ARG2))
+ CBRANCH (([f(ARG2)] + 191) INT_LESS 26)
+0 INT_LESS ([f(ARG2)] + 191) 26
+([f(ARG2)] + 191) CAST ([f(ARG2)] + 191)
+([f(ARG2)] + 32) COPY ([f(ARG2)] + 32)
+[f(ARG2)] COPY [f(ARG2)]
+([f(ARG2)] + 32) INT_ADD [f(ARG2)] 32
+([f(ARG1)] + 191) INT_ADD [f(ARG1)] 191
+([f(ARG2)] + 191) INT_ADD [f(ARG2)] 191
+ RETURN 0 (f(ARG1) - f(ARG2))
+([f(ARG1)] + 32) INT_ADD [f(ARG1)] 32
+(f(ARG1) - f(ARG2)) INT_SUB f(ARG1) f(ARG2)
+f(ARG1) INT_ZEXT f(ARG1)
+f(ARG2) INT_ZEXT f(ARG2)
+[f(ARG1)] LOAD 433 f(ARG1)
+ RETURN 0 0
+0 COPY 0
+(f(ARG1) - f(ARG2)) COPY (f(ARG1) - f(ARG2))
+0 INT_EQUAL f(ARG1) 0
+[f(ARG2)] LOAD 433 f(ARG2)
+[(f() + 40)] LOAD 433 (f() + 40)
+ CBRANCH ([f(Symbol)] INT_EQUAL 0)
+0 INT_EQUAL [f(Symbol)] 0
+VZERO COPY VZERO
+[f(Symbol)] LOAD 433 f(Symbol)
+ CBRANCH (f() INT_NOTEQUAL [(f() + 40)])
+(f() + 40) CAST (f() + 40)
+(FS_OFFSET + 40) INT_ADD 0 40
+VZERO COPY VZERO
+ CBRANCH (f() INT_EQUAL 0)
+f(ASCII , Symbol) COPY f(ASCII , Symbol)
+f() CALL libcall_nl_langinfo_thunk 14
+ CBRANCH ([f(Symbol)] INT_EQUAL 0)
+4227718 COPY CONST
+(f() + 40) INT_ADD f() 40
+0 INT_NOTEQUAL f() [(f() + 40)]
+ASCII COPY STR
+[f(Symbol)] LOAD 433 f(Symbol)
+0 INT_EQUAL [f(Symbol)] 0
+[(FS_OFFSET + 40)] LOAD 433 (FS_OFFSET + 40)
+ CBRANCH (VZERO INT_NOTEQUAL 0)
+(FS_OFFSET + 40) CAST (FS_OFFSET + 40)
+0 INT_EQUAL f() 0
+0 INT_NOTEQUAL VZERO 0
+ CBRANCH (f() INT_NOTEQUAL 0)
+f() CAST f()
+[(f(/home/ericlee/projects/input3/binaries/lib) + f())] LOAD 433 (f(/home/ericlee/projects/input3/binaries/lib) + f())
+ CBRANCH (f() INT_NOTEQUAL 0)
+(f() + 14) INT_ADD f() 14
+ BRANCH VZERO
+(f(/home/ericlee/projects/input3/binaries/lib) + f()) PTRADD f(/home/ericlee/projects/input3/binaries/lib) f() 1
+0 INT_NOTEQUAL f() 0
+ CBRANCH ([(f(/home/ericlee/projects/input3/binaries/lib) + f())] INT_EQUAL 47)
+0 INT_EQUAL [(f(/home/ericlee/projects/input3/binaries/lib) + f())] 47
+f() MULTIEQUAL (f() + 14) 14
+f() CALL libcall_malloc_thunk f()
+f() COPY f()
+(f() + 1) INT_SUB f() 1
+14 COPY 14
+f() COPY f()
+ CBRANCH (f() INT_EQUAL 35)
+ CBRANCH (f() INT_NOTEQUAL 4294967295)
+ CBRANCH ([(f() + 8)] INT_LESS [(f() + 16)])
+0 INT_NOTEQUAL f() CONST
+0 INT_LESS [(f() + 8)] [(f() + 16)]
+f() MULTIEQUAL f() f()
+f() CALL libcall_open_thunk f() CONST
+r COPY STR
+f() CALL libcall_fdopen_thunk f() r
+%50s %50s COPY STR
+(RSP + -184) PTRSUB RSP -184
+f() CALL libcall_fscanf_thunk f() %50s %50s (RSP + -184)
+0 INT_SLESS f() 2
+[(f() + 8)] CAST [(f() + 8)]
+[(f() + 16)] LOAD 433 (f() + 16)
+f() MULTIEQUAL [f()] f()
+ CALL libcall_ungetc_thunk f() f()
+ CBRANCH (f() INT_SLESS 2)
+(f() + 16) PTRSUB f() 16
+[(f() + 8)] LOAD 433 (f() + 8)
+ CBRANCH (f() INT_EQUAL 4294967295)
+(f() + 8) PTRSUB f() 8
+0 INT_EQUAL f() CONST
+ CBRANCH (f() INT_EQUAL 0)
+[(f() + 8)] LOAD 433 (f() + 8)
+f(RSP) PTRADD f() f(RSP) 1
+(RSP + -120) PTRSUB RSP -120
+((f(RSP) + ((-3 - ((f(RSP) / 2147483647) + (f(RSP) / 2147483647))) - (RSP + -120))) + 1) INT_ADD (f(RSP) + ((-3 - ((f(RSP) / 2147483647) + (f(RSP) / 2147483647))) - (RSP + -120))) 1
+ CALL libcall_memcpy_thunk f(RSP) (RSP + -120) ((f(RSP) + ((-3 - ((f(RSP) / 2147483647) + (f(RSP) / 2147483647))) - (RSP + -120))) + 1)
+f(RSP) PTRADD f() f(RSP) 1
+(RSP + -184) PTRSUB RSP -184
+((f(RSP) + ((-3 - ((f(RSP) / 2147483647) + (f(RSP) / 2147483647))) - (RSP + -184))) + 1) INT_ADD (f(RSP) + ((-3 - ((f(RSP) / 2147483647) + (f(RSP) / 2147483647))) - (RSP + -184))) 1
+ CALL libcall_memcpy_thunk f(RSP) (RSP + -184) ((f(RSP) + ((-3 - ((f(RSP) / 2147483647) + (f(RSP) / 2147483647))) - (RSP + -184))) + 1)
+ CBRANCH ([(f() + 8)] INT_LESS [(f() + 16)])
+f() MULTIEQUAL f() f()
+ CALL libcall_free_thunk f()
+0 INT_LESS [(f() + 8)] [(f() + 16)]
+(f() + 16) PTRSUB f() 16
+f(RSP) INT_ADD (-2 - (f(RSP) + ((-3 - ((f(RSP) / 2147483647) + (f(RSP) / 2147483647))) - (RSP + -184)))) ((f(RSP) + 2) - (f(RSP) + ((-3 - ((f(RSP) / 2147483647) + (f(RSP) / 2147483647))) - (RSP + -120))))
+(-2 - (f(RSP) + ((-3 - ((f(RSP) / 2147483647) + (f(RSP) / 2147483647))) - (RSP + -184)))) INT_SUB -2 (f(RSP) + ((-3 - ((f(RSP) / 2147483647) + (f(RSP) / 2147483647))) - (RSP + -184)))
+(f() + 8) PTRSUB f() 8
+Symbol COPY CONST
+ BRANCH VZERO
+[(f() + 16)] LOAD 433 (f() + 16)
+ CALL libcall_fclose_thunk f()
+[(f() + 8)] CAST [(f() + 8)]
+((f(RSP) + 2) - (f(RSP) + ((-3 - ((f(RSP) / 2147483647) + (f(RSP) / 2147483647))) - (RSP + -120)))) INT_SUB (f(RSP) + 2) (f(RSP) + ((-3 - ((f(RSP) / 2147483647) + (f(RSP) / 2147483647))) - (RSP + -120)))
+f(RSP) INT_ADD ((f(RSP) + 2) - (f(RSP) + ((-3 - ((f(RSP) / 2147483647) + (f(RSP) / 2147483647))) - (RSP + -120)))) -1
+((f() + f()) + 12) INT_ADD (f() + f()) 12
+ CBRANCH (4294967295 INT_SLESS f())
+(f() + f()) PTRADD f() f() 1
+Symbol COPY CONST
+ BRANCH VZERO
+f(/home/ericlee/projects/input3/binaries/lib) MULTIEQUAL f(/home/ericlee/projects/input3/binaries/lib) f()
+f() MULTIEQUAL f() f()
+ CALL libcall_memcpy_thunk f() f(/home/ericlee/projects/input3/binaries/lib) f()
+Symbol COPY Symbol
+0 INT_SLESS CONST f()
+ CALL libcall_free_thunk f()
+ STORE 433 ((f() + f()) + 12) 115
+((f() + f()) + 12) CAST ((f() + f()) + 12)
+f(Symbol) COPY f(Symbol)
+(f() + f()) CAST (f() + f())
+((f() + f()) + 8) PTRADD (f() + f()) 1 8
+ STORE 433 ((f() + f()) + 8) CONST
+(f() + f()) CAST (f() + f())
+((f() + f()) + 8) CAST ((f() + f()) + 8)
+ STORE 433 (f() + f()) CONST
+ CBRANCH (f() INT_EQUAL 4294967295)
+ CBRANCH ((f() + 9) INT_LESS 2)
+0 INT_EQUAL f(RSP) 0
+(f() + 9) INT_SUB f() 9
+ CALL libcall_fclose_thunk f()
+0 INT_LESS (f() + 9) 2
+f() COPY f()
+ CBRANCH (f(RSP) INT_EQUAL 0)
+ CBRANCH (f() INT_EQUAL 0)
+(f() + 1) INT_ADD f() 1
+(f(Symbol) + (f() + 1)) PTRADD f(Symbol) (f() + 1) 1
+f(Symbol) MULTIEQUAL VZERO ((f(Symbol) + (f() + 1)) + (f() + 1)) f(Symbol) Symbol
+f() CALL libcall_strlen_thunk f(Symbol)
+ CBRANCH ([f(Symbol)] INT_EQUAL 42)
+0 INT_EQUAL [f(Symbol)] 42
+ CALL libcall___stack_chk_fail_thunk
+ RETURN 0 f(ASCII , Symbol)
+ RETURN 1
+f(Symbol) COPY f(Symbol)
+f(Symbol) COPY f(Symbol)
+f() CAST f()
+(f() + 1) INT_ADD f() 1
+ CBRANCH (f() INT_NOTEQUAL 0)
+(f() + 15) INT_ADD f() 15
+f() CALL libcall_malloc_thunk (f() + 15)
+0 INT_NOTEQUAL f() 0
+ CBRANCH ((32896 & (~([f(RSP)]) & ([f(RSP)] + 4278124287))) INT_EQUAL 0)
+(f(RSP) + 6) COPY (f(RSP) + 6)
+(f(RSP) + 4) COPY (f(RSP) + 4)
+ CBRANCH (f() INT_EQUAL 0)
+42 COPY 42
+[f()] LOAD 433 f()
+ CBRANCH ([f()] INT_EQUAL 0)
+41 COPY 41
+0 INT_EQUAL [f()] 0
+/home/ericlee/projects/input3/binaries/lib COPY STR
+ CBRANCH ([(f() + 16)] INT_LESSEQUAL [(f() + 8)])
+ STORE 433 (f() + 8) (f() + 1)
+(f() + 8) PTRSUB f() 8
+f() COPY f()
+(f() + 1) CAST (f() + 1)
+f() COPY f()
+f() CAST f()
+(f() + 1) PTRADD f() 1 1
+0 INT_EQUAL f() CONST
+[f()] INT_ZEXT [f()]
+f() CALL libcall___uflow_thunk f()
+f() COPY f()
+[f()] LOAD 433 f()
+ CBRANCH (f() INT_EQUAL 32)
+(f() + 16) PTRSUB f() 16
+[(f() + 16)] LOAD 433 (f() + 16)
+0 INT_LESSEQUAL [(f() + 16)] [(f() + 8)]
+0 INT_EQUAL f() 35
+(f() + 8) PTRSUB f() 8
+[(f() + 8)] LOAD 433 (f() + 8)
+[(f() + 8)] CAST [(f() + 8)]
+ CBRANCH (f() INT_NOTEQUAL 10)
+ CBRANCH ((32896 & (~([f(RSP)]) & ([f(RSP)] + 4278124287))) INT_EQUAL 0)
+(f(RSP) + 6) COPY (f(RSP) + 6)
+(f(RSP) + 4) COPY (f(RSP) + 4)
+ CBRANCH ((32896 & (~([f(RSP)]) & ([f(RSP)] + 4278124287))) INT_EQUAL 0)
+((2155905152 & (~([f(RSP)]) & ([f(RSP)] + 4278124287))) / 65536) COPY ((2155905152 & (~([f(RSP)]) & ([f(RSP)] + 4278124287))) / 65536)
+(2155905152 & (~([f(RSP)]) & ([f(RSP)] + 4278124287))) COPY (2155905152 & (~([f(RSP)]) & ([f(RSP)] + 4278124287)))
+ BRANCH VZERO
+Symbol COPY CONST
+ STORE 433 (f(RSP) + f()) 0
+(f(RSP) + f()) PTRADD f() f(RSP) 1
+ CBRANCH ([(f(Symbol) + 1)] INT_EQUAL 0)
+(f() + 1) INT_ADD f() 1
+(f(Symbol) + (f() + 1)) PTRADD f(Symbol) (f() + 1) 1
+f() CALL libcall_strlen_thunk f(Symbol)
+f(Symbol) COPY f(Symbol)
+(f() + 1) INT_ADD f() 1
+((f(Symbol) + (f() + 1)) + (f() + 1)) PTRADD (f(Symbol) + (f() + 1)) (f() + 1) 1
+f() CALL libcall_strlen_thunk (f(Symbol) + (f() + 1))
+[[(f() + 8)]] INT_ZEXT [[(f() + 8)]]
+ STORE 433 (f() + 8) ([(f() + 8)] + 1)
+ BRANCH VZERO
+([(f() + 8)] + 1) CAST ([(f() + 8)] + 1)
+f() CAST f()
+f() CALL libcall___uflow_thunk f()
+([(f() + 8)] + 1) PTRADD [(f() + 8)] 1 1
+[[(f() + 8)]] LOAD 433 [(f() + 8)]
+(f() + 8) PTRSUB f() 8
+0 INT_EQUAL f() 32
+0 INT_NOTEQUAL f() 10
+f() MULTIEQUAL f() 4227718
+f() CALL libcall_strcmp_thunk f() f(Symbol)
+0 INT_EQUAL f() 0
+0 INT_NOTEQUAL f() 0
+ CBRANCH (f() INT_NOTEQUAL 0)
+ BRANCH VZERO
+ STORE 433 (f() + f()) 47
+(f() + f()) PTRADD f() f() 1
+f(/home/ericlee/projects/input3/binaries/lib) MULTIEQUAL /home/ericlee/projects/input3/binaries/lib f()
+f() MULTIEQUAL 42 f()
+ CALL libcall_memcpy_thunk f() f(/home/ericlee/projects/input3/binaries/lib) f()
+ CBRANCH ((32896 & (~([f(RSP)]) & ([f(RSP)] + 4278124287))) INT_EQUAL 0)
+((2155905152 & (~([f(RSP)]) & ([f(RSP)] + 4278124287))) / 65536) COPY ((2155905152 & (~([f(RSP)]) & ([f(RSP)] + 4278124287))) / 65536)
+(2155905152 & (~([f(RSP)]) & ([f(RSP)] + 4278124287))) COPY (2155905152 & (~([f(RSP)]) & ([f(RSP)] + 4278124287)))
+0 INT_EQUAL [(f(Symbol) + 1)] 0
+[(f(Symbol) + 1)] LOAD 433 (f(Symbol) + 1)
+(f(Symbol) + 1) PTRADD f(Symbol) 1 1
+((2155905152 & (~([f(RSP)]) & ([f(RSP)] + 4278124287))) / 65536) INT_RIGHT (2155905152 & (~([f(RSP)]) & ([f(RSP)] + 4278124287))) 16
+0 INT_EQUAL f() 0
+(f(RSP) + 4) COPY (f(RSP) + 4)
+(f(RSP) + 6) INT_ADD f(RSP) 6
+(f(RSP) + 6) CAST (f(RSP) + 6)
+f(RSP) CAST f(RSP)
+(32896 & (~([f(RSP)]) & ([f(RSP)] + 4278124287))) INT_AND (~([f(RSP)]) & ([f(RSP)] + 4278124287)) CONST
+([f(RSP)] + 4278124287) INT_ADD [f(RSP)] CONST
+((-3 - ((f(RSP) / 2147483647) + (f(RSP) / 2147483647))) - (RSP + -120)) INT_SUB (-3 - ((f(RSP) / 2147483647) + (f(RSP) / 2147483647))) (RSP + -120)
+f(RSP) COPY f(RSP)
+(f(RSP) + ((-3 - ((f(RSP) / 2147483647) + (f(RSP) / 2147483647))) - (RSP + -184))) INT_ADD f(RSP) ((-3 - ((f(RSP) / 2147483647) + (f(RSP) / 2147483647))) - (RSP + -184))
+(-3 - ((f(RSP) / 2147483647) + (f(RSP) / 2147483647))) INT_SUB -3 ((f(RSP) / 2147483647) + (f(RSP) / 2147483647))
+ CBRANCH ((2155905152 & (~([f(RSP)]) & ([f(RSP)] + 4278124287))) INT_EQUAL 0)
+(-3 - ((f(RSP) / 2147483647) + (f(RSP) / 2147483647))) INT_SUB -3 ((f(RSP) / 2147483647) + (f(RSP) / 2147483647))
+(f(RSP) / 2147483647) SUBPIECE f(RSP) 0
+(~([f(RSP)]) & ([f(RSP)] + 4278124287)) INT_AND ([f(RSP)] + 4278124287) ~([f(RSP)])
+0 INT_EQUAL (2155905152 & (~([f(RSP)]) & ([f(RSP)] + 4278124287))) 0
+((f(RSP) / 2147483647) + (f(RSP) / 2147483647)) INT_ZEXT ((f(RSP) / 2147483647) + (f(RSP) / 2147483647))
+[f(RSP)] LOAD 433 f(RSP)
+0 INT_EQUAL (32896 & (~([f(RSP)]) & ([f(RSP)] + 4278124287))) 0
+~([f(RSP)]) INT_NEGATE [f(RSP)]
+(f(RSP) + 4) PTRADD f(RSP) 1 4
+(RSP + -120) PTRSUB RSP -120
+f(RSP) CAST f(RSP)
+((f(RSP) / 2147483647) + (f(RSP) / 2147483647)) INT_CARRY (f(RSP) / 2147483647) (f(RSP) / 2147483647)
+(RSP + -184) CAST (RSP + -184)
+(RSP + -184) PTRSUB RSP -184
+(f(RSP) + 4) COPY (f(RSP) + 4)
+((f(RSP) / 2147483647) + (f(RSP) / 2147483647)) INT_CARRY (f(RSP) / 2147483647) (f(RSP) / 2147483647)
+(f(RSP) + 6) CAST (f(RSP) + 6)
+f(RSP) CAST f(RSP)
+0 INT_EQUAL f(RSP) 0
+(f(RSP) + ((-3 - ((f(RSP) / 2147483647) + (f(RSP) / 2147483647))) - (RSP + -120))) INT_ADD f(RSP) ((-3 - ((f(RSP) / 2147483647) + (f(RSP) / 2147483647))) - (RSP + -120))
+(f(RSP) + 6) INT_ADD f(RSP) 6
+f(RSP) COPY f(RSP)
+(RSP + -120) PTRSUB RSP -120
+(2155905152 & (~([f(RSP)]) & ([f(RSP)] + 4278124287))) INT_AND (~([f(RSP)]) & ([f(RSP)] + 4278124287)) CONST
+(RSP + -120) COPY (RSP + -120)
+(32896 & (~([f(RSP)]) & ([f(RSP)] + 4278124287))) INT_AND (~([f(RSP)]) & ([f(RSP)] + 4278124287)) CONST
+((-3 - ((f(RSP) / 2147483647) + (f(RSP) / 2147483647))) - (RSP + -184)) INT_SUB (-3 - ((f(RSP) / 2147483647) + (f(RSP) / 2147483647))) (RSP + -184)
+(f(RSP) / 2147483647) SUBPIECE f(RSP) 0
+0 INT_EQUAL (32896 & (~([f(RSP)]) & ([f(RSP)] + 4278124287))) 0
+[f(RSP)] LOAD 433 f(RSP)
+(RSP + -184) COPY (RSP + -184)
+(2155905152 & (~([f(RSP)]) & ([f(RSP)] + 4278124287))) INT_AND (~([f(RSP)]) & ([f(RSP)] + 4278124287)) CONST
+(f(RSP) + 2) INT_ADD f(RSP) 2
+(f(RSP) + 4) PTRADD f(RSP) 1 4
+ CBRANCH ((2155905152 & (~([f(RSP)]) & ([f(RSP)] + 4278124287))) INT_EQUAL 0)
+f(RSP) CAST f(RSP)
+(RSP + -120) CAST (RSP + -120)
+(~([f(RSP)]) & ([f(RSP)] + 4278124287)) INT_AND ([f(RSP)] + 4278124287) ~([f(RSP)])
+0 INT_EQUAL (2155905152 & (~([f(RSP)]) & ([f(RSP)] + 4278124287))) 0
+((f(RSP) / 2147483647) + (f(RSP) / 2147483647)) INT_ZEXT ((f(RSP) / 2147483647) + (f(RSP) / 2147483647))
+f(RSP) INT_ADD (f(RSP) + ((-3 - ((f(RSP) / 2147483647) + (f(RSP) / 2147483647))) - (RSP + -184))) (f(RSP) + ((-3 - ((f(RSP) / 2147483647) + (f(RSP) / 2147483647))) - (RSP + -120)))
+~([f(RSP)]) INT_NEGATE [f(RSP)]
+((2155905152 & (~([f(RSP)]) & ([f(RSP)] + 4278124287))) / 65536) INT_RIGHT (2155905152 & (~([f(RSP)]) & ([f(RSP)] + 4278124287))) 16
+ CBRANCH (f(RSP) INT_EQUAL 0)
+(RSP + -184) PTRSUB RSP -184
+([f(RSP)] + 4278124287) INT_ADD [f(RSP)] CONST
+CHARSETALIASDIR COPY STR
+f() CALL libcall_getenv_thunk CHARSETALIASDIR
+0 INT_EQUAL f() 0
+ CALL libcall_close_thunk f()
+0 COPY 0
+VZERO COPY VZERO
+f() CALL libcall_strlen_thunk f()
+0 INT_NOTEQUAL f() 0
+f(RSP) INT_ADD f(RSP) f(RSP)
+f(RSP) INT_ADD f(RSP) 3
+f() CAST f()
+f(RSP) INT_ADD f(RSP) 3
+f() CALL libcall_realloc_thunk f() f(RSP)
+ BRANCH VZERO
+f() CALL libcall_malloc_thunk f(RSP)
+f() CAST f()
+f() CALL libcall_strlen_thunk ARG1
+ARG1 COPY ARG1
+(RSP + -96) PTRSUB RSP -96
+(RSP + -88) CAST (RSP + -88)
+(RSP + -80) PTRSUB RSP -80
+(RSP + -72) CAST (RSP + -72)
+f() CALL libcall_iconv_thunk ARG2 (RSP + -96) (RSP + -88) (RSP + -80) (RSP + -72)
+(RSP + -80) PTRSUB RSP -80
+(RSP + -72) CAST (RSP + -72)
+f() CALL libcall_iconv_thunk ARG2 0 0 (RSP + -80) (RSP + -72)
+ CALL libcall_iconv_thunk ARG2 0 0 0 0
+ CBRANCH (f() INT_NOTEQUAL 0)
+0 INT_NOTEQUAL f() 0
+[(f() + 40)] LOAD 433 (f() + 40)
+(f() + 1) PTRADD f() 1 1
+ CBRANCH (268435455 INT_LESS f())
+(f() * 16) INT_LEFT f() 4
+(f() * 16) CAST (f() * 16)
+f() COPY f()
+f() CAST f()
+(f() * 16) COPY (f() * 16)
+(FS_OFFSET + 40) CAST (FS_OFFSET + 40)
+ CBRANCH (0 INT_NOTEQUAL [(f() + 40)])
+(FS_OFFSET + 40) INT_ADD 0 40
+(f() + 1) CAST (f() + 1)
+f() CALL libcall_malloc_thunk (f() + 1)
+f() CAST f()
+(f() + 40) INT_ADD f() 40
+0 INT_NOTEQUAL 0 [(f() + 40)]
+f() CAST f()
+0 INT_LESS CONST f()
+(f() + 40) CAST (f() + 40)
+[(FS_OFFSET + 40)] LOAD 433 (FS_OFFSET + 40)
+ CBRANCH ([f()] INT_EQUAL 22)
+0 INT_NOTEQUAL [f()] 7
+(RSP + -72) PTRSUB RSP -72
+ CBRANCH (f() INT_NOTEQUAL -1)
+0 INT_NOTEQUAL f() -1
+ CBRANCH ([f()] INT_NOTEQUAL 7)
+f() CALL libcall___errno_location_thunk
+0 COPY 0
+ CBRANCH (f() INT_EQUAL -1)
+ BRANCH VZERO
+0 COPY 0
+0 INT_EQUAL f() -1
+(RSP + -88) PTRSUB RSP -88
+ BRANCH VZERO
+f() COPY f()
+f() COPY f()
+(f() + 1) COPY (f() + 1)
+(RSP + -72) PTRSUB RSP -72
+f() COPY f()
+ STORE 433 f() 12
+ CBRANCH ((f() * 2) INT_LESSEQUAL f())
+0 COPY 0
+ STORE 433 f() 12
+f() MULTIEQUAL f() f() f()
+(f() * 2) CAST (f() * 2)
+f() CALL libcall_realloc_thunk f() (f() * 2)
+ CBRANCH (f() INT_EQUAL 0)
+f() CAST f()
+0 COPY 0
+0 INT_EQUAL f() 0
+f() MULTIEQUAL f() f() f()
+ CALL libcall_free_thunk f()
+(((~(f()) + 1) + f()) + f()) PTRADD f() ((~(f()) + 1) + f()) 1
+((f() * 2) + (-1 - ((~(f()) + 1) + f()))) PTRADD (f() * 2) (-1 - ((~(f()) + 1) + f())) 1
+(-1 - ((~(f()) + 1) + f())) INT_SUB -1 ((~(f()) + 1) + f())
+((~(f()) + 1) + f()) CAST ((~(f()) + 1) + f())
+(f() * 2) COPY (f() * 2)
+f() COPY f()
+((~(f()) + 1) + f()) CAST ((~(f()) + 1) + f())
+ CBRANCH (((~(f()) + 1) + (f() + 1)) INT_LESS f())
+f() CAST f()
+f() COPY f()
+((~(f()) + 1) + (f() + 1)) CAST ((~(f()) + 1) + (f() + 1))
+f() COPY f()
+ CBRANCH (f() INT_EQUAL 0)
+f() CALL libcall_realloc_thunk f() ((~(f()) + 1) + (f() + 1))
+0 INT_EQUAL f() 0
+0 INT_EQUAL [f()] 22
+[f()] LOAD 433 f()
+f() CALL libcall___errno_location_thunk
+((~(f()) + 1) + (f() + 1)) PTRADD (f() + 1) (~(f()) + 1) 1
+(f() + 1) PTRADD f() 1 1
+f() CAST f()
+(~(f()) + 1) INT_2COMP f()
+(f() + 1) COPY (f() + 1)
+[f()] LOAD 433 f()
+f() CALL libcall___errno_location_thunk
+ STORE 433 f() 0
+ CBRANCH ([f()] INT_NOTEQUAL 7)
+f() COPY f()
+0 INT_NOTEQUAL [f()] 7
+0 INT_LESS ((~(f()) + 1) + (f() + 1)) f()
+0 INT_LESSEQUAL (f() * 2) f()
+(~(f()) + 1) INT_2COMP f()
+f() CAST f()
+(f() * 2) INT_MULT f() 2
+((~(f()) + 1) + f()) PTRADD f() (~(f()) + 1) 1
+(f() * 2) CAST (f() * 2)
+f() CAST f()
+ CBRANCH ((f() * 2) INT_LESSEQUAL f())
+ RETURN 0 f()
+ CALL libcall___stack_chk_fail_thunk
+ RETURN 1
+(f() * 2) INT_MULT f() 2
+(~(f()) + 1) INT_2COMP f()
+0 INT_LESSEQUAL (f() * 2) f()
+f() CAST f()
+(f() * 2) CAST (f() * 2)
+f() CAST f()
+((~(f()) + 1) + f()) PTRADD f() (~(f()) + 1) 1
+ CBRANCH (f() INT_EQUAL 0)
+((~(f()) + 1) + f()) CAST ((~(f()) + 1) + f())
+(f() * 2) COPY (f() * 2)
+f() COPY f()
+((~(f()) + 1) + f()) CAST ((~(f()) + 1) + f())
+(-1 - ((~(f()) + 1) + f())) INT_SUB -1 ((~(f()) + 1) + f())
+(((~(f()) + 1) + f()) + f()) PTRADD f() ((~(f()) + 1) + f()) 1
+((f() * 2) + (-1 - ((~(f()) + 1) + f()))) PTRADD (f() * 2) (-1 - ((~(f()) + 1) + f())) 1
+f() CAST f()
+(f() * 2) CAST (f() * 2)
+f() MULTIEQUAL f() f()
+f() CALL libcall_realloc_thunk f() (f() * 2)
+0 INT_EQUAL f() 0
+ RETURN 0
+VZERO COPY VZERO
+ RETURN 0
+ RETURN 0
+ RETURN 0
+[ARG5] LOAD 433 ARG5
+ CALL func
+ CBRANCH (f(ARG5) INT_NOTEQUAL 0)
+0 COPY 0
+0 INT_NOTEQUAL f(ARG5) 0
+[(ARG5 + ((f() + 1) * 8))] LOAD 433 (ARG5 + ((f() + 1) * 8))
+(f() + 1) INT_ADD f() 1
+(ARG5 + ((f() + 1) * 8)) PTRADD ARG5 (f() + 1) 8
+ARG1 INT_ZEXT ARG1
+ARG2 INT_ZEXT ARG2
+((ARG2 * ARG1) / 2147483647) INT_RIGHT (ARG2 * ARG1) 64
+((ARG2 * ARG1) / 2147483647) SUBPIECE (ARG2 * ARG1) 0
+ CBRANCH (-1 INT_SLESS ((ARG2 * ARG1) / 2147483647))
+(ARG2 * ARG1) INT_MULT ARG1 ARG2
+((ARG2 * ARG1) / 4611686014132420609) SUBPIECE ((ARG2 * ARG1) / 2147483647) 0
+0 INT_SLESS -1 ((ARG2 * ARG1) / 2147483647)
+0 INT_EQUAL ((ARG2 * ARG1) / 4611686014132420609) 0
+ CBRANCH (((ARG2 * ARG1) / 4611686014132420609) INT_EQUAL 0)
+ RETURN 0
+ CALL func
+ RETURN 1
+ CALL func
+0 INT_EQUAL ARG2 0
+f() CALL libcall_realloc_thunk ARG1 ARG2
+0 INT_NOTEQUAL ARG2 0
+ CALL libcall_free_thunk ARG1
+0 INT_NOTEQUAL ARG1 0
+ CBRANCH (ARG2 INT_EQUAL 0)
+ CBRANCH (ARG1 INT_NOTEQUAL 0)
+ RETURN 0 0
+ CBRANCH (f() INT_EQUAL 0)
+0 INT_EQUAL f() 0
+0 COPY 0
+ CBRANCH (ARG2 INT_NOTEQUAL 0)
+ RETURN 1
+ RETURN 0 f()
+ CALL func
+ARG3 INT_ZEXT ARG3
+ARG2 INT_ZEXT ARG2
+((ARG3 * ARG2) / 2147483647) INT_RIGHT (ARG3 * ARG2) 64
+((ARG3 * ARG2) / 2147483647) SUBPIECE (ARG3 * ARG2) 0
+ CBRANCH (-1 INT_SLESS ((ARG3 * ARG2) / 2147483647))
+(ARG3 * ARG2) INT_MULT ARG2 ARG3
+((ARG3 * ARG2) / 4611686014132420609) SUBPIECE ((ARG3 * ARG2) / 2147483647) 0
+0 INT_SLESS -1 ((ARG3 * ARG2) / 2147483647)
+0 INT_EQUAL ((ARG3 * ARG2) / 4611686014132420609) 0
+ CBRANCH (((ARG3 * ARG2) / 4611686014132420609) INT_EQUAL 0)
+ RETURN 0
+ CALL func
+ RETURN 1
+ CALL func
+f(ARG3) MULTIEQUAL ((6148914691236517204 % ARG3) / 2147483647) 0 0
+ CALL func ARG1 ARG2 f(ARG3)
+0 INT_EQUAL ARG1 0
+(f(ARG2 , ARG3) * ARG3) INT_MULT f(ARG2 , ARG3) ARG3
+f(ARG3) MULTIEQUAL ((6148914691236517204 % ARG3) / 2147483647) 0
+ CALL func ARG1 (f(ARG2 , ARG3) * ARG3) f(ARG3) (f(ARG2 , ARG3) * ARG3)
+ARG3 INT_ZEXT ARG3
+ARG3 INT_ZEXT ARG3
+ARG3 INT_ZEXT ARG3
+[ARG2] LOAD 433 ARG2
+ STORE 433 ARG2 f(ARG2 , ARG3)
+ CBRANCH (ARG1 INT_EQUAL 0)
+ CBRANCH ([ARG2] INT_EQUAL 0)
+(128 / ARG3) INT_DIV 128 ARG3
+((128 / ARG3) / 2147483647) SUBPIECE (128 / ARG3) 0
+128 INT_ZEXT 128
+0 INT_ZEXT 0
+((128 / ARG3) / 2147483647) INT_ADD ((128 / ARG3) / 2147483647) 0
+128 INT_OR 0 128
+0 INT_LEFT 0 64
+0 INT_ZEXT 0
+0 INT_EQUAL ((128 / ARG3) / 2147483647) 0
+ CBRANCH (((6148914691236517204 / ARG3) / 2147483647) INT_LESSEQUAL [ARG2])
+(([ARG2] + 1) + ([ARG2] / 2)) INT_ADD ([ARG2] + 1) ([ARG2] / 2)
+([ARG2] / 2) INT_RIGHT [ARG2] 1
+([ARG2] + 1) INT_ADD [ARG2] 1
+ RETURN 1
+ RETURN 0
+0 INT_ZEXT 0
+((f(ARG2 , ARG3) * ARG3) / 2147483647) INT_RIGHT (f(ARG2 , ARG3) * ARG3) 64
+(6148914691236517204 % ARG3) INT_REM 6148914691236517204 ARG3
+((6148914691236517204 % ARG3) / 2147483647) SUBPIECE (6148914691236517204 % ARG3) 0
+ CBRANCH (((f(ARG2 , ARG3) * ARG3) / 2147483647) INT_SLESS 0)
+(6148914691236517204 / ARG3) INT_DIV 6148914691236517204 ARG3
+((f(ARG2 , ARG3) * ARG3) / 2147483647) SUBPIECE (f(ARG2 , ARG3) * ARG3) 0
+((6148914691236517204 / ARG3) / 2147483647) SUBPIECE (6148914691236517204 / ARG3) 0
+(f(ARG2 , ARG3) * ARG3) INT_MULT f(ARG2 , ARG3) ARG3
+((f(ARG2 , ARG3) * ARG3) / 4611686014132420609) SUBPIECE ((f(ARG2 , ARG3) * ARG3) / 2147483647) 0
+0 INT_SLESS ((f(ARG2 , ARG3) * ARG3) / 2147483647) 0
+0 INT_ZEXT 0
+6148914691236517204 INT_OR 0 6148914691236517204
+0 INT_LEFT 0 64
+0 INT_LESSEQUAL ((6148914691236517204 / ARG3) / 2147483647) [ARG2]
+0 INT_EQUAL [ARG2] 0
+6148914691236517204 INT_ZEXT CONST
+f(ARG2 , ARG3) INT_ZEXT f(ARG2 , ARG3)
+0 INT_NOTEQUAL ((f(ARG2 , ARG3) * ARG3) / 4611686014132420609) 0
+ CBRANCH (0 INT_NOTEQUAL 0)
+0 INT_NOTEQUAL 0 0
+0 INT_EQUAL ARG1 0
+f(ARG2) MULTIEQUAL ((([ARG2] / 2) + 1) + [ARG2]) f(ARG2)
+ CALL func ARG1 f(ARG2)
+ STORE 433 ARG2 f(ARG2)
+[ARG2] LOAD 433 ARG2
+ CBRANCH (ARG1 INT_EQUAL 0)
+ CBRANCH (6148914691236517203 INT_LESS [ARG2])
+ RETURN 1
+ CALL func
+ RETURN 0
+((([ARG2] / 2) + 1) + [ARG2]) INT_ADD (([ARG2] / 2) + 1) [ARG2]
+([ARG2] / 2) INT_RIGHT [ARG2] 1
+(([ARG2] / 2) + 1) INT_ADD ([ARG2] / 2) 1
+ CBRANCH (f(ARG2) INT_SLESS 0)
+ CBRANCH ([ARG2] INT_EQUAL 0)
+128 COPY 128
+0 INT_EQUAL [ARG2] 0
+f(ARG2) CAST f(ARG2)
+0 INT_LESS CONST [ARG2]
+0 INT_SLESS f(ARG2) 0
+f() CALL libcall_calloc_thunk ARG1 ARG2
+ARG1 INT_ZEXT ARG1
+ARG2 INT_ZEXT ARG2
+0 INT_SLESS -1 ((ARG2 * ARG1) / 2147483647)
+((ARG2 * ARG1) / 2147483647) SUBPIECE (ARG2 * ARG1) 0
+(ARG2 * ARG1) INT_MULT ARG1 ARG2
+((ARG2 * ARG1) / 4611686014132420609) SUBPIECE ((ARG2 * ARG1) / 2147483647) 0
+0 INT_EQUAL ((ARG2 * ARG1) / 4611686014132420609) 0
+((ARG2 * ARG1) / 2147483647) INT_RIGHT (ARG2 * ARG1) 64
+ CBRANCH (-1 INT_SLESS ((ARG2 * ARG1) / 2147483647))
+ CBRANCH (f() INT_NOTEQUAL 0)
+ RETURN 1
+ CALL func
+ RETURN 0
+ CBRANCH (((ARG2 * ARG1) / 4611686014132420609) INT_EQUAL 0)
+0 INT_NOTEQUAL f() 0
+f() CAST f()
+ CALL libcall_memcpy_thunk f() ARG1 ARG2
+f() CALL func ARG2
+ RETURN 0
+(f() + 1) INT_ADD f() 1
+ CALL func ARG1 (f() + 1)
+f() CALL libcall_strlen_thunk ARG1
+ RETURN 0
+0 INT_NOTEQUAL ARG2 0
+ARG2 COPY ARG2
+ARG2 COPY ARG2
+(RSP + -4200) PTRSUB RSP CONST
+(RSP + -4192) PTRSUB RSP CONST
+(RSP + -4184) PTRSUB RSP CONST
+(RSP + -4176) CAST (RSP + -4176)
+f() CALL libcall_iconv_thunk ARG3 (RSP + -4200) (RSP + -4192) (RSP + -4184) (RSP + -4176)
+(RSP + -4176) CAST (RSP + -4176)
+f() CALL libcall_iconv_thunk ARG3 0 0 (RSP + -4184) (RSP + -4176)
+ CALL libcall_iconv_thunk ARG3 0 0 0 0
+(RSP + -4200) PTRSUB RSP CONST
+(RSP + -4192) PTRSUB RSP CONST
+(RSP + -4176) CAST (RSP + -4176)
+f() CALL libcall_iconv_thunk ARG3 (RSP + -4200) (RSP + -4192) (RSP + -4184) (RSP + -4176)
+ CALL libcall_iconv_thunk ARG3 0 0 0 0
+(RSP + -4176) CAST (RSP + -4176)
+f() CALL libcall_iconv_thunk ARG3 0 0 (RSP + -4184) (RSP + -4176)
+ARG1 COPY ARG1
+ARG1 COPY ARG1
+f(ARG4) LOAD 433 ARG4
+f(ARG4) LOAD 433 ARG4
+ STORE 433 ARG4 f(ARG4)
+ STORE 433 ARG5 0
+ STORE 433 ARG5 ((f(RSP) + (~((RSP + -4168)) + 1)) + (RSP + -4168))
+f(RSP) LOAD 433 ARG5
+f(RSP) LOAD 433 ARG5
+(FS_OFFSET + 40) CAST (FS_OFFSET + 40)
+(RSP + -4176) PTRSUB RSP CONST
+0 COPY 0
+(FS_OFFSET + 40) INT_ADD 0 40
+[(FS_OFFSET + 40)] LOAD 433 (FS_OFFSET + 40)
+(RSP + -4168) PTRSUB RSP CONST
+ CBRANCH (ARG2 INT_NOTEQUAL 0)
+ CBRANCH (f() INT_NOTEQUAL -1)
+(~((RSP + -4168)) + 1) INT_2COMP (RSP + -4168)
+[(f() + 40)] LOAD 433 (f() + 40)
+((f(RSP) + (~((RSP + -4168)) + 1)) + (RSP + -4168)) PTRADD (RSP + -4168) (f(RSP) + (~((RSP + -4168)) + 1)) 1
+ BRANCH VZERO
+ CBRANCH (f() INT_NOTEQUAL [(f() + 40)])
+(f() + 40) CAST (f() + 40)
+4294967295 COPY CONST
+f() COPY f()
+(f() + 40) INT_ADD f() 40
+0 INT_NOTEQUAL f() [(f() + 40)]
+ CBRANCH (((f(RSP) + (~((RSP + -4168)) + 1)) + (RSP + -4168)) INT_EQUAL 0)
+(f(RSP) + (~((RSP + -4168)) + 1)) PTRADD f(RSP) (~((RSP + -4168)) + 1) 1
+0 INT_EQUAL ((f(RSP) + (~((RSP + -4168)) + 1)) + (RSP + -4168)) 0
+(f(RSP) + (~((RSP + -4168)) + 1)) CAST (f(RSP) + (~((RSP + -4168)) + 1))
+(RSP + -4168) CAST (RSP + -4168)
+ CBRANCH ([f()] INT_NOTEQUAL 7)
+0 INT_NOTEQUAL f(ARG2) 0
+(f(RSP) + (~((RSP + -4168)) + 1)) CAST (f(RSP) + (~((RSP + -4168)) + 1))
+ CBRANCH ([f()] INT_NOTEQUAL 22)
+(~((RSP + -4168)) + 1) INT_2COMP (RSP + -4168)
+0 INT_NOTEQUAL [f()] 22
+(RSP + -4168) CAST (RSP + -4168)
+ CBRANCH (f(ARG2) INT_NOTEQUAL 0)
+(f(RSP) + (f(RSP) + (~((RSP + -4168)) + 1))) PTRADD f(RSP) (f(RSP) + (~((RSP + -4168)) + 1)) 1
+(f(RSP) + (~((RSP + -4168)) + 1)) PTRADD f(RSP) (~((RSP + -4168)) + 1) 1
+ CBRANCH ([f()] INT_EQUAL 22)
+4294967295 COPY CONST
+ CBRANCH (f(ARG4) INT_NOTEQUAL f(ARG4))
+0 INT_NOTEQUAL f(ARG4) f(ARG4)
+ CBRANCH (f() INT_NOTEQUAL -1)
+0 INT_NOTEQUAL f() -1
+ STORE 433 f() [f()]
+f(ARG4) MULTIEQUAL f(ARG4) f()
+ CALL libcall_free_thunk f(ARG4)
+[f()] LOAD 433 f()
+f() CALL libcall___errno_location_thunk
+ BRANCH VZERO
+ CBRANCH (f() INT_NOTEQUAL 0)
+ BRANCH VZERO
+((f(RSP) + (~((RSP + -4168)) + 1)) + (RSP + -4168)) COPY ((f(RSP) + (~((RSP + -4168)) + 1)) + (RSP + -4168))
+f(ARG4) COPY f(ARG4)
+ CBRANCH (f(ARG2) INT_EQUAL 0)
+0 INT_EQUAL f(ARG2) 0
+ STORE 433 f() 12
+f() CALL libcall___errno_location_thunk
+4096 COPY CONST
+0 INT_EQUAL f() -1
+0 INT_NOTEQUAL f() -1
+4096 COPY CONST
+(RSP + -4168) COPY (RSP + -4168)
+(RSP + -4168) COPY (RSP + -4168)
+ CBRANCH (f() INT_EQUAL -1)
+ RETURN 1
+ CALL libcall___stack_chk_fail_thunk
+ RETURN 0 f()
+ CBRANCH (f() INT_NOTEQUAL -1)
+0 INT_NOTEQUAL f() -1
+[f()] LOAD 433 f()
+0 INT_EQUAL [f()] 22
+f() CALL libcall___errno_location_thunk
+0 INT_NOTEQUAL f(RSP) 0
+ CBRANCH (f(RSP) INT_NOTEQUAL 0)
+0 COPY 0
+ CBRANCH (f(ARG4) INT_NOTEQUAL 0)
+ BRANCH VZERO
+0 INT_NOTEQUAL f(ARG4) 0
+ CBRANCH (0 BOOL_OR 0)
+f() CAST f()
+((f(RSP) + (~((RSP + -4168)) + 1)) + (RSP + -4168)) CAST ((f(RSP) + (~((RSP + -4168)) + 1)) + (RSP + -4168))
+0 INT_NOTEQUAL f() 0
+f() CALL libcall_malloc_thunk ((f(RSP) + (~((RSP + -4168)) + 1)) + (RSP + -4168))
+0 BOOL_OR 0 0
+0 INT_EQUAL ((f(RSP) + (~((RSP + -4168)) + 1)) + (RSP + -4168)) f(RSP)
+0 INT_LESS ((f(RSP) + (~((RSP + -4168)) + 1)) + (RSP + -4168)) f(RSP)
+ RETURN 1
+ CALL libcall_abort_thunk
+0 COPY 0
+0 INT_NOTEQUAL [f()] 7
+[f()] LOAD 433 f()
+f() CALL libcall___errno_location_thunk
+f() CALL func
+0 INT_EQUAL f() 0
+ CBRANCH (f() INT_EQUAL 0)
+ CBRANCH ([f()] INT_EQUAL 12)
+ RETURN 1
+ CALL func
+ RETURN 0 f()
+f() COPY f()
+[f()] LOAD 433 f()
+0 INT_EQUAL [f()] 12
+f() CALL libcall___errno_location_thunk
+f() CALL libcall_iswcntrl_thunk ARG1
+f() CALL libcall_wcwidth_thunk ARG1
+f() CAST f()
+ CBRANCH (4294967295 INT_SLESS f())
+0 INT_SLESS CONST f()
+f() COPY f()
+0 INT_ZEXT 0
+ RETURN 0 f()
+0 COPY 0
+ RETURN 0 0
+0 INT_EQUAL f() 0
+(ARG2 + 8) PTRADD ARG2 1 8
+(ARG2 + 8) PTRADD ARG2 1 8
+[ARG2] LOAD 433 ARG2
+ARG2 CAST ARG2
+(ARG2 + 16) PTRADD ARG2 2 8
+(ARG2 + 24) PTRADD ARG2 3 8
+(ARG1 + 8) PTRADD ARG1 1 8
+ STORE 433 ARG1 f()
+ STORE 433 ARG1 [ARG2]
+(ARG1 + 16) PTRADD ARG1 2 8
+ARG1 CAST ARG1
+(ARG1 + 24) PTRADD ARG1 3 8
+(ARG1 + 16) CAST (ARG1 + 16)
+[(ARG2 + 16)] LOAD 433 (ARG2 + 16)
+ STORE 433 (ARG1 + 8) [(ARG2 + 8)]
+ CBRANCH ([(ARG2 + 16)] INT_NOTEQUAL 0)
+(ARG2 + 16) CAST (ARG2 + 16)
+ STORE 433 (ARG1 + 16) [(ARG2 + 16)]
+0 INT_NOTEQUAL [(ARG2 + 16)] 0
+[(ARG2 + 8)] LOAD 433 (ARG2 + 8)
+ CBRANCH ([ARG2] INT_EQUAL (ARG2 + 24))
+0 INT_EQUAL [ARG2] (ARG2 + 24)
+[ARG2] CAST [ARG2]
+ RETURN 0
+[(ARG2 + 8)] CAST [(ARG2 + 8)]
+f() CALL libcall_memcpy_thunk (ARG1 + 24) [ARG2] [(ARG2 + 8)]
+[(ARG2 + 8)] LOAD 433 (ARG2 + 8)
+ BRANCH VZERO
+(ARG1 + 20) CAST (ARG1 + 20)
+(ARG2 + 20) INT_ADD ARG2 20
+[(ARG2 + 20)] LOAD 433 (ARG2 + 20)
+(ARG2 + 20) CAST (ARG2 + 20)
+ STORE 433 (ARG1 + 20) [(ARG2 + 20)]
+(ARG1 + 20) INT_ADD ARG1 20
+(ARG1 / 2147483647) SUBPIECE ARG1 0
+(ARG1 / 32) INT_RIGHT ARG1 5
+[(Symbol + ((7 & (ARG1 / 32)) * 4))] LOAD 433 (Symbol + ((7 & (ARG1 / 32)) * 4))
+Symbol PTRSUB 0 CONST
+(31 & (ARG1 / 2147483647)) INT_AND (ARG1 / 2147483647) 31
+(Symbol + ((7 & (ARG1 / 32)) * 4)) PTRADD Symbol ((7 & (ARG1 / 32)) * 4) 1
+(Symbol + ((7 & (ARG1 / 32)) * 4)) CAST (Symbol + ((7 & (ARG1 / 32)) * 4))
+((7 & (ARG1 / 32)) * 4) INT_MULT (7 & (ARG1 / 32)) 4
+(1 & ([(Symbol + ((7 & (ARG1 / 32)) * 4))] >> (31 & (ARG1 / 2147483647)))) INT_AND ([(Symbol + ((7 & (ARG1 / 32)) * 4))] >> (31 & (ARG1 / 2147483647))) 1
+(7 & (ARG1 / 32)) INT_AND (ARG1 / 32) 7
+(7 & (ARG1 / 32)) INT_ZEXT (7 & (ARG1 / 32))
+ RETURN 0 (1 & ([(Symbol + ((7 & (ARG1 / 32)) * 4))] >> (31 & (ARG1 / 2147483647))))
+([(Symbol + ((7 & (ARG1 / 32)) * 4))] >> (31 & (ARG1 / 2147483647))) INT_RIGHT [(Symbol + ((7 & (ARG1 / 32)) * 4))] (31 & (ARG1 / 2147483647))
+(1 & ([(Symbol + ((7 & (ARG1 / 32)) * 4))] >> (31 & (ARG1 / 2147483647)))) COPY (1 & ([(Symbol + ((7 & (ARG1 / 32)) * 4))] >> (31 & (ARG1 / 2147483647))))
+ RETURN 0
+ CALL libcall___gmon_start___thunk
+ RETURN 0
+ARG1 COPY ARG1
+0 INT_EQUAL ARG1 0
+0 INT_NOTEQUAL ARG3 0
+f(ARG1 , RSP) CAST f(ARG1 , RSP)
+ARG2 CAST ARG2
+f() CALL libcall_mbrtowc_thunk f(ARG1 , RSP) ARG2 ARG3 ARG4
+[ARG2] LOAD 433 ARG2
+[(FS_OFFSET + 40)] LOAD 433 (FS_OFFSET + 40)
+[(f() + 40)] LOAD 433 (f() + 40)
+ CBRANCH (-3 INT_LESS f())
+ CBRANCH (ARG1 INT_EQUAL 0)
+(RSP + -52) PTRSUB RSP -52
+ CBRANCH (0 INT_NOTEQUAL [(f() + 40)])
+(FS_OFFSET + 40) INT_ADD 0 40
+(FS_OFFSET + 40) CAST (FS_OFFSET + 40)
+(f() + 40) INT_ADD f() 40
+(f() + 40) CAST (f() + 40)
+0 INT_NOTEQUAL 0 [(f() + 40)]
+0 INT_LESS -3 f()
+(RSP + -52) COPY (RSP + -52)
+ RETURN 1
+ CALL libcall___stack_chk_fail_thunk
+ RETURN 0 f()
+ CBRANCH (ARG3 INT_NOTEQUAL 0)
+f() CALL func 0
+ CBRANCH (f() INT_EQUAL 0)
+0 INT_EQUAL f() 0
+[ARG2] INT_ZEXT [ARG2]
+1 COPY 1
+ STORE 433 f(ARG1 , RSP) [ARG2]
+ BRANCH VZERO
+ARG2 COPY ARG2
+ARG2 COPY ARG2
+ARG4 COPY ARG4
+ARG4 COPY ARG4
+0 INT_NOTEQUAL ARG3 (f() + 1)
+0 INT_EQUAL ARG3 (f(ARG3 , RSP) + 1)
+0 INT_LESS 2 ARG3
+(ARG3 * 8) INT_MULT ARG3 8
+ARG3 INT_ZEXT ARG3
+ARG1 COPY ARG1
+[ARG1] LOAD 433 ARG1
+[(FS_OFFSET + 40)] LOAD 433 (FS_OFFSET + 40)
+0 INT_NOTEQUAL f() [(f() + 40)]
+((ARG3 * 8) / 2147483647) INT_RIGHT (ARG3 * 8) 64
+(FS_OFFSET + 40) CAST (FS_OFFSET + 40)
+[(f() + 40)] LOAD 433 (f() + 40)
+8 INT_ZEXT 8
+0 INT_EQUAL ((ARG3 * 8) / 4611686014132420609) 0
+(FS_OFFSET + 40) INT_ADD 0 40
+(f() + 40) CAST (f() + 40)
+ CBRANCH (-1 INT_SLESS ((ARG3 * 8) / 2147483647))
+0 INT_SLESS -1 ((ARG3 * 8) / 2147483647)
+[(FS_OFFSET + 40)] COPY [(FS_OFFSET + 40)]
+(RSP + -56) COPY (RSP + -56)
+ CBRANCH (f() INT_NOTEQUAL [(f() + 40)])
+(RSP + -56) PTRSUB RSP -56
+(RSP + -56) PTRSUB RSP -56
+((ARG3 * 8) / 2147483647) SUBPIECE (ARG3 * 8) 0
+(RSP + -56) PTRSUB RSP -56
+(ARG3 * 8) INT_MULT 8 ARG3
+((ARG3 * 8) / 4611686014132420609) SUBPIECE ((ARG3 * 8) / 2147483647) 0
+(f() + 40) INT_ADD f() 40
+ CBRANCH (f(ARG3 , RSP) INT_EQUAL 0)
+0 COPY 0
+(f(ARG3 , RSP) + (f() * 8)) PTRADD f(ARG3 , RSP) f() 8
+f(ARG3 , RSP) LOAD 433 (f(ARG3 , RSP) + (f(ARG3 , RSP) * 8))
+(f(ARG2) + (f(ARG3 , RSP) - f(ARG3 , RSP))) INT_ADD f(ARG2) (f(ARG3 , RSP) - f(ARG3 , RSP))
+ CBRANCH (f(ARG2 , ARG3 , RSP) INT_NOTEQUAL [((f(ARG2) + -1) + f())])
+0 INT_NOTEQUAL f(ARG2 , ARG3 , RSP) [((f(ARG2) + -1) + f())]
+(f(ARG2) + f(ARG3 , RSP)) CAST (f(ARG2) + f(ARG3 , RSP))
+(f(ARG3 , RSP) - f(ARG3 , RSP)) INT_SUB f(ARG3 , RSP) f(ARG3 , RSP)
+(f(ARG2) + f(ARG3 , RSP)) INT_ADD f(ARG2) f(ARG3 , RSP)
+f(ARG2 , ARG3 , RSP) LOAD 433 (f(ARG2) + (f(ARG3 , RSP) - f(ARG3 , RSP)))
+(f(ARG3 , RSP) + (f(ARG3 , RSP) * 8)) PTRADD f(ARG3 , RSP) f(ARG3 , RSP) 8
+(f(ARG2) + (f(ARG3 , RSP) - f(ARG3 , RSP))) CAST (f(ARG2) + (f(ARG3 , RSP) - f(ARG3 , RSP)))
+[(f(ARG2) + f())] LOAD 433 (f(ARG2) + f(ARG3 , RSP))
+ STORE 433 (f(ARG3 , RSP) + (f() * 8)) f()
+ CBRANCH (f(ARG3 , RSP) INT_NOTEQUAL 0)
+(f(ARG3 , RSP) + 8) PTRADD f(ARG3 , RSP) 1 8
+ STORE 433 (f(ARG3 , RSP) + 8) 1
+0 COPY 0
+0 COPY 0
+f(ARG3 , RSP) COPY f(ARG3 , RSP)
+ STORE 433 f(ARG4) 0
+ CBRANCH (2 INT_LESS ARG3)
+0 COPY 0
+ CBRANCH (f(ARG1) INT_NOTEQUAL 0)
+0 INT_NOTEQUAL f(ARG1) 0
+2 COPY 2
+ CBRANCH (((ARG3 * 8) / 4611686014132420609) INT_EQUAL 0)
+f(ARG3 , RSP) COPY f(ARG3 , RSP)
+0 INT_NOTEQUAL f(ARG3 , RSP) 0
+0 INT_LESS (ARG3 * 8) CONST
+ CBRANCH ((ARG3 * 8) INT_LESS 4016)
+ CBRANCH ([(f(ARG2) + f())] INT_EQUAL f(ARG1))
+(f(ARG3 , RSP) + 1) INT_ADD f(ARG3 , RSP) 1
+ CBRANCH (ARG3 INT_EQUAL (f(ARG3 , RSP) + 1))
+ CBRANCH (f(ARG3 , RSP) INT_EQUAL 0)
+0 INT_EQUAL f(ARG3 , RSP) 0
+(f(ARG1) + 1) PTRADD f(ARG1) 1 1
+0 INT_EQUAL f(ARG3 , RSP) 0
+ BRANCH VZERO
+(f(ARG3 , RSP) + (f() * 8)) PTRADD f(ARG3 , RSP) f() 8
+(f() - (f(ARG3 , RSP) + 1)) INT_SUB f() (f(ARG3 , RSP) + 1)
+(f(ARG3 , RSP) + 1) INT_ADD f(ARG3 , RSP) 1
+ STORE 433 (f(ARG3 , RSP) + (f() * 8)) (f() - (f(ARG3 , RSP) + 1))
+ CBRANCH (ARG3 INT_NOTEQUAL (f() + 1))
+((f(ARG2) + -1) + f()) CAST ((f(ARG2) + -1) + f())
+(f() + 1) INT_ADD f() 1
+((f(ARG2) + -1) + f()) INT_ADD (f(ARG2) + -1) f()
+[((f(ARG2) + -1) + f())] LOAD 433 ((f(ARG2) + -1) + f())
+(f(ARG2) + -1) INT_ADD f(ARG2) -1
+(RSP + -56) COPY (RSP + -56)
+ STORE 433 f(ARG4) f(ARG1 , ARG3 , RSP)
+(f(ARG1) + 1) COPY (f(ARG1) + 1)
+ BRANCH VZERO
+(f(ARG3 , RSP) + -8) INT_ADD f(ARG3 , RSP) -8
+ BRANCH VZERO
+(f(ARG3 , RSP) + -8) CAST (f(ARG3 , RSP) + -8)
+f(ARG3 , RSP) CAST f(ARG3 , RSP)
+[(f(ARG1) + 1)] LOAD 433 (f(ARG1) + 1)
+1 COPY 1
+(f(ARG1) + 1) PTRADD f(ARG1) 1 1
+ CALL func
+ STORE 433 (f(ARG3 , RSP) + -8) CONST
+ RETURN 1
+(f(ARG3 , RSP) + -8) CAST (f(ARG3 , RSP) + -8)
+f(ARG3 , RSP) CAST f(ARG3 , RSP)
+ CALL libcall___stack_chk_fail_thunk
+ RETURN 0 f()
+ STORE 433 (f(ARG3 , RSP) + -8) CONST
+(f(ARG3 , RSP) + -8) INT_ADD f(ARG3 , RSP) -8
+(f(ARG3 , RSP) - f(ARG3 , RSP)) INT_SUB f(ARG3 , RSP) f(ARG3 , RSP)
+(f(ARG1) + 1) PTRADD f(ARG1) 1 1
+ BRANCH VZERO
+f(ARG1) COPY f(ARG1)
+(f(ARG1) + 1) COPY (f(ARG1) + 1)
+f(ARG3 , RSP) LOAD 433 (f(ARG3 , RSP) + (f(ARG3 , RSP) * 8))
+[(f(ARG1) + 1)] LOAD 433 (f(ARG1) + 1)
+(f(ARG1) + 1) PTRADD f(ARG1) 1 1
+(f(ARG3 , RSP) + (f(ARG3 , RSP) * 8)) PTRADD f(ARG3 , RSP) f(ARG3 , RSP) 8
+(f(ARG1 , ARG3 , RSP) + 1) PTRADD f(ARG1 , ARG3 , RSP) 1 1
+(f(ARG1 , ARG3 , RSP) + f(ARG3 , RSP)) PTRADD f(ARG1 , ARG3 , RSP) f(ARG3 , RSP) 1
+(f(ARG3 , RSP) + -8) CAST (f(ARG3 , RSP) + -8)
+1 COPY 1
+ CALL func
+f(ARG3 , RSP) CAST f(ARG3 , RSP)
+[(f(ARG2) + f())] LOAD 433 (f(ARG2) + f(ARG3 , RSP))
+ STORE 433 (f(ARG3 , RSP) + -8) CONST
+(f(ARG3 , RSP) + -8) INT_ADD f(ARG3 , RSP) -8
+ BRANCH VZERO
+(f(ARG2) + f(ARG3 , RSP)) INT_ADD f(ARG2) f(ARG3 , RSP)
+0 INT_EQUAL [(f(ARG2) + f())] f(ARG1)
+(f(ARG2) + f(ARG3 , RSP)) CAST (f(ARG2) + f(ARG3 , RSP))
+ARG2 COPY ARG2
+f() CALL func
+f() CAST f()
+((~((-16 & ((ARG3 * 8) + 46))) + 1) + (RSP + -32)) CAST ((~((-16 & ((ARG3 * 8) + 46))) + 1) + (RSP + -32))
+(RSP + -32) CAST (RSP + -32)
+(~((-16 & ((ARG3 * 8) + 46))) + 1) INT_2COMP (-16 & ((ARG3 * 8) + 46))
+((~((-16 & ((ARG3 * 8) + 46))) + 1) + (RSP + -56)) INT_ADD (RSP + -56) (~((-16 & ((ARG3 * 8) + 46))) + 1)
+ARG4 COPY ARG4
+(RSP + -32) PTRSUB RSP -32
+((ARG3 * 8) + 46) INT_ADD (ARG3 * 8) 46
+((~((-16 & ((ARG3 * 8) + 46))) + 1) + (RSP + -56)) CAST ((~((-16 & ((ARG3 * 8) + 46))) + 1) + (RSP + -56))
+(RSP + -56) CAST (RSP + -56)
+((~((-16 & ((ARG3 * 8) + 46))) + 1) + (RSP + -32)) INT_ADD (RSP + -32) (~((-16 & ((ARG3 * 8) + 46))) + 1)
+(RSP + -56) PTRSUB RSP -56
+ BRANCH VZERO
+(-16 & ((ARG3 * 8) + 46)) INT_AND ((ARG3 * 8) + 46) -16
+ARG2 COPY ARG2
+f() CALL func ARG2
+ARG1 COPY ARG1
+ARG3 COPY ARG3
+(FS_OFFSET + 40) INT_ADD 0 40
+f() INT_ZEXT f()
+56 INT_ZEXT 56
+0 INT_EQUAL ((f() * 56) / 4611686014132420609) 0
+ CBRANCH (-1 INT_SLESS ((f() * 56) / 2147483647))
+0 INT_SLESS -1 ((f() * 56) / 2147483647)
+f() CAST f()
+[(FS_OFFSET + 40)] LOAD 433 (FS_OFFSET + 40)
+((f() * 56) / 2147483647) SUBPIECE (f() * 56) 0
+(f() * 56) INT_MULT 56 f()
+((f() * 56) / 4611686014132420609) SUBPIECE ((f() * 56) / 2147483647) 0
+(RSP + -312) COPY (RSP + -312)
+f() CAST f()
+(RSP + -312) PTRSUB RSP -312
+((f() * 56) / 2147483647) INT_RIGHT (f() * 56) 64
+(RSP + -312) PTRSUB RSP -312
+(RSP + -312) PTRSUB RSP -312
+(FS_OFFSET + 40) CAST (FS_OFFSET + 40)
+f() COPY f()
+ CBRANCH (f() INT_NOTEQUAL 0)
+ STORE 433 (f(RSP) + -4) f(ARG2)
+(f(RSP) + -4) CAST (f(RSP) + -4)
+f(RSP) CAST f(RSP)
+(f(RSP) + -4) INT_ADD f(RSP) -4
+ CBRANCH ((1 & ([(Symbol + (([f(ARG1)] / 32) * 4))] >> ([f(ARG1)] & 31))) INT_EQUAL 0)
+1 COPY 1
+f() COPY f()
+f(RSP) COPY f(RSP)
+[(f(RSP) + -8)] LOAD 433 (f(RSP) + -8)
+f() CALL libcall_mbsinit_thunk f(RSP) [(f(RSP) + -8)]
+[f(ARG1)] INT_SEXT [f(ARG1)]
+1 COPY 1
+f(ARG1) PTRSUB f(ARG1) 0
+ STORE 433 (f(RSP) + -8) CONST
+(f(RSP) + -8) CAST (f(RSP) + -8)
+1 COPY 1
+ CBRANCH (f() INT_NOTEQUAL 0)
+0 INT_NOTEQUAL f() 0
+[f(ARG1)] LOAD 433 f(ARG1)
+ CBRANCH (f() INT_NOTEQUAL 0)
+(f(RSP) + -8) PTRADD f(RSP) -8 1
+(f(RSP) + -8) PTRADD f(RSP) -8 1
+f(ARG1) CAST f(ARG1)
+0 INT_NOTEQUAL f() 0
+1 COPY 1
+[f(ARG1)] COPY [f(ARG1)]
+ CBRANCH (f() INT_EQUAL 0)
+(f(ARG1) + f()) COPY (f(ARG1) + f())
+(f(ARG1) + f()) CAST (f(ARG1) + f())
+(f(ARG1) + f()) COPY (f(ARG1) + f())
+f(ARG1) CAST f(ARG1)
+(f(ARG1) + f()) INT_ADD f(ARG1) f()
+0 INT_EQUAL f() 0
+0 COPY 0
+f(ARG1) PTRSUB f(ARG1) 0
+0 COPY 0
+f() COPY f()
+ CBRANCH (f(ARG1) INT_NOTEQUAL 0)
+0 INT_NOTEQUAL f(ARG1) 0
+0 COPY 0
+(f(ARG1) + f()) CAST (f(ARG1) + f())
+f() CAST f()
+f(ARG1) CAST f(ARG1)
+f(ARG1) PTRSUB f(ARG1) 0
+f(RSP) COPY f(RSP)
+(f(ARG1) + f()) INT_ADD f(ARG1) f()
+ CBRANCH (f() INT_EQUAL 0)
+ CBRANCH (f() INT_EQUAL (f(RSP) + 1))
+[(f() + 40)] LOAD 433 (f() + 40)
+(f() + 40) CAST (f() + 40)
+ STORE 433 (f(RSP) + -8) CONST
+(f(RSP) + -8) CAST (f(RSP) + -8)
+(f(RSP) + -8) PTRADD f(RSP) -8 1
+ STORE 433 f(ARG3) f(ARG1)
+ CBRANCH (f() INT_NOTEQUAL [(f() + 40)])
+(f() + 40) INT_ADD f() 40
+ BRANCH VZERO
+0 INT_NOTEQUAL f() [(f() + 40)]
+1 COPY 1
+f(RSP) MULTIEQUAL f() ((~((-16 & ((f() * 56) + 46))) + 1) + (RSP + -288))
+ CALL func f(RSP)
+ CBRANCH (f() INT_EQUAL 0)
+ CBRANCH ([f(ARG1)] INT_NOTEQUAL 0)
+(RSP + -132) PTRSUB RSP -132
+[(f(RSP) + -8)] LOAD 433 (f(RSP) + -8)
+f() CALL libcall_mbsinit_thunk (RSP + -132) [(f(RSP) + -8)]
+0 INT_NOTEQUAL [f(ARG1)] 0
+f(ARG1) CAST f(ARG1)
+ STORE 433 (f(RSP) + -8) CONST
+(f(RSP) + -8) PTRADD f(RSP) -8 1
+(f(RSP) + -8) PTRADD f(RSP) -8 1
+[f(ARG1)] LOAD 433 f(ARG1)
+ CBRANCH (f() INT_NOTEQUAL 0)
+0 INT_NOTEQUAL f() 0
+ CBRANCH (f() INT_EQUAL 0)
+1 COPY 1
+f(ARG1) PTRSUB f(ARG1) 0
+(f(RSP) + -8) CAST (f(RSP) + -8)
+1 COPY 1
+1 COPY 1
+1 COPY 1
+0 INT_EQUAL f() 0
+ CBRANCH (f(ARG1) INT_NOTEQUAL 0)
+f() COPY f()
+1 COPY 1
+0 INT_EQUAL f() 0
+(f(RSP) + -8) PTRADD f(RSP) -8 1
+ CBRANCH (f() INT_NOTEQUAL 0)
+0 INT_NOTEQUAL f() 0
+(f(RSP) + -8) PTRADD f(RSP) -8 1
+ RETURN 1
+iter->cur.wc == 0 COPY STR
+mbuiter.h COPY STR
+0 COPY STR
+[(f(RSP) + -8)] LOAD 433 (f(RSP) + -8)
+ CALL libcall___assert_fail_thunk iter->cur.wc == 0 mbuiter.h 179 0 [(f(RSP) + -8)]
+ STORE 433 (f(RSP) + -8) CONST
+(RSP + -196) PTRSUB RSP -196
+[(f(RSP) + -8)] LOAD 433 (f(RSP) + -8)
+f() CALL libcall_mbsinit_thunk (RSP + -196) [(f(RSP) + -8)]
+ STORE 433 (f(RSP) + -8) CONST
+(f(RSP) + -8) PTRADD f(RSP) -8 1
+1 COPY 1
+(f(RSP) + -8) PTRADD f(RSP) -8 1
+(f(RSP) + -8) CAST (f(RSP) + -8)
+(f(RSP) + -8) CAST (f(RSP) + -8)
+1 COPY 1
+ CBRANCH (f() INT_NOTEQUAL -2)
+ STORE 433 (f(RSP) + -16) f()
+ STORE 433 (f(RSP) + -8) f()
+0 INT_NOTEQUAL f() 0
+(f(RSP) + 48) INT_ADD f(RSP) 48
+(f(ARG2) + f()) CAST (f(ARG2) + f())
+f() CAST f()
+f(ARG2) CAST f(ARG2)
+0 COPY 0
+(RSP + -224) CAST (RSP + -224)
+ CBRANCH (f() INT_EQUAL 0)
+1 COPY 1
+0 INT_EQUAL f() 0
+ CBRANCH (f() INT_EQUAL 0)
+0 INT_EQUAL f() 0
+0 COPY 0
+(f(RSP) + -16) CAST (f(RSP) + -16)
+f(RSP) CAST f(RSP)
+0 COPY 0
+f(ARG2) CAST f(ARG2)
+[(f(RSP) + -8)] LOAD 433 (f(RSP) + -8)
+f() CALL libcall_strlen_thunk f(ARG2) [(f(RSP) + -8)]
+(f(RSP) + -8) CAST (f(RSP) + -8)
+(f(ARG2) + f()) COPY (f(ARG2) + f())
+(f(RSP) + -8) CAST (f(RSP) + -8)
+f(RSP) CAST f(RSP)
+(f(RSP) + -8) PTRADD f(RSP) -8 1
+ STORE 433 (f(RSP) + -8) CONST
+(f(RSP) + -8) PTRADD f(RSP) -8 1
+0 COPY 0
+ BRANCH VZERO
+(f(RSP) + -8) PTRSUB (f(RSP) + -8) 0
+1 COPY 1
+(f(RSP) + 48) CAST (f(RSP) + 48)
+f(RSP) CAST f(RSP)
+0 COPY 0
+(RSP + -224) PTRSUB RSP -224
+ BRANCH VZERO
+ CBRANCH (f(ARG2) INT_EQUAL (RSP + -224))
+0 INT_EQUAL f(ARG2) (RSP + -224)
+(f(RSP) + -16) INT_ADD f(RSP) -16
+f() CAST f()
+ BRANCH VZERO
+(f(RSP) + -8) CAST (f(RSP) + -8)
+(f(ARG2) + f()) INT_ADD f(ARG2) f()
+f() COPY f()
+(f(RSP) + -8) INT_ADD f(RSP) -8
+f(ARG2) COPY f(ARG2)
+f() COPY f()
+ CBRANCH ((f(RSP) + -1) INT_EQUAL 0)
+ CBRANCH (f() INT_EQUAL 0)
+ CBRANCH (f() INT_EQUAL 0)
+0 INT_EQUAL f() 0
+0 INT_EQUAL f() 0
+f() COPY f()
+ CBRANCH (f() INT_EQUAL 0)
+(f() - (f(RSP) + 1)) INT_SUB f() (f(RSP) + 1)
+(f() - (f(RSP) + 1)) CAST (f() - (f(RSP) + 1))
+(f(RSP) + 1) INT_ADD f(RSP) 1
+f() CAST f()
+ STORE 433 (f(RSP) + (f() * 8)) (f() - (f(RSP) + 1))
+f() CAST f()
+ CBRANCH (f(RSP) INT_EQUAL 0)
+(f(RSP) + (f() * 8)) PTRADD f(RSP) f() 8
+0 INT_EQUAL f(RSP) 0
+ BRANCH VZERO
+0 COPY 0
+ CBRANCH (f(ARG1) INT_EQUAL f(RSP))
+f(ARG1) PTRSUB f(ARG1) 0
+ CBRANCH (f(RSP) INT_EQUAL 0)
+f() COPY f()
+0 INT_EQUAL f(RSP) 0
+(f(ARG1) + f()) CAST (f(ARG1) + f())
+f() CAST f()
+0 COPY 0
+f(ARG1) CAST f(ARG1)
+f(RSP) COPY f(RSP)
+(f(ARG1) + f()) COPY (f(ARG1) + f())
+0 INT_EQUAL f() (f(RSP) + 1)
+(f(ARG1) + f()) INT_ADD f(ARG1) f()
+(f(RSP) + 1) CAST (f(RSP) + 1)
+(f(RSP) + 1) INT_ADD f(RSP) 1
+f(RSP) CAST f(RSP)
+ CBRANCH (f(RSP) INT_EQUAL 0)
+ CBRANCH (f() INT_EQUAL 0)
+0 INT_EQUAL f() 0
+f() COPY f()
+ CBRANCH ([f(ARG1)] INT_NOTEQUAL 0)
+[(f(RSP) + -8)] LOAD 433 (f(RSP) + -8)
+ RETURN 1
+ CBRANCH (f(ARG1) INT_NOTEQUAL 0)
+*iter->cur.ptr == '\0' COPY STR
+0 INT_NOTEQUAL f(ARG1) 0
+mbuiter.h COPY STR
+0 COPY STR
+ CALL libcall___assert_fail_thunk *iter->cur.ptr == '\0' mbuiter.h 178 0 [(f(RSP) + -8)]
+(f(RSP) + -8) PTRADD f(RSP) -8 1
+(f(RSP) + -8) CAST (f(RSP) + -8)
+(f(RSP) + -8) PTRADD f(RSP) -8 1
+ STORE 433 (f(RSP) + -8) CONST
+(f(RSP) * 6) INT_MULT f(RSP) 6
+0 INT_EQUAL [(f(RSP) + 8)] f()
+f(RSP) CAST f(RSP)
+(f(RSP) + 8) PTRADD f(RSP) 1 8
+f(ARG1) COPY f(ARG1)
+[(f(RSP) + 8)] LOAD 433 (f(RSP) + 8)
+ CBRANCH (f(ARG1) INT_EQUAL 0)
+0 INT_EQUAL f(ARG1) 0
+ CBRANCH ([(f(RSP) + 8)] INT_EQUAL f())
+(f(RSP) + (f(RSP) * 48)) PTRADD f(RSP) (f(RSP) * 6) 8
+ CBRANCH (((f() * 56) / 4611686014132420609) INT_EQUAL 0)
+(f() * 56) CAST (f() * 56)
+ CBRANCH ((f() * 56) INT_LESS 4016)
+ CBRANCH (f(RSP) INT_NOTEQUAL 0)
+0 INT_NOTEQUAL f(RSP) 0
+f() CAST f()
+(f() * 56) INT_MULT f() 56
+f(RSP) COPY f(RSP)
+0 COPY 0
+0 INT_LESS (f() * 56) CONST
+f(RSP) COPY f(RSP)
+ CBRANCH (f() INT_EQUAL -2)
+[(f(RSP) + -8)] LOAD 433 (f(RSP) + -8)
+f(ARG1) CAST f(ARG1)
+f() CALL libcall_strlen_thunk f(ARG1) [(f(RSP) + -8)]
+ STORE 433 (f(RSP) + -8) CONST
+0 INT_EQUAL f() 0
+(f(RSP) + -8) PTRADD f(RSP) -8 1
+(f(RSP) + -8) PTRADD f(RSP) -8 1
+ BRANCH VZERO
+f() CAST f()
+(f(RSP) + -8) CAST (f(RSP) + -8)
+f() COPY f()
+0 COPY 0
+ CBRANCH (f(ARG1) INT_NOTEQUAL 0)
+0 INT_NOTEQUAL f(ARG1) 0
+ CBRANCH (f() INT_EQUAL -1)
+ CBRANCH (f() INT_EQUAL -2)
+1 COPY 1
+0 COPY 0
+0 INT_EQUAL f() -2
+ BRANCH VZERO
+ CBRANCH (f() INT_EQUAL -2)
+f(ARG1) CAST f(ARG1)
+[(f(RSP) + -8)] LOAD 433 (f(RSP) + -8)
+f() CALL libcall_strlen_thunk f(ARG1) [(f(RSP) + -8)]
+ STORE 433 (f(RSP) + -8) CONST
+ BRANCH VZERO
+f() COPY f()
+ CBRANCH (f() INT_EQUAL 0)
+(f(RSP) + -8) CAST (f(RSP) + -8)
+0 INT_EQUAL f() 0
+(f(RSP) + -8) PTRADD f(RSP) -8 1
+(f(RSP) + -8) PTRADD f(RSP) -8 1
+0 COPY 0
+Symbol PTRSUB 0 CONST
+(f(RSP) + -8) PTRADD f(RSP) -8 1
+ STORE 433 (f(RSP) + -8) CONST
+(RSP + -228) PTRSUB RSP -228
+(f(RSP) + -8) CAST (f(RSP) + -8)
+(f(RSP) + -8) PTRADD f(RSP) -8 1
+f() CAST f()
+(f(RSP) + -8) CAST (f(RSP) + -8)
+[(Symbol + (([f(ARG2)] / 32) * 4))] LOAD 433 (Symbol + (([f(ARG2)] / 32) * 4))
+(Symbol + (([f(ARG2)] / 32) * 4)) PTRADD Symbol (([f(ARG2)] / 32) * 4) 1
+[(f(RSP) + -8)] LOAD 433 (f(RSP) + -8)
+f() CALL libcall___ctype_get_mb_cur_max_thunk [(f(RSP) + -8)]
+ STORE 433 (f(RSP) + -8) CONST
+[f(ARG2)] LOAD 433 f(ARG2)
+(f(RSP) + -8) PTRADD f(RSP) -8 1
+(f(RSP) + -8) PTRADD f(RSP) -8 1
+ CBRANCH (f() INT_EQUAL -1)
+([(Symbol + (([f(ARG2)] / 32) * 4))] >> ([f(ARG2)] & 31)) INT_RIGHT [(Symbol + (([f(ARG2)] / 32) * 4))] ([f(ARG2)] & 31)
+([f(ARG2)] / 32) INT_RIGHT [f(ARG2)] 5
+(1 & ([(Symbol + (([f(ARG2)] / 32) * 4))] >> ([f(ARG2)] & 31))) INT_AND ([(Symbol + (([f(ARG2)] / 32) * 4))] >> ([f(ARG2)] & 31)) 1
+f(ARG2) COPY f(ARG2)
+(Symbol + (([f(ARG2)] / 32) * 4)) CAST (Symbol + (([f(ARG2)] / 32) * 4))
+f() COPY f()
+0 INT_EQUAL f() -1
+(f(RSP) + -8) CAST (f(RSP) + -8)
+(([f(ARG2)] / 32) * 4) INT_MULT ([f(ARG2)] / 32) 4
+([f(ARG2)] & 31) INT_AND [f(ARG2)] 31
+f(ARG2) COPY f(ARG2)
+([f(ARG2)] / 32) INT_ZEXT ([f(ARG2)] / 32)
+0 INT_EQUAL (1 & ([(Symbol + (([f(ARG2)] / 32) * 4))] >> ([f(ARG2)] & 31))) 0
+f() CALL func f(ARG2) f()
+f(ARG2) CAST f(ARG2)
+ CBRANCH ((1 & ([(Symbol + (([f(ARG2)] / 32) * 4))] >> ([f(ARG2)] & 31))) INT_EQUAL 0)
+f() CALL func (RSP + -228) f(ARG2) f()
+ STORE 433 (f(RSP) + -8) CONST
+ RETURN 0 f()
+ CALL libcall___stack_chk_fail_thunk
+(f(RSP) + -8) CAST (f(RSP) + -8)
+ STORE 433 (f(RSP) + -8) CONST
+(f(RSP) + -8) PTRADD f(RSP) -8 1
+ RETURN 1
+ RETURN 1
+[(f(RSP) + -8)] LOAD 433 (f(RSP) + -8)
+ CALL libcall_abort_thunk [(f(RSP) + -8)]
+ STORE 433 (f(RSP) + -8) CONST
+(f(RSP) + -8) PTRADD f(RSP) -8 1
+(f(RSP) + -8) PTRADD f(RSP) -8 1
+(f(RSP) + -8) CAST (f(RSP) + -8)
+0 INT_EQUAL (1 & ([(Symbol + (([f(ARG1)] / 32) * 4))] >> ([f(ARG1)] & 31))) 0
+ STORE 433 (f(RSP) + -8) CONST
+ STORE 433 (f(RSP) + -8) CONST
+(f(RSP) + -8) CAST (f(RSP) + -8)
+(f(RSP) + -8) PTRADD f(RSP) -8 1
+(RSP + -164) PTRSUB RSP -164
+f(ARG1) PTRSUB f(ARG1) 0
+f(ARG1) CAST f(ARG1)
+([f(ARG1)] / 32) INT_ZEXT ([f(ARG1)] / 32)
+([f(ARG1)] & 31) INT_AND [f(ARG1)] 31
+[(Symbol + (([f(ARG1)] / 32) * 4))] LOAD 433 (Symbol + (([f(ARG1)] / 32) * 4))
+(Symbol + (([f(ARG1)] / 32) * 4)) PTRADD Symbol (([f(ARG1)] / 32) * 4) 1
+f(ARG1) COPY f(ARG1)
+Symbol PTRSUB 0 CONST
+(f(RSP) + -8) CAST (f(RSP) + -8)
+(f(RSP) + -8) PTRADD f(RSP) -8 1
+(f(RSP) + -8) PTRADD f(RSP) -8 1
+[(f(RSP) + -8)] LOAD 433 (f(RSP) + -8)
+f() CALL libcall___ctype_get_mb_cur_max_thunk [(f(RSP) + -8)]
+f() CALL func f(ARG1) f()
+[f(ARG1)] LOAD 433 f(ARG1)
+ STORE 433 (f(RSP) + -8) CONST
+(f(RSP) + -8) PTRADD f(RSP) -8 1
+f() COPY f()
+([(Symbol + (([f(ARG1)] / 32) * 4))] >> ([f(ARG1)] & 31)) INT_RIGHT [(Symbol + (([f(ARG1)] / 32) * 4))] ([f(ARG1)] & 31)
+([f(ARG1)] / 32) INT_RIGHT [f(ARG1)] 5
+0 INT_EQUAL f() -1
+(f(RSP) + -8) CAST (f(RSP) + -8)
+(1 & ([(Symbol + (([f(ARG1)] / 32) * 4))] >> ([f(ARG1)] & 31))) INT_AND ([(Symbol + (([f(ARG1)] / 32) * 4))] >> ([f(ARG1)] & 31)) 1
+f(ARG1) COPY f(ARG1)
+(([f(ARG1)] / 32) * 4) INT_MULT ([f(ARG1)] / 32) 4
+(Symbol + (([f(ARG1)] / 32) * 4)) CAST (Symbol + (([f(ARG1)] / 32) * 4))
+f() CALL func (RSP + -164) f(ARG1) f()
+(RSP + -196) PTRSUB RSP -196
+[(f(RSP) + -8)] LOAD 433 (f(RSP) + -8)
+f() CALL libcall_mbsinit_thunk (RSP + -196) [(f(RSP) + -8)]
+ STORE 433 (f(RSP) + -8) CONST
+(f(RSP) + -8) PTRADD f(RSP) -8 1
+(f(RSP) + -8) PTRADD f(RSP) -8 1
+(f(RSP) + -8) CAST (f(RSP) + -8)
+1 COPY 1
+1 COPY 1
+ CBRANCH (f() INT_NOTEQUAL 0)
+0 INT_NOTEQUAL f() 0
+1 COPY 1
+[f(ARG2)] CAST [f(ARG2)]
+f(ARG2) CAST f(ARG2)
+1 COPY 1
+[f(ARG2)] LOAD 433 f(ARG2)
+ CBRANCH (f() INT_EQUAL 0)
+0 INT_EQUAL f() 0
+ CBRANCH (f(ARG2) INT_EQUAL 0)
+0 INT_EQUAL f(ARG2) 0
+(f(RSP) + -8) PTRADD f(RSP) -8 1
+1 COPY 1
+[(f(RSP) + -8)] LOAD 433 (f(RSP) + -8)
+(f(RSP) + -8) PTRADD f(RSP) -8 1
+[f(ARG2)] INT_SEXT [f(ARG2)]
+[f(ARG2)] COPY [f(ARG2)]
+(RSP + -260) PTRSUB RSP -260
+f() CALL libcall_mbsinit_thunk (RSP + -260) [(f(RSP) + -8)]
+(f(RSP) + -8) CAST (f(RSP) + -8)
+ STORE 433 (f(RSP) + -8) CONST
+1 COPY 1
+[(f(RSP) + -8)] LOAD 433 (f(RSP) + -8)
+(f(RSP) + -8) PTRADD f(RSP) -8 1
+(f(RSP) + -8) PTRADD f(RSP) -8 1
+(f(RSP) + -8) CAST (f(RSP) + -8)
+(RSP + -260) PTRSUB RSP -260
+f() CALL libcall_mbsinit_thunk (RSP + -260) [(f(RSP) + -8)]
+1 COPY 1
+ CBRANCH ([f(ARG2)] INT_NOTEQUAL 0)
+ STORE 433 (f(RSP) + -8) CONST
+0 INT_NOTEQUAL [f(ARG2)] 0
+f(ARG2) CAST f(ARG2)
+ CBRANCH (f() INT_NOTEQUAL 0)
+0 INT_NOTEQUAL f() 0
+[f(ARG2)] LOAD 433 f(ARG2)
+ CBRANCH (f() INT_EQUAL -1)
+ BRANCH VZERO
+1 COPY 1
+0 INT_EQUAL f() -2
+0 COPY 0
+0 COPY 0
+ BRANCH VZERO
+ CBRANCH (f(RSP) INT_EQUAL 0)
+0 INT_EQUAL f(RSP) 0
+((f(RSP) + (f(RSP) * 48)) + 16) PTRADD (f(RSP) + (f(RSP) * 48)) 2 8
+((f(RSP) + (f(RSP) * 48)) + 16) CAST ((f(RSP) + (f(RSP) * 48)) + 16)
+f(RSP) CAST f(RSP)
+((f(RSP) + (f(RSP) * 48)) + 16) PTRSUB ((f(RSP) + (f(RSP) * 48)) + 16) 0
+f(RSP) LOAD 433 ((f(RSP) + (f(RSP) * 48)) + 16)
+(f(RSP) + (f(RSP) * 48)) PTRADD f(RSP) (f(RSP) * 6) 8
+(f(RSP) * 6) INT_MULT f(RSP) 6
+ CBRANCH (f() INT_NOTEQUAL 0)
+0 COPY STR
+(f(RSP) + -8) PTRADD f(RSP) -8 1
+[(f(RSP) + -8)] LOAD 433 (f(RSP) + -8)
+(f(RSP) + -8) PTRADD f(RSP) -8 1
+f() COPY f()
+0 INT_EQUAL f() -1
+ RETURN 1
+(f(RSP) + -8) CAST (f(RSP) + -8)
+mbsinit (&iter->state) COPY STR
+mbuiter.h COPY STR
+[(f(RSP) + -8)] LOAD 433 (f(RSP) + -8)
+ CALL libcall___assert_fail_thunk mbsinit (&iter->state) mbuiter.h 150 0 [(f(RSP) + -8)]
+f(ARG1) COPY f(ARG1)
+f() CALL libcall___ctype_get_mb_cur_max_thunk [(f(RSP) + -8)]
+f() CALL func f(ARG1) f()
+ STORE 433 (f(RSP) + -8) CONST
+(RSP + -164) PTRSUB RSP -164
+f() CALL func (RSP + -164) f(ARG1) f()
+ STORE 433 (f(RSP) + -8) CONST
+(f(RSP) + -8) CAST (f(RSP) + -8)
+(f(RSP) + -8) PTRADD f(RSP) -8 1
+ STORE 433 (f(RSP) + -8) CONST
+(f(RSP) + -8) CAST (f(RSP) + -8)
+(f(RSP) + -8) PTRADD f(RSP) -8 1
+f(ARG1) COPY f(ARG1)
+(f(RSP) + -8) CAST (f(RSP) + -8)
+(f(RSP) + -8) PTRADD f(RSP) -8 1
+(f(RSP) + -8) PTRADD f(RSP) -8 1
+ STORE 433 (f(RSP) + -8) CONST
+1 COPY 1
+ CBRANCH (f() INT_EQUAL 0)
+(1 & ([(Symbol + (([f(ARG1)] / 32) * 4))] >> ([f(ARG1)] & 31))) INT_AND ([(Symbol + (([f(ARG1)] / 32) * 4))] >> ([f(ARG1)] & 31)) 1
+(([f(ARG1)] / 32) * 4) INT_MULT ([f(ARG1)] / 32) 4
+Symbol PTRSUB 0 CONST
+0 INT_EQUAL (1 & ([(Symbol + (([f(ARG1)] / 32) * 4))] >> ([f(ARG1)] & 31))) 0
+ CBRANCH ((1 & ([(Symbol + (([f(ARG1)] / 32) * 4))] >> ([f(ARG1)] & 31))) INT_EQUAL 0)
+(Symbol + (([f(ARG1)] / 32) * 4)) CAST (Symbol + (([f(ARG1)] / 32) * 4))
+f(ARG1) PTRSUB f(ARG1) 0
+[(Symbol + (([f(ARG1)] / 32) * 4))] LOAD 433 (Symbol + (([f(ARG1)] / 32) * 4))
+(Symbol + (([f(ARG1)] / 32) * 4)) PTRADD Symbol (([f(ARG1)] / 32) * 4) 1
+f(ARG1) CAST f(ARG1)
+([f(ARG1)] / 32) INT_ZEXT ([f(ARG1)] / 32)
+[f(ARG1)] LOAD 433 f(ARG1)
+([f(ARG1)] & 31) INT_AND [f(ARG1)] 31
+([f(ARG1)] / 32) INT_RIGHT [f(ARG1)] 5
+([(Symbol + (([f(ARG1)] / 32) * 4))] >> ([f(ARG1)] & 31)) INT_RIGHT [(Symbol + (([f(ARG1)] / 32) * 4))] ([f(ARG1)] & 31)
+(RSP + -288) CAST (RSP + -288)
+((~((-16 & ((f() * 56) + 46))) + 1) + (RSP + -288)) INT_ADD (RSP + -288) (~((-16 & ((f() * 56) + 46))) + 1)
+f() CAST f()
+(RSP + -312) PTRSUB RSP -312
+((~((-16 & ((f() * 56) + 46))) + 1) + (RSP + -312)) PTRADD (RSP + -312) (~((-16 & ((f() * 56) + 46))) + 1) 1
+f() CALL func
+(RSP + -288) PTRSUB RSP -288
+(~((-16 & ((f() * 56) + 46))) + 1) INT_2COMP (-16 & ((f() * 56) + 46))
+ BRANCH VZERO
+((f() * 56) + 46) INT_ADD (f() * 56) 46
+(-16 & ((f() * 56) + 46)) INT_AND ((f() * 56) + 46) -16
+((~((-16 & ((f() * 56) + 46))) + 1) + (RSP + -288)) CAST ((~((-16 & ((f() * 56) + 46))) + 1) + (RSP + -288))
+(f(RSP) + (f(RSP) * 8)) PTRSUB (f(RSP) + (f(RSP) * 8)) 0
+(f(RSP) + (f(RSP) * 8)) PTRADD f(RSP) f(RSP) 8
+(f(RSP) - f(RSP)) CAST (f(RSP) - f(RSP))
+f(RSP) CAST f(RSP)
+((f(RSP) + (f(RSP) * 8)) + f()) CAST ((f(RSP) + (f(RSP) * 8)) + f())
+(f(RSP) + (f(RSP) * 8)) CAST (f(RSP) + (f(RSP) * 8))
+f(RSP) LOAD 433 ((f(RSP) + (f(RSP) * 8)) + f())
+f(RSP) CAST f(RSP)
+ CBRANCH (f() INT_EQUAL 0)
+f() COPY f()
+0 INT_EQUAL f(RSP) 0
+((f(RSP) + (f(RSP) * 8)) + f()) INT_ADD (f(RSP) + (f(RSP) * 8)) f()
+0 INT_EQUAL f() 0
+(f(RSP) - f(RSP)) INT_SUB f(RSP) f(RSP)
+0 INT_NOTEQUAL f(ARG2) 0
+ CBRANCH (f(ARG2) INT_NOTEQUAL 0)
+ CBRANCH ([f(RSP)] INT_EQUAL 0)
+((f(RSP) + (f(RSP) * 48)) + 8) PTRADD (f(RSP) + (f(RSP) * 48)) 1 8
+((f(RSP) + (f(RSP) * 48)) + 16) PTRADD (f(RSP) + (f(RSP) * 48)) 2 8
+ CBRANCH ([(f(RSP) + -8)] INT_EQUAL f(RSP))
+f(RSP) LOAD 433 ((f(RSP) + (f(RSP) * 48)) + 8)
+0 INT_EQUAL [(f(RSP) + -8)] f(RSP)
+((f(RSP) + (f(RSP) * 48)) + 16) PTRSUB ((f(RSP) + (f(RSP) * 48)) + 16) 0
+(f(RSP) + -8) PTRADD f(RSP) -1 8
+f(RSP) LOAD 433 ((f(RSP) + (f(RSP) * 48)) + 16)
+ CBRANCH (f(RSP) INT_EQUAL 0)
+((f(RSP) + (f(RSP) * 48)) + 16) CAST ((f(RSP) + (f(RSP) * 48)) + 16)
+[(f(RSP) + -8)] LOAD 433 (f(RSP) + -8)
+0 INT_EQUAL f(RSP) 0
+[f(ARG1)] COPY [f(ARG1)]
+1 COPY 1
+[f(ARG1)] INT_SEXT [f(ARG1)]
+[(f(RSP) + -8)] LOAD 433 (f(RSP) + -8)
+f() CALL libcall_mbsinit_thunk f(RSP) [(f(RSP) + -8)]
+(f(RSP) + -8) CAST (f(RSP) + -8)
+1 COPY 1
+f(ARG1) PTRSUB f(ARG1) 0
+ STORE 433 (f(RSP) + -8) CONST
+f(ARG1) CAST f(ARG1)
+1 COPY 1
+(f(RSP) + -8) PTRADD f(RSP) -8 1
+(f(RSP) + -8) PTRADD f(RSP) -8 1
+[f(ARG1)] LOAD 433 f(ARG1)
+0 INT_NOTEQUAL f() 0
+ CBRANCH ((1 & ([(Symbol + (([f(ARG1)] / 32) * 4))] >> ([f(ARG1)] & 31))) INT_EQUAL 0)
+f(ARG1) PTRSUB f(ARG1) 0
+f(ARG1) CAST f(ARG1)
+[(f(RSP) + -8)] LOAD 433 (f(RSP) + -8)
+ CBRANCH (f() INT_NOTEQUAL 0)
+0 INT_NOTEQUAL f() 0
+[f(ARG1)] LOAD 433 f(ARG1)
+1 COPY 1
+[f(ARG1)] COPY [f(ARG1)]
+f() CALL libcall_mbsinit_thunk f(RSP) [(f(RSP) + -8)]
+(f(RSP) + -8) CAST (f(RSP) + -8)
+[f(ARG1)] INT_SEXT [f(ARG1)]
+ STORE 433 (f(RSP) + -8) CONST
+1 COPY 1
+1 COPY 1
+(f(RSP) + -8) PTRADD f(RSP) -8 1
+(f(RSP) + -8) PTRADD f(RSP) -8 1
+1 COPY 1
+ BRANCH VZERO
+0 COPY 0
+f(ARG1) CAST f(ARG1)
+0 INT_EQUAL f() 0
+(f(RSP) + -8) CAST (f(RSP) + -8)
+0 COPY 0
+[(f(RSP) + -8)] LOAD 433 (f(RSP) + -8)
+f() CALL libcall_strlen_thunk f(ARG1) [(f(RSP) + -8)]
+ STORE 433 (f(RSP) + -8) CONST
+ BRANCH VZERO
+(f(RSP) + -8) PTRADD f(RSP) -8 1
+(f(RSP) + -8) PTRADD f(RSP) -8 1
+f() COPY f()
+ CBRANCH (f() INT_EQUAL 0)
+0 INT_EQUAL f() 0
+f(ARG1) PTRSUB f(ARG1) 0
+1 COPY 1
+ CBRANCH ([f(ARG1)] INT_NOTEQUAL 0)
+0 INT_NOTEQUAL [f(ARG1)] 0
+f(ARG1) CAST f(ARG1)
+[f(ARG1)] LOAD 433 f(ARG1)
+ CBRANCH (f() INT_NOTEQUAL 0)
+0 INT_NOTEQUAL f() 0
+(f(RSP) + (f(RSP) * 8)) PTRSUB (f(RSP) + (f(RSP) * 8)) 0
+(f(RSP) + (f() * 8)) PTRADD f(RSP) f() 8
+(f(RSP) + (f(RSP) * 8)) PTRADD f(RSP) f(RSP) 8
+(f(RSP) - f(RSP)) INT_SUB f(RSP) f(RSP)
+ BRANCH VZERO
+((f(RSP) + (f(RSP) * 8)) + f()) CAST ((f(RSP) + (f(RSP) * 8)) + f())
+(f(RSP) + (f(RSP) * 8)) CAST (f(RSP) + (f(RSP) * 8))
+((f(RSP) + (f(RSP) * 8)) + f()) INT_ADD (f(RSP) + (f(RSP) * 8)) f()
+ STORE 433 (f(RSP) + (f() * 8)) f()
+0 INT_EQUAL [f(RSP)] 0
+(f(RSP) + (f(RSP) * 48)) PTRADD f(RSP) (f(RSP) * 6) 8
+f() CAST f()
+(f(RSP) * 6) INT_MULT f(RSP) 6
+f(RSP) LOAD 433 ((f(RSP) + (f(RSP) * 8)) + f())
+ CBRANCH (f(ARG1) INT_EQUAL 0)
+0 INT_EQUAL f(ARG1) 0
+(f(RSP) + -1) INT_ADD f(RSP) -1
+(f(ARG1) + f()) INT_ADD f(ARG1) f()
+(f(ARG1) + f()) CAST (f(ARG1) + f())
+f(ARG1) PTRSUB f(ARG1) 0
+f(ARG1) CAST f(ARG1)
+(f(ARG1) + f()) COPY (f(ARG1) + f())
+0 COPY 0
+0 INT_EQUAL (f(RSP) + -1) 0
+[f(RSP)] LOAD 433 f(RSP)
+ CBRANCH (f() INT_EQUAL 0)
+[(f(RSP) + 8)] CAST [(f(RSP) + 8)]
+0 INT_EQUAL f() 0
+[f(RSP)] CAST [f(RSP)]
+(f(RSP) + -8) CAST (f(RSP) + -8)
+[(f(RSP) + -8)] LOAD 433 (f(RSP) + -8)
+(f(RSP) + -8) PTRADD f(RSP) -8 1
+(f(RSP) + -8) PTRADD f(RSP) -8 1
+f() CALL libcall_memcmp_thunk [f(RSP)] f(ARG1) [(f(RSP) + 8)] [(f(RSP) + -8)]
+ STORE 433 (f(RSP) + -8) CONST
+ CBRANCH (f() INT_LESS 3)
+(f() + 1) CAST (f() + 1)
+f() CAST f()
+f(RSP) CAST f(RSP)
+ BRANCH VZERO
+(f() + 1) INT_ADD f() 1
+ CBRANCH (f() INT_EQUAL (f() + 1))
+(f(RSP) + 48) PTRADD f(RSP) 6 8
+0 INT_EQUAL f() (f() + 1)
+[f(RSP)] LOAD 433 f(RSP)
+f(RSP) PTRSUB f(RSP) 0
+0 INT_NOTEQUAL f() -2
+0 COPY 0
+1 COPY 1
+ CBRANCH ([(f(RSP) + 4)] INT_EQUAL f(RSP))
+ STORE 433 (f(RSP) + -8) CONST
+(f(RSP) + -8) CAST (f(RSP) + -8)
+(f(RSP) + -8) PTRADD f(RSP) -8 1
+(RSP + -100) PTRSUB RSP -100
+f(ARG1) COPY f(ARG1)
+[(f(RSP) + -8)] LOAD 433 (f(RSP) + -8)
+f() CALL libcall___ctype_get_mb_cur_max_thunk [(f(RSP) + -8)]
+f() CALL func f(ARG1) f()
+f() CALL func (RSP + -100) f(ARG1) f()
+(f(RSP) + -8) PTRADD f(RSP) -8 1
+(f(RSP) + -8) PTRADD f(RSP) -8 1
+ STORE 433 (f(RSP) + -8) CONST
+(f(RSP) + -8) PTRADD f(RSP) -8 1
+f() CAST f()
+(f(RSP) + -8) CAST (f(RSP) + -8)
+ STORE 433 (f(RSP) + -8) CONST
+1 COPY 1
+f(ARG1) COPY f(ARG1)
+ CBRANCH (f() INT_EQUAL -1)
+(f(RSP) + -8) CAST (f(RSP) + -8)
+f() COPY f()
+0 INT_EQUAL f() -1
+(f() * 48) INT_MULT f() 48
+(f(RSP) + (f() * 48)) COPY (f(RSP) + (f() * 48))
+0 COPY 0
+(f() * 48) COPY (f() * 48)
+0 COPY 0
+f() CAST f()
+(f(RSP) + (f() * 48)) PTRADD f(RSP) (f() * 6) 8
+(f() * 6) INT_MULT f() 6
+f() CAST f()
+(f(RSP) + 24) CAST (f(RSP) + 24)
+(f(RSP) + 24) PTRADD f(RSP) 3 8
+0 COPY 0
+(RSP + -312) COPY (RSP + -312)
+1 COPY 1
+f(RSP) LOAD 433 ((f(RSP) + (f(RSP) * 48)) + 20)
+0 INT_EQUAL f(ARG1) f(RSP)
+((f(RSP) + (f(RSP) * 48)) + 20) PTRSUB ((f(RSP) + (f(RSP) * 48)) + 16) 4
+((f(RSP) + (f(RSP) * 48)) + 16) PTRADD (f(RSP) + (f(RSP) * 48)) 2 8
+0 INT_NOTEQUAL f(ARG1) 0
+0 COPY 0
+0 COPY 0
+(RSP + -132) COPY (RSP + -132)
+(f(RSP) + 64) PTRADD f(RSP) 8 8
+1 COPY 1
+0 COPY 0
+ STORE 433 (f(RSP) + 8) 1
+(RSP + -196) COPY (RSP + -196)
+2 COPY 2
+0 COPY 0
+0 COPY 0
+(RSP + -196) PTRSUB RSP -196
+ STORE 433 f(ARG3) 0
+(f(RSP) + 8) PTRADD f(RSP) 1 8
+0 INT_LESS f() 3
+(RSP + -132) PTRSUB RSP -132
+0 COPY 0
+0 COPY 0
+0 COPY 0
+f(ARG1) COPY f(ARG1)
+f() CAST f()
+f(ARG1) COPY f(ARG1)
+0 COPY 0
+ BRANCH VZERO
+1 COPY 1
+0 INT_EQUAL f() -2
+ STORE 433 (f(RSP) + -24) f(RSP)
+f(RSP) CAST f(RSP)
+f(ARG2) CAST f(ARG2)
+f() CAST f()
+[(f(RSP) + -8)] LOAD 433 (f(RSP) + -8)
+ CALL libcall_memcpy_thunk f(RSP) f(ARG2) f() [(f(RSP) + -8)]
+(f(RSP) + -24) INT_ADD f(RSP) -24
+(f(RSP) + -8) PTRADD f(RSP) -8 1
+ STORE 433 (f(RSP) + -8) CONST
+(f(RSP) + -8) PTRADD f(RSP) -8 1
+ STORE 433 (f(RSP) + -24) f(ARG2)
+f() COPY f()
+ BRANCH VZERO
+(f(RSP) + -24) CAST (f(RSP) + -24)
+f(RSP) CAST f(RSP)
+(f(RSP) + -24) CAST (f(RSP) + -24)
+(f(RSP) + -24) INT_ADD f(RSP) -24
+f(RSP) CAST f(RSP)
+f() COPY f()
+(f(RSP) + -8) CAST (f(RSP) + -8)
+(f(RSP) + -16) PTRADD f(RSP) -2 8
+[(f(RSP) + -16)] CAST [(f(RSP) + -16)]
+f(RSP) CAST f(RSP)
+[(f(RSP) + -8)] CAST [(f(RSP) + -8)]
+[(f(RSP) + -8)] LOAD 433 (f(RSP) + -8)
+f() CALL libcall_memcmp_thunk [(f(RSP) + -16)] f(RSP) [(f(RSP) + -8)] [(f(RSP) + -8)]
+ STORE 433 (f(RSP) + -8) CONST
+(f(RSP) + -8) PTRADD f(RSP) -8 1
+(f(RSP) + -8) PTRADD f(RSP) -8 1
+f(RSP) LOAD 433 (f(RSP) + (f(RSP) * 48))
+0 INT_EQUAL f() 0
+(f(RSP) + -8) CAST (f(RSP) + -8)
+[(f(RSP) + -16)] LOAD 433 (f(RSP) + -16)
+0 COPY 0
+ BRANCH VZERO
+((f(RSP) + (f(RSP) * 48)) + 20) PTRSUB ((f(RSP) + (f(RSP) * 48)) + 16) 4
+0 INT_EQUAL [(f(RSP) + 4)] f(RSP)
+((f(RSP) + (f(RSP) * 48)) + 16) PTRADD (f(RSP) + (f(RSP) * 48)) 2 8
+[(f(RSP) + 4)] LOAD 433 (f(RSP) + 4)
+f(RSP) LOAD 433 ((f(RSP) + (f(RSP) * 48)) + 20)
+(f(RSP) + 4) PTRSUB f(RSP) 4
+(1 & ([(Symbol + (([f(ARG1)] / 32) * 4))] >> ([f(ARG1)] & 31))) INT_AND ([(Symbol + (([f(ARG1)] / 32) * 4))] >> ([f(ARG1)] & 31)) 1
+(Symbol + (([f(ARG1)] / 32) * 4)) CAST (Symbol + (([f(ARG1)] / 32) * 4))
+Symbol PTRSUB 0 CONST
+(([f(ARG1)] / 32) * 4) INT_MULT ([f(ARG1)] / 32) 4
+0 INT_EQUAL (1 & ([(Symbol + (([f(ARG1)] / 32) * 4))] >> ([f(ARG1)] & 31))) 0
+f(ARG1) CAST f(ARG1)
+f(ARG1) PTRSUB f(ARG1) 0
+[(Symbol + (([f(ARG1)] / 32) * 4))] LOAD 433 (Symbol + (([f(ARG1)] / 32) * 4))
+(Symbol + (([f(ARG1)] / 32) * 4)) PTRADD Symbol (([f(ARG1)] / 32) * 4) 1
+([f(ARG1)] / 32) INT_ZEXT ([f(ARG1)] / 32)
+[f(ARG1)] LOAD 433 f(ARG1)
+([f(ARG1)] & 31) INT_AND [f(ARG1)] 31
+([(Symbol + (([f(ARG1)] / 32) * 4))] >> ([f(ARG1)] & 31)) INT_RIGHT [(Symbol + (([f(ARG1)] / 32) * 4))] ([f(ARG1)] & 31)
+([f(ARG1)] / 32) INT_RIGHT [f(ARG1)] 5
+[f(ARG1)] LOAD 433 f(ARG1)
+f(ARG1) CAST f(ARG1)
+f(ARG1) PTRSUB f(ARG1) 0
+1 COPY 1
+0 INT_NOTEQUAL [f(ARG1)] 0
+0 INT_EQUAL ARG2 1
+0 INT_NOTEQUAL ARG2 0
+0 INT_NOTEQUAL ARG2 0
+0 INT_EQUAL ARG2 1
+ CBRANCH (f() INT_EQUAL 0)
+f() CALL libcall___strdup_thunk
+f() CAST f()
+0 INT_EQUAL f() 0
+(FS_OFFSET + 40) CAST (FS_OFFSET + 40)
+(FS_OFFSET + 40) INT_ADD 0 40
+[(FS_OFFSET + 40)] LOAD 433 (FS_OFFSET + 40)
+ CBRANCH (f() INT_NOTEQUAL -2)
+(f() + 1) INT_ADD f() 1
+0 COPY 0
+ CBRANCH (ARG2 INT_EQUAL 1)
+ CBRANCH (f() INT_EQUAL 0)
+0 INT_EQUAL f() 0
+f() CAST f()
+f() CAST f()
+1 COPY 1
+((~(f()) + 1) + (f() + f())) PTRADD (f() + f()) (~(f()) + 1) 1
+f() CALL libcall_strlen_thunk f()
+(~(f()) + 1) INT_2COMP f()
+f() MULTIEQUAL f() f() (f() + f()) f()
+ CALL libcall_memmove_thunk f() f() (f() + 1)
+ BRANCH VZERO
+ CBRANCH (f() INT_NOTEQUAL 0)
+f() COPY f()
+ BRANCH VZERO
+0 COPY 0
+ CBRANCH (f() INT_EQUAL 0)
+0 INT_EQUAL f() 1
+1 COPY 1
+ CBRANCH (f() INT_NOTEQUAL 0)
+f() COPY f()
+0 INT_NOTEQUAL f() 0
+ CBRANCH (f() INT_EQUAL 1)
+ CBRANCH (ARG2 INT_NOTEQUAL 0)
+0 COPY 0
+0 INT_LESS f() (f() + f())
+(f() + f()) PTRADD f() f() 1
+f() CAST f()
+f() CALL libcall_strlen_thunk f()
+f() COPY f()
+0 COPY 0
+ CBRANCH (f() INT_LESS (f() + f()))
+0 COPY 0
+f() COPY f()
+0 COPY 0
+0 COPY 0
+f() COPY f()
+f() COPY f()
+0 COPY 0
+0 INT_LESS f() (f() + f())
+0 COPY 0
+(RSP + -124) PTRSUB RSP -124
+f() CAST f()
+f() COPY f()
+ CBRANCH (f() INT_LESS (f() + f()))
+f() COPY f()
+(f() + f()) PTRADD f() f() 1
+f() CALL libcall_strlen_thunk f()
+ CBRANCH (f() INT_EQUAL 0)
+0 INT_LESS (f() + f()) (f() + f())
+(f() + f()) PTRADD f() f() 1
+(RSP + -124) PTRSUB RSP -124
+f() CALL libcall_mbsinit_thunk (RSP + -124)
+(f() + f()) COPY (f() + f())
+[f()] LOAD 433 f()
+1 COPY 1
+0 INT_EQUAL f() 0
+1 COPY 1
+f() COPY f()
+0 COPY 0
+ CBRANCH (f() INT_NOTEQUAL 0)
+0 INT_NOTEQUAL f() 0
+ CBRANCH ((f() + f()) INT_LESS (f() + f()))
+1 COPY 1
+ CBRANCH ([f()] INT_NOTEQUAL 0)
+0 INT_NOTEQUAL [f()] 0
+f() CAST f()
+ CBRANCH ([f()] INT_NOTEQUAL 0)
+ RETURN 1
+1 COPY 1
+*iter->cur.ptr == '\0' COPY STR
+mbiter.h COPY STR
+0 COPY STR
+ CALL libcall___assert_fail_thunk *iter->cur.ptr == '\0' mbiter.h 169 0
+ CBRANCH (f() INT_NOTEQUAL 0)
+0 INT_NOTEQUAL f() 0
+ CBRANCH ((1 & ([(Symbol + (([f()] / 32) * 4))] >> ([f()] & 31))) INT_EQUAL 0)
+1 COPY 1
+[f()] INT_SEXT [f()]
+1 COPY 1
+ CBRANCH (f() INT_NOTEQUAL 0)
+0 INT_NOTEQUAL f() 0
+f() COPY f()
+f() MULTIEQUAL f() f() [f()]
+f() CALL libcall_iswspace_thunk f()
+f() COPY f()
+[f()] LOAD 433 f()
+[f()] CAST [f()]
+(RSP + -124) PTRSUB RSP -124
+f() CALL libcall_mbsinit_thunk (RSP + -124)
+1 COPY 1
+ CBRANCH (f() INT_EQUAL 0)
+f() COPY f()
+0 INT_EQUAL f() 0
+mbsinit (&iter->state) COPY STR
+mbiter.h COPY STR
+0 COPY STR
+ CALL libcall___assert_fail_thunk mbsinit (&iter->state) mbiter.h 142 0
+f() CAST f()
+((~(f()) + 1) + (f() + f())) PTRADD (f() + f()) (~(f()) + 1) 1
+f() COPY f()
+1 COPY 1
+(RSP + -92) PTRSUB RSP -92
+f() MULTIEQUAL f() (f() + f())
+f() CALL func (RSP + -92) f() ((~(f()) + 1) + (f() + f()))
+ CBRANCH (f() INT_EQUAL -1)
+(~(f()) + 1) INT_2COMP f()
+f() CAST f()
+ RETURN 1
+ BRANCH VZERO
+0 INT_EQUAL f() -1
+ CBRANCH (ARG2 INT_EQUAL 1)
+ CBRANCH (f() INT_LESSEQUAL ((f() + -1) + f()))
+(f() + -1) INT_SUB f() -1
+0 INT_LESSEQUAL f() ((f() + -1) + f())
+((f() + -1) + f()) PTRADD f() (f() + -1) 1
+f() CAST f()
+f() CALL libcall_strlen_thunk f()
+ CBRANCH (f() INT_NOTEQUAL 0)
+0 INT_NOTEQUAL f() 0
+2 COPY 2
+f() COPY f()
+f() MULTIEQUAL [f()] f() f() f() f()
+f() CALL libcall_iswspace_thunk f()
+ CBRANCH (f() INT_NOTEQUAL 0)
+ CBRANCH (f() INT_NOTEQUAL 0)
+ BRANCH VZERO
+ CBRANCH (f() INT_EQUAL 0)
+1 COPY 1
+f() COPY f()
+f() CALL libcall_iswspace_thunk f()
+1 COPY 1
+0 INT_EQUAL f() 0
+ CBRANCH (ARG2 INT_NOTEQUAL 0)
+(f() + 1) INT_ADD f() 1
+f() INT_ZEXT f()
+f() CAST f()
+[f()] LOAD 433 f()
+f() COPY f()
+f() CALL libcall_strlen_thunk f()
+ CBRANCH ([f()] INT_NOTEQUAL 0)
+0 INT_NOTEQUAL [f()] 0
+f() MULTIEQUAL f() (f() + 1) f()
+ CALL libcall_memmove_thunk f() f() (f() + 1)
+ CBRANCH ((1 & ([(Symbol + (([f()] / 32) * 4))] >> ([f()] & 31))) INT_EQUAL 0)
+[f()] LOAD 433 f()
+1 COPY 1
+f() CALL libcall_mbsinit_thunk (RSP + -124)
+1 COPY 1
+f() COPY f()
+[f()] INT_SEXT [f()]
+ CBRANCH (f() INT_EQUAL 0)
+[f()] CAST [f()]
+0 INT_EQUAL f() 0
+0 INT_NOTEQUAL f() -2
+1 COPY 1
+0 COPY 0
+0 COPY 0
+0 INT_EQUAL f() 2
+(f() + 40) CAST (f() + 40)
+[(f() + 40)] LOAD 433 (f() + 40)
+f() COPY f()
+(f() + 40) INT_ADD f() 40
+ CBRANCH f()
+0 INT_EQUAL f() [(f() + 40)]
+ CBRANCH (f() INT_EQUAL [(f() + 40)])
+ CBRANCH (f() INT_EQUAL 2)
+ CBRANCH (f() INT_LESSEQUAL (f() + -1))
+f() INT_ZEXT f()
+ CBRANCH (([([f()] + (([f()] * 2) + 1))] & 32) INT_EQUAL 0)
+[([f()] + (([f()] * 2) + 1))] LOAD 433 ([f()] + ((f() * 2) + 1))
+([f()] + ((f() * 2) + 1)) INT_ADD [f()] ((f() * 2) + 1)
+0 INT_EQUAL ([([f()] + (([f()] * 2) + 1))] & 32) 0
+(f() * 2) INT_MULT f() 2
+([([f()] + (([f()] * 2) + 1))] & 32) INT_AND [([f()] + (([f()] * 2) + 1))] 32
+((f() * 2) + 1) INT_ADD (f() * 2) 1
+([f()] + ((f() * 2) + 1)) CAST ([f()] + ((f() * 2) + 1))
+[f()] CAST [f()]
+f() LOAD 433 f()
+ CBRANCH f()
+(([f()] / 32) * 4) INT_MULT ([f()] / 32) 4
+0 INT_EQUAL (1 & ([(Symbol + (([f()] / 32) * 4))] >> ([f()] & 31))) 0
+[f()] LOAD 433 f()
+Symbol PTRSUB 0 CONST
+([f()] & 31) INT_AND [f()] 31
+(Symbol + (([f()] / 32) * 4)) CAST (Symbol + (([f()] / 32) * 4))
+([f()] / 32) INT_RIGHT [f()] 5
+([(Symbol + (([f()] / 32) * 4))] >> ([f()] & 31)) INT_RIGHT [(Symbol + (([f()] / 32) * 4))] ([f()] & 31)
+(1 & ([(Symbol + (([f()] / 32) * 4))] >> ([f()] & 31))) INT_AND ([(Symbol + (([f()] / 32) * 4))] >> ([f()] & 31)) 1
+([f()] / 32) INT_ZEXT ([f()] / 32)
+[(Symbol + (([f()] / 32) * 4))] LOAD 433 (Symbol + (([f()] / 32) * 4))
+(Symbol + (([f()] / 32) * 4)) PTRADD Symbol (([f()] / 32) * 4) 1
+ CBRANCH (f() INT_LESS 2)
+ CBRANCH ([(f() + 1)] INT_NOTEQUAL 0)
+[([f()] + ((f() * 2) + 1))] LOAD 433 ([f()] + ((f() * 2) + 1))
+([f()] + ((f() * 2) + 1)) INT_ADD [f()] ((f() * 2) + 1)
+0 INT_EQUAL ([([f()] + ((f() * 2) + 1))] & 32) 0
+(f() * 2) INT_MULT f() 2
+([([f()] + ((f() * 2) + 1))] & 32) INT_AND [([f()] + ((f() * 2) + 1))] 32
+((f() * 2) + 1) INT_ADD (f() * 2) 1
+([f()] + ((f() * 2) + 1)) CAST ([f()] + ((f() * 2) + 1))
+[f()] CAST [f()]
+f() COPY f()
+ CBRANCH (([([f()] + ((f() * 2) + 1))] & 32) INT_EQUAL 0)
+ CBRANCH (f() INT_EQUAL -2)
+0 INT_EQUAL f() 0
+ BRANCH VZERO
+0 COPY 0
+(~(f()) + 1) INT_2COMP f()
+f() CAST f()
+((~(f()) + 1) + (f() + f())) PTRADD (f() + f()) (~(f()) + 1) 1
+ CBRANCH (f() INT_NOTEQUAL 0)
+0 INT_NOTEQUAL f() 0
+f() COPY f()
+ STORE 433 f() 0
+ BRANCH VZERO
+ CALL libcall___stack_chk_fail_thunk
+ RETURN 1
+ RETURN 0 f()
+(f() + -1) PTRADD f() -1 1
+ STORE 433 f() 0
+0 INT_LESSEQUAL f() (f() + -1)
+ BRANCH VZERO
+f() CALL libcall_iswspace_thunk f()
+f() COPY f()
+0 INT_EQUAL f() 0
+ BRANCH VZERO
+[f()] LOAD 433 f()
+f() CALL libcall___ctype_b_loc_thunk
+f() COPY f()
+0 COPY 0
+ BRANCH VZERO
+ CBRANCH (f() INT_EQUAL 2)
+0 INT_NOTEQUAL f() 0
+iter->cur.wc == 0 COPY STR
+mbiter.h COPY STR
+0 COPY STR
+ CALL libcall___assert_fail_thunk iter->cur.wc == 0 mbiter.h 170 0
+0 INT_NOTEQUAL f() 0
+(RSP + -124) PTRSUB RSP -124
+f() COPY f()
+f() CALL libcall_mbsinit_thunk (RSP + -124)
+1 COPY 1
+ RETURN 1
+1 COPY 1
+ CBRANCH (f() INT_EQUAL -1)
+ BRANCH VZERO
+0 COPY 0
+1 COPY 1
+0 INT_EQUAL f() -2
+1 COPY 1
+0 INT_NOTEQUAL [f()] 0
+[f()] LOAD 433 f()
+ RETURN 1
+f() CALL libcall___ctype_get_mb_cur_max_thunk
+ CALL func
+0 INT_LESS f() 2
+f() CAST f()
+(RSP + -92) PTRSUB RSP -92
+f() MULTIEQUAL f() (f() + f())
+((~(f()) + 1) + (f() + f())) PTRADD (f() + f()) (~(f()) + 1) 1
+f() CALL func (RSP + -92) f() ((~(f()) + 1) + (f() + f()))
+f() CAST f()
+(~(f()) + 1) INT_2COMP f()
+f() COPY f()
+0 INT_EQUAL f() -1
+1 COPY 1
+([(Symbol + (([f()] / 32) * 4))] >> ([f()] & 31)) INT_RIGHT [(Symbol + (([f()] / 32) * 4))] ([f()] & 31)
+([f()] / 32) INT_RIGHT [f()] 5
+(1 & ([(Symbol + (([f()] / 32) * 4))] >> ([f()] & 31))) INT_AND ([(Symbol + (([f()] / 32) * 4))] >> ([f()] & 31)) 1
+([f()] / 32) INT_ZEXT ([f()] / 32)
+[(Symbol + (([f()] / 32) * 4))] LOAD 433 (Symbol + (([f()] / 32) * 4))
+(Symbol + (([f()] / 32) * 4)) PTRADD Symbol (([f()] / 32) * 4) 1
+(([f()] / 32) * 4) INT_MULT ([f()] / 32) 4
+0 INT_EQUAL (1 & ([(Symbol + (([f()] / 32) * 4))] >> ([f()] & 31))) 0
+(Symbol + (([f()] / 32) * 4)) CAST (Symbol + (([f()] / 32) * 4))
+Symbol PTRSUB 0 CONST
+[f()] LOAD 433 f()
+([f()] & 31) INT_AND [f()] 31
+ BRANCH VZERO
+[f()] LOAD 433 f()
+f() CALL libcall___ctype_b_loc_thunk
+(f() + f()) COPY (f() + f())
+f() CAST f()
+(f() + f()) PTRADD f() f() 1
+0 INT_LESS (f() + f()) (f() + f())
+0 COPY 0
+ CBRANCH ((f() + f()) INT_LESS (f() + f()))
+(f() + f()) COPY (f() + f())
+0 INT_NOTEQUAL f() 0
+f() COPY f()
+0 INT_EQUAL f() 2
+(f() + 1) COPY (f() + 1)
+0 INT_NOTEQUAL [(f() + 1)] 0
+(f() + 1) PTRADD f() 1 1
+[(f() + 1)] LOAD 433 (f() + 1)
+4228708 PTRSUB 0 CONST
+ CALL libcall_write_thunk 2 4228708 2
+4227717 PTRSUB 0 CONST
+ CALL libcall_write_thunk 2 4227717 1
+VZERO COPY VZERO
+f() CALL func
+ CALLIND VZERO 0
+VZERO COPY VZERO
+f() CAST f()
+ RETURN 1
+f() CALL libcall_strlen_thunk f()
+VZERO COPY VZERO
+f() CALL libcall_strlen_thunk VZERO
+VZERO INDIRECT VZERO 65
+ CALL libcall__exit_thunk VZERO
+ CALL libcall_write_thunk 2 f() f()
+VZERO COPY VZERO
+ CALL libcall_write_thunk 2 VZERO f()
+ CBRANCH (f(ARG5) INT_LESS 48)
+ BRANCH VZERO
+[(FS_OFFSET + 40)] LOAD 433 (FS_OFFSET + 40)
+40 INT_ADD 0 40
+0 INT_EQUAL [(FS_OFFSET + 40)] [40]
+0 COPY 0
+f(ARG5) INT_ZEXT f(ARG5)
+(FS_OFFSET + 40) CAST (FS_OFFSET + 40)
+[40] LOAD 433 40
+(FS_OFFSET + 40) INT_ADD 0 40
+ CBRANCH (f(ARG5) INT_NOTEQUAL 0)
+f(ARG5) LOAD 433 ARG5
+0 INT_LESS f(ARG5) 48
+ CBRANCH ([(FS_OFFSET + 40)] INT_EQUAL [40])
+40 CAST 40
+ CALL func
+0 INT_NOTEQUAL f(ARG5) 0
+(RSP + -104) PTRSUB RSP -104
+(ARG5 + 16) PTRADD ARG5 4 4
+((f() * 8) + (RSP + -104)) PTRADD (RSP + -104) f() 8
+(ARG5 + 8) CAST (ARG5 + 8)
+[[(ARG5 + 8)]] LOAD 433 [(ARG5 + 8)]
+(ARG5 + 8) PTRADD ARG5 2 4
+[(ARG5 + 16)] LOAD 433 (ARG5 + 16)
+(f(ARG5) + 8) INT_ADD f(ARG5) 8
+[([ARG5] + [(ARG5 + 16)])] LOAD 433 (f(ARG5) + [(ARG5 + 16)])
+ STORE 433 (ARG5 + 8) ([(ARG5 + 8)] + 8)
+(RSP + -104) PTRSUB RSP -104
+(f(ARG5) + [(ARG5 + 16)]) CAST (f(ARG5) + [(ARG5 + 16)])
+([(ARG5 + 8)] + 8) PTRADD [(ARG5 + 8)] 1 8
+(ARG5 + 16) CAST (ARG5 + 16)
+ STORE 433 ARG5 (f(ARG5) + 8)
+ STORE 433 ((f() * 8) + (RSP + -104)) [[(ARG5 + 8)]]
+(ARG5 + 8) PTRADD ARG5 2 4
+((f() * 8) + (RSP + -104)) PTRADD (RSP + -104) f() 8
+ STORE 433 ((f() * 8) + (RSP + -104)) [([ARG5] + [(ARG5 + 16)])]
+(f(ARG5) + [(ARG5 + 16)]) INT_ADD f(ARG5) [(ARG5 + 16)]
+[(ARG5 + 8)] LOAD 433 (ARG5 + 8)
+(ARG5 + 8) CAST (ARG5 + 8)
+ CBRANCH ((f() + 1) INT_NOTEQUAL 10)
+0 INT_NOTEQUAL (f() + 1) 10
+(f() + 1) INT_ADD f() 1
+ CALL libcall___stack_chk_fail_thunk
+ RETURN 0
+ RETURN 1
+f() CALL libcall___strdup_thunk ARG1
+f() CALL libcall_iconv_open_thunk ARG3 ARG2
+f() CALL func ARG1 f()
+[ARG1] LOAD 433 ARG1
+f() CALL func ARG2 ARG3
+0 INT_EQUAL [ARG1] 0
+ CBRANCH ([ARG1] INT_EQUAL 0)
+ CBRANCH (f() INT_EQUAL 0)
+ CBRANCH (f() INT_NOTEQUAL 0)
+ CBRANCH (f() INT_EQUAL -1)
+0 INT_NOTEQUAL f() 0
+f() CAST f()
+0 INT_EQUAL f() -1
+ RETURN 0 f()
+f() COPY f()
+ RETURN 0 0
+ RETURN 0 0
+0 COPY 0
+ RETURN 0 f()
+ RETURN 0 0
+ STORE 433 f() 12
+ RETURN 0 0
+f() CALL libcall___errno_location_thunk
+f() COPY f()
+0 COPY 0
+0 COPY 0
+0 COPY 0
+ CBRANCH (f() INT_NOTEQUAL 0)
+ STORE 433 f() [f()]
+ CALL libcall_iconv_close_thunk f()
+f() CALL libcall_iconv_close_thunk f()
+ CBRANCH (4294967295 INT_SLESS f())
+0 INT_SLESS CONST f()
+[f()] LOAD 433 f()
+f() CALL libcall___errno_location_thunk
+f() CAST f()
+0 INT_NOTEQUAL f() 0
+0 INT_EQUAL f() 0
+ STORE 433 f() [f()]
+[f()] LOAD 433 f()
+f() CALL libcall___errno_location_thunk
+ CALL libcall_free_thunk f()
+0 INT_EQUAL VZERO 0
+f() COPY f()
+ RETURN 0
+ CBRANCH (VZERO INT_EQUAL 0)
+1 COPY 1
+ CALL func
+f() CAST f()
+ CALL libcall_memset_thunk f() 0 ARG1
+f() CALL func
+ RETURN 0
+f() CALL func
+0 INT_SLESS f() 0
+ CBRANCH (f() INT_SLESS 0)
+ CBRANCH ([f()] INT_EQUAL 12)
+ CALL func
+f() COPY f()
+ RETURN 1
+ RETURN 0 f()
+[f()] LOAD 433 f()
+0 INT_EQUAL [f()] 12
+f() CALL libcall___errno_location_thunk
+(RSP + -400) PTRSUB RSP -400
+f() CALL func ARG1 ARG2 (RSP + -400)
+ARG1 COPY ARG1
+ARG1 COPY ARG1
+[ARG1] LOAD 433 ARG1
+ARG1 COPY ARG1
+ARG2 CAST ARG2
+(ARG2 + ((~(f()) + 1) + f())) PTRADD ARG2 ((~(f()) + 1) + f()) 1
+[ARG2] LOAD 433 ARG2
+ARG2 COPY ARG2
+[ARG2] LOAD 433 ARG2
+ARG2 COPY ARG2
+[ARG2] LOAD 433 ARG2
+(ARG2 + 1) PTRADD ARG2 1 1
+ARG2 COPY ARG2
+f(ARG1) COPY f(ARG1)
+f() CALL libcall_strlen_thunk ARG2
+f() CALL func f(ARG1) ARG2 f()
+ARG2 COPY ARG2
+0 INT_LESS f() 2
+(FS_OFFSET + 40) CAST (FS_OFFSET + 40)
+ CBRANCH (f() INT_LESS 2)
+f() CALL libcall___ctype_get_mb_cur_max_thunk
+(FS_OFFSET + 40) INT_ADD 0 40
+[(FS_OFFSET + 40)] LOAD 433 (FS_OFFSET + 40)
+ CBRANCH (f() INT_EQUAL -2)
+ BRANCH VZERO
+ARG2 CAST ARG2
+0 COPY 0
+(f(ARG2) + f()) PTRADD f(ARG2) f() 1
+ CBRANCH (f() INT_EQUAL 0)
+(RSP + -100) PTRSUB RSP -100
+0 COPY 0
+(f() + 1) INT_ADD f() 1
+f() CALL libcall_strlen_thunk ARG2
+ CBRANCH (f() INT_EQUAL 0)
+0 INT_EQUAL f() 0
+0 INT_EQUAL f() 0
+ CBRANCH (f() INT_NOTEQUAL 0)
+ BRANCH VZERO
+0 COPY 0
+ CBRANCH ((f() - f()) INT_EQUAL 0)
+ CBRANCH (f() INT_EQUAL 0)
+0 INT_EQUAL f() 0
+0 INT_EQUAL f() 0
+f() COPY f()
+(RSP + -324) PTRSUB RSP -324
+ CBRANCH (f() INT_EQUAL 0)
+ CBRANCH (f() INT_EQUAL -2)
+f(ARG2) CAST f(ARG2)
+ CBRANCH (f() INT_NOTEQUAL 0)
+ BRANCH VZERO
+0 INT_NOTEQUAL f() 0
+0 COPY 0
+ CBRANCH (f() INT_EQUAL 0)
+f() CALL libcall_strlen_thunk f(ARG2)
+0 INT_EQUAL f() 0
+f() COPY f()
+1 COPY 1
+0 COPY 0
+ CBRANCH ((1 & ([(Symbol + (([f(ARG1)] / 32) * 4))] >> ([f(ARG1)] & 31))) INT_EQUAL 0)
+1 COPY 1
+(RSP + -260) PTRSUB RSP -260
+f() CALL libcall_mbsinit_thunk (RSP + -260)
+[f(ARG1)] INT_SEXT [f(ARG1)]
+(f() / 2147483647) SUBPIECE f() 1
+(((f() / 2147483647) * 256) + 1) PIECE (f() / 2147483647) 1
+(f() / 2147483647) SUBPIECE f() 1
+(((f() / 2147483647) * 256) + 1) PIECE (f() / 2147483647) 1
+ CBRANCH (f() INT_NOTEQUAL 0)
+0 INT_NOTEQUAL f() 0
+[f(ARG1)] LOAD 433 f(ARG1)
+ CBRANCH (f(ARG1) INT_EQUAL 0)
+0 INT_EQUAL f(ARG1) 0
+[f(ARG1)] CAST [f(ARG1)]
+ CBRANCH (f(ARG2) INT_NOTEQUAL 0)
+ CBRANCH (f() INT_NOTEQUAL 0)
+(f() - f()) INT_SUB f() f()
+f(ARG2) CAST f(ARG2)
+f() CALL libcall_strnlen_thunk f(ARG2) (f() - f())
+[(f(ARG2) + f())] LOAD 433 (f(ARG2) + f())
+0 INT_NOTEQUAL f() 0
+f() COPY f()
+f() COPY f()
+(f(ARG2) + f()) PTRADD f(ARG2) f() 1
+ CBRANCH ([(f(ARG2) + f())] INT_NOTEQUAL 0)
+0 INT_NOTEQUAL [(f(ARG2) + f())] 0
+ CBRANCH (f() INT_EQUAL 0)
+(RSP + -196) CAST (RSP + -196)
+f() CALL libcall_mbsinit_thunk (RSP + -196)
+(f() & -1099511627776) INT_AND f() CONST
+ CBRANCH ([f(ARG1)] INT_NOTEQUAL 0)
+1 COPY 1
+ CBRANCH (f() INT_NOTEQUAL 0)
+0 INT_NOTEQUAL [f(ARG1)] 0
+(f() / 2147483647) SUBPIECE f() 0
+(1 # (f() / 2147483647)) PIECE 1 (f() / 2147483647)
+((f() & -1099511627776) | (1 # (f() / 2147483647))) INT_OR (f() & -1099511627776) (1 # (f() / 2147483647))
+(1 # (f() / 2147483647)) INT_ZEXT (1 # (f() / 2147483647))
+(((f(ARG1) / 2147483647) * 256) + 1) PIECE (f(ARG1) / 2147483647) 1
+(RSP + -200) PTRSUB RSP -200
+(RSP + -196) PTRADD (RSP + -200) 4 1
+1 COPY 1
+ CBRANCH (f() INT_NOTEQUAL 0)
+0 INT_NOTEQUAL f() 0
+0 INT_NOTEQUAL f() 0
+[f(ARG1)] LOAD 433 f(ARG1)
+ CBRANCH (f() INT_EQUAL -1)
+0 INT_EQUAL f() -2
+1 COPY 1
+0 COPY 0
+ CBRANCH ((1 & ([(Symbol + (([f(ARG1)] / 32) * 4))] >> ([f(ARG1)] & 31))) INT_EQUAL 0)
+(f(ARG1) / 2147483647) SUBPIECE f(ARG1) 1
+(((f(ARG1) / 2147483647) * 256) + 1) PIECE (f(ARG1) / 2147483647) 1
+[f(ARG1)] LOAD 433 f(ARG1)
+[f(ARG1)] CAST [f(ARG1)]
+(RSP + -196) CAST (RSP + -196)
+f() CALL libcall_mbsinit_thunk (RSP + -196)
+([f(ARG1)] * 2147483647) INT_LEFT [f(ARG1)] 32
+1 COPY 1
+1 COPY 1
+(4294967295 & (((f(ARG1) / 2147483647) * 256) + 1)) INT_AND (((f(ARG1) / 2147483647) * 256) + 1) CONST
+[f(ARG1)] INT_SEXT [f(ARG1)]
+[f(ARG1)] CAST [f(ARG1)]
+(([f(ARG1)] * 2147483647) | (4294967295 & (((f(ARG1) / 2147483647) * 256) + 1))) INT_OR (4294967295 & (((f(ARG1) / 2147483647) * 256) + 1)) ([f(ARG1)] * 2147483647)
+[f(ARG1)] INT_ZEXT [f(ARG1)]
+ CBRANCH (f() INT_NOTEQUAL 0)
+0 INT_NOTEQUAL f() 0
+ CBRANCH (f(ARG2) INT_EQUAL 0)
+ CBRANCH (f() INT_NOTEQUAL 0)
+0 INT_NOTEQUAL f() 0
+f() COPY f()
+ CBRANCH (f() INT_NOTEQUAL 0)
+0 INT_NOTEQUAL f() 0
+(f() / 2147483647) SUBPIECE f() 0
+ BRANCH VZERO
+f() COPY f()
+1 COPY 1
+ CBRANCH (f() INT_EQUAL -1)
+0 COPY 0
+1 COPY 1
+0 COPY 0
+0 INT_EQUAL f() -2
+ BRANCH VZERO
+ CBRANCH (f() INT_LESS (f() * 5))
+(f() + 1) INT_ADD f() 1
+0 INT_NOTEQUAL f(ARG2) 0
+[f(ARG1)] LOAD 433 f(ARG1)
+ CBRANCH ([ARG2] INT_EQUAL [f(ARG1)])
+0 INT_EQUAL [ARG2] [f(ARG1)]
+1 COPY 1
+f() COPY f()
+ CBRANCH (f() INT_EQUAL -1)
+ CBRANCH (f() INT_EQUAL -2)
+1 COPY 1
+0 INT_EQUAL f() -2
+0 COPY 0
+0 INT_EQUAL f() 0
+1 COPY 1
+ BRANCH VZERO
+ CBRANCH (f() INT_EQUAL 0)
+*iter->cur.ptr == '\0' COPY STR
+mbuiter.h COPY STR
+0 COPY STR
+ CALL libcall___assert_fail_thunk *iter->cur.ptr == '\0' mbuiter.h 178 0
+ CBRANCH ((f(ARG1) / 2147483647) INT_NOTEQUAL 0)
+0 INT_NOTEQUAL (f(ARG1) / 2147483647) 0
+(f(ARG1) / 2147483647) SUBPIECE f(ARG1) 4
+ RETURN 1
+0 INT_EQUAL f() 0
+ CBRANCH (f() INT_EQUAL f())
+f() COPY f()
+(f() + 1) COPY (f() + 1)
+f() COPY f()
+(f() + 1) INT_ADD f() 1
+(f() + 1) INT_ADD f() 1
+f() COPY f()
+0 INT_EQUAL f() f()
+ CBRANCH (f() INT_EQUAL 0)
+ CBRANCH (f() INT_EQUAL -1)
+ CBRANCH (9 INT_LESS f())
+(f() / 256) INT_RIGHT f() 8
+(f() * 256) INT_LEFT f() 8
+(f() / 2147483647) INT_ZEXT (f() / 2147483647)
+1 COPY 1
+ CBRANCH (f() INT_NOTEQUAL -2)
+0 INT_NOTEQUAL f() -2
+0 INT_LESS 9 f()
+(f() / 2147483647) SUBPIECE f() 1
+(((f() / 2147483647) * 256) + 1) PIECE (f() / 2147483647) 1
+ BRANCH VZERO
+1 COPY 1
+0 INT_NOTEQUAL [ARG2] 0
+ CBRANCH (f(ARG2) INT_EQUAL 0)
+0 INT_EQUAL f(ARG2) 0
+(RSP + -132) PTRSUB RSP -132
+f() CALL libcall_mbsinit_thunk (RSP + -132)
+1 COPY 1
+1 COPY 1
+ CBRANCH (f() INT_NOTEQUAL 0)
+0 INT_NOTEQUAL f() 0
+[ARG2] LOAD 433 ARG2
+ CBRANCH ([ARG2] INT_NOTEQUAL 0)
+ CBRANCH (f() INT_EQUAL 0)
+(f() / 2147483647) SUBPIECE f() 0
+f() COPY f()
+[ARG2] CAST [ARG2]
+[(Symbol + (([ARG2] / 32) * 4))] LOAD 433 (Symbol + (([ARG2] / 32) * 4))
+([ARG2] & 31) INT_AND [ARG2] 31
+((f() / 549755813632) # f()) PIECE (f() / 549755813632) f()
+(f() + 1) INT_ADD f() 1
+(Symbol + (([ARG2] / 32) * 4)) PTRADD Symbol (([ARG2] / 32) * 4) 1
+(f() / 549755813632) SUBPIECE (f() / 256) 0
+ BRANCH VZERO
+(f() & 4294967040) INT_AND f() CONST
+0 INT_EQUAL (f() / 2147483647) 0
+[ARG2] INT_SEXT [ARG2]
+f() COPY f()
+(f(ARG1) + f()) PTRADD f(ARG1) f() 1
+(f() # f()) PIECE f() f()
+f() COPY f()
+([(Symbol + (([ARG2] / 32) * 4))] >> ([ARG2] & 31)) INT_RIGHT [(Symbol + (([ARG2] / 32) * 4))] ([ARG2] & 31)
+([ARG2] / 32) INT_ZEXT ([ARG2] / 32)
+(1 & ([(Symbol + (([ARG2] / 32) * 4))] >> ([ARG2] & 31))) INT_AND ([(Symbol + (([ARG2] / 32) * 4))] >> ([ARG2] & 31)) 1
+(f(ARG1) # f()) PIECE f(ARG1) f()
+0 COPY 0
+(([ARG2] / 32) * 4) INT_MULT ([ARG2] / 32) 4
+(Symbol + (([ARG2] / 32) * 4)) CAST (Symbol + (([ARG2] / 32) * 4))
+([ARG2] / 32) INT_RIGHT [ARG2] 5
+0 COPY 0
+Symbol PTRSUB 0 CONST
+f() COPY f()
+0 INT_EQUAL (1 & ([(Symbol + (([ARG2] / 32) * 4))] >> ([ARG2] & 31))) 0
+ CBRANCH ((1 & ([(Symbol + (([ARG2] / 32) * 4))] >> ([ARG2] & 31))) INT_EQUAL 0)
+f() COPY f()
+f() COPY f()
+f() INT_ZEXT f()
+0 COPY 0
+(f(ARG1) + f()) PTRADD f(ARG1) f() 1
+(f() / 256) INT_RIGHT f() 8
+ CBRANCH ((f() / 2147483647) INT_EQUAL 0)
+(f() + 1) INT_ADD f() 1
+ CBRANCH (f() INT_EQUAL 0)
+f() CALL libcall___ctype_get_mb_cur_max_thunk
+mbsinit (&iter->state) COPY STR
+ RETURN 1
+mbuiter.h COPY STR
+ARG2 INDIRECT ARG2 CONST
+f() CALL func ARG2 f()
+0 COPY STR
+ CALL libcall___assert_fail_thunk mbsinit (&iter->state) mbuiter.h 150 0
+(RSP + -356) PTRSUB RSP -356
+ARG2 COPY ARG2
+(RSP + -388) PTRSUB RSP -388
+f() CALL func (RSP + -356) ARG2 f() (RSP + -388)
+1 COPY 1
+ CBRANCH (f() INT_EQUAL -1)
+0 INT_EQUAL f() -1
+0 INT_EQUAL f(ARG2) 0
+ CBRANCH ([f(ARG2)] INT_NOTEQUAL 0)
+(RSP + -324) PTRSUB RSP -324
+1 COPY 1
+0 INT_NOTEQUAL [f(ARG2)] 0
+f() CALL libcall_mbsinit_thunk (RSP + -324)
+ CBRANCH (f() INT_NOTEQUAL 0)
+[f(ARG2)] LOAD 433 f(ARG2)
+1 COPY 1
+1 COPY 1
+0 INT_NOTEQUAL f() 0
+ CBRANCH ([f(ARG2)] INT_NOTEQUAL 0)
+0 INT_NOTEQUAL f(ARG2) 0
+ CBRANCH (f(ARG2) INT_NOTEQUAL 0)
+f() COPY f()
+0 INT_NOTEQUAL f(ARG1) f(ARG2)
+(f() + 1) COPY (f() + 1)
+f() COPY f()
+ CBRANCH (f(ARG1) INT_NOTEQUAL f(ARG2))
+f() COPY f()
+ CBRANCH (9 INT_LESS f())
+ CBRANCH f()
+ CBRANCH ([ARG2] INT_NOTEQUAL 0)
+ CBRANCH (A_Stack[-0x164]:4 INT_NOTEQUAL 0)
+0 INT_NOTEQUAL A_Stack[-0x164]:4 0
+ CBRANCH ((f() * 5) INT_LESSEQUAL f())
+1 COPY 1
+ CBRANCH (f() INT_EQUAL f())
+0 INT_EQUAL (f() - f()) 0
+0 INT_EQUAL f() f()
+f() COPY f()
+ BRANCH VZERO
+(f() + 1) COPY (f() + 1)
+f() COPY f()
+(f() + 1) INT_ADD f() 1
+(f() - f()) INT_SUB f() f()
+ CBRANCH (f() INT_EQUAL 0)
+Symbol PTRSUB 0 CONST
+(RSP + -292) PTRSUB RSP -292
+f() CALL libcall___ctype_get_mb_cur_max_thunk
+([f(ARG2)] & 31) INT_AND [f(ARG2)] 31
+([(Symbol + (([f(ARG2)] / 32) * 4))] >> ([f(ARG2)] & 31)) INT_RIGHT [(Symbol + (([f(ARG2)] / 32) * 4))] ([f(ARG2)] & 31)
+([f(ARG2)] / 32) INT_RIGHT [f(ARG2)] 5
+f(ARG2) INDIRECT f(ARG2) CONST
+f() CALL func f(ARG2) f()
+(Symbol + (([f(ARG2)] / 32) * 4)) CAST (Symbol + (([f(ARG2)] / 32) * 4))
+(1 & ([(Symbol + (([f(ARG2)] / 32) * 4))] >> ([f(ARG2)] & 31))) INT_AND ([(Symbol + (([f(ARG2)] / 32) * 4))] >> ([f(ARG2)] & 31)) 1
+[(Symbol + (([f(ARG2)] / 32) * 4))] LOAD 433 (Symbol + (([f(ARG2)] / 32) * 4))
+(Symbol + (([f(ARG2)] / 32) * 4)) PTRADD Symbol (([f(ARG2)] / 32) * 4) 1
+0 INT_EQUAL f() -1
+(([f(ARG2)] / 32) * 4) INT_MULT ([f(ARG2)] / 32) 4
+0 INT_EQUAL (1 & ([(Symbol + (([f(ARG2)] / 32) * 4))] >> ([f(ARG2)] & 31))) 0
+f(ARG2) COPY f(ARG2)
+ CBRANCH ((1 & ([(Symbol + (([f(ARG2)] / 32) * 4))] >> ([f(ARG2)] & 31))) INT_EQUAL 0)
+[f(ARG2)] LOAD 433 f(ARG2)
+([f(ARG2)] / 32) INT_ZEXT ([f(ARG2)] / 32)
+f() CALL func (RSP + -292) f(ARG2) f()
+ CBRANCH (f() INT_NOTEQUAL 0)
+(f() & 4294967040) INT_AND f() CONST
+ BRANCH VZERO
+ CBRANCH (f() INT_EQUAL 0)
+ CBRANCH (f() INT_EQUAL 0)
+0 INT_EQUAL f() 0
+ CBRANCH ([(ARG2 + 1)] INT_EQUAL 0)
+ CBRANCH ([(f(ARG1) + 1)] INT_EQUAL 0)
+0 INT_EQUAL [(f(ARG1) + 1)] 0
+[(f(ARG1) + 1)] LOAD 433 (f(ARG1) + 1)
+ CBRANCH (f() INT_EQUAL -1)
+0 INT_NOTEQUAL f() -2
+1 COPY 1
+ CBRANCH ((f() / 2147483647) INT_EQUAL 0)
+f() COPY f()
+0 COPY 0
+0 INT_EQUAL (f() / 2147483647) 0
+(f() / 2147483647) SUBPIECE f() 4
+1 COPY 1
+ CBRANCH (f() INT_NOTEQUAL -2)
+ CBRANCH (f(ARG2) INT_EQUAL 0)
+(RSP + -200) PTRSUB RSP -200
+(RSP + -196) PTRADD (RSP + -200) 4 1
+0 COPY 0
+1 COPY 1
+ CBRANCH (0 INT_NOTEQUAL [(f() + 40)])
+(f() + 40) CAST (f() + 40)
+0 COPY 0
+(f() + 40) INT_ADD f() 40
+0 INT_NOTEQUAL 0 [(f() + 40)]
+(f() & 4294967040) INT_AND f() CONST
+0 COPY 0
+0 COPY 0
+0 COPY 0
+[(f() + 40)] LOAD 433 (f() + 40)
+0 COPY 0
+1 COPY 1
+0 COPY 0
+0 COPY 0
+ CBRANCH ((f(ARG1) / 2147483647) INT_EQUAL 0)
+0 INT_EQUAL f() 0
+0 COPY 0
+0 COPY 0
+ CBRANCH (f() INT_EQUAL 0)
+ BRANCH VZERO
+f(ARG1) INDIRECT f(ARG1) CONST
+f() CALL libcall___ctype_get_mb_cur_max_thunk
+f() CALL func f(ARG1) f()
+(RSP + -228) PTRSUB RSP -228
+f(ARG1) COPY f(ARG1)
+f() CALL func (RSP + -228) f(ARG1) f()
+(f() / 2147483647) SUBPIECE f() 1
+(((f() / 2147483647) * 256) + 1) PIECE (f() / 2147483647) 1
+(f() / 2147483647) SUBPIECE f() 1
+0 INT_EQUAL f() -1
+ CBRANCH (f() INT_NOTEQUAL 0)
+1 COPY 1
+0 COPY 0
+ BRANCH VZERO
+0 COPY 0
+(f() / 2147483647) SUBPIECE f() 0
+ RETURN 1
+ CALL libcall_abort_thunk
+ CBRANCH ((1 & ([(Symbol + (([f(ARG2)] / 32) * 4))] >> ([f(ARG2)] & 31))) INT_EQUAL 0)
+[f(ARG2)] INT_SEXT [f(ARG2)]
+ CBRANCH (f(ARG2) INT_EQUAL 0)
+[f(ARG2)] LOAD 433 f(ARG2)
+0 INT_EQUAL f(ARG2) 0
+1 COPY 1
+1 COPY 1
+f() CALL libcall_mbsinit_thunk (RSP + -132)
+ CBRANCH (f() INT_NOTEQUAL 0)
+0 INT_NOTEQUAL f() 0
+f(ARG1) COPY f(ARG1)
+1 COPY 1
+[f(ARG2)] CAST [f(ARG2)]
+f(ARG1) MULTIEQUAL f(ARG1) f(ARG1)
+f(ARG2) MULTIEQUAL f(ARG2) f(ARG2)
+f() MULTIEQUAL f() f()
+f() CALL libcall_memcmp_thunk f(ARG1) f(ARG2) f()
+f() COPY f()
+f() COPY f()
+0 INT_EQUAL f() 0
+f() COPY f()
+(f() + 1) INT_ADD f() 1
+(f() + 1) COPY (f() + 1)
+f() COPY f()
+ CBRANCH ([(f(ARG1) + 1)] INT_EQUAL [(ARG2 + 1)])
+((~(f()) + 1) + f()) INT_ADD f() (~(f()) + 1)
+ BRANCH VZERO
+[(ARG2 + ((~(f()) + 1) + f()))] LOAD 433 (ARG2 + ((~(f()) + 1) + f()))
+(f(ARG1) + 1) PTRADD f(ARG1) 1 1
+(~(f()) + 1) INT_2COMP f()
+ CBRANCH ([(ARG2 + ((~(f()) + 1) + f()))] INT_EQUAL 0)
+f() COPY f()
+0 INT_LESS 9 f()
+0 INT_EQUAL [(ARG2 + ((~(f()) + 1) + f()))] 0
+ CBRANCH (f() INT_EQUAL -2)
+f(ARG1) CAST f(ARG1)
+(f(ARG1) & -256) INT_AND f(ARG1) -256
+f() CALL libcall_strlen_thunk f(ARG1)
+0 INT_EQUAL f() 0
+ BRANCH VZERO
+(1 & ([(Symbol + (([ARG2] / 32) * 4))] >> ([ARG2] & 31))) INT_AND ([(Symbol + (([ARG2] / 32) * 4))] >> ([ARG2] & 31)) 1
+0 COPY 0
+Symbol PTRSUB 0 CONST
+(([ARG2] / 32) * 4) INT_MULT ([ARG2] / 32) 4
+([ARG2] / 32) INT_RIGHT [ARG2] 5
+0 COPY 0
+(Symbol + (([ARG2] / 32) * 4)) CAST (Symbol + (([ARG2] / 32) * 4))
+([ARG2] / 32) INT_ZEXT ([ARG2] / 32)
+0 INT_EQUAL (1 & ([(Symbol + (([ARG2] / 32) * 4))] >> ([ARG2] & 31))) 0
+ CBRANCH ((1 & ([(Symbol + (([ARG2] / 32) * 4))] >> ([ARG2] & 31))) INT_EQUAL 0)
+[ARG2] INT_SEXT [ARG2]
+[(Symbol + (([ARG2] / 32) * 4))] LOAD 433 (Symbol + (([ARG2] / 32) * 4))
+([ARG2] & 31) INT_AND [ARG2] 31
+(Symbol + (([ARG2] / 32) * 4)) PTRADD Symbol (([ARG2] / 32) * 4) 1
+ CBRANCH ([ARG2] INT_NOTEQUAL 0)
+0 INT_NOTEQUAL [ARG2] 0
+0 COPY 0
+[ARG2] CAST [ARG2]
+([(Symbol + (([ARG2] / 32) * 4))] >> ([ARG2] & 31)) INT_RIGHT [(Symbol + (([ARG2] / 32) * 4))] ([ARG2] & 31)
+0 INT_NOTEQUAL f() 0
+(RSP + -388) PTRSUB RSP -388
+mbuiter.h COPY STR
+ RETURN 1
+1 COPY 1
+iter->cur.wc == 0 COPY STR
+0 COPY STR
+ CALL libcall___assert_fail_thunk iter->cur.wc == 0 mbuiter.h 179 0
+f() CALL libcall_mbsinit_thunk (RSP + -388)
+0 INT_EQUAL f(ARG2) 0
+1 COPY 1
+ CBRANCH (f() INT_EQUAL 0)
+0 INT_NOTEQUAL [f(ARG2)] 0
+f() CALL libcall_mbsinit_thunk (RSP + -132)
+1 COPY 1
+ CBRANCH (f() INT_NOTEQUAL 0)
+0 INT_NOTEQUAL f() 0
+[f(ARG2)] LOAD 433 f(ARG2)
+1 COPY 1
+0 INT_LESS f() (f() * 5)
+(f() * 5) INT_MULT f() 5
+f() COPY f()
+f() COPY f()
+(f() + 1) COPY (f() + 1)
+0 INT_NOTEQUAL f(ARG2) (f(ARG1) / 2147483647)
+ CBRANCH (f() INT_NOTEQUAL f())
+ CBRANCH f()
+f() COPY f()
+ BRANCH VZERO
+0 INT_NOTEQUAL f() f()
+(f() + 1) COPY (f() + 1)
+ CBRANCH (f() INT_EQUAL -1)
+ BRANCH VZERO
+0 INT_EQUAL f() -2
+(f(ARG1) / 2147483647) INT_ZEXT (f(ARG1) / 2147483647)
+((f(ARG1) / 2147483647) * 256) INT_LEFT (f(ARG1) / 2147483647) 8
+1 COPY 1
+(f() + 2) COPY (f() + 2)
+(f(ARG1) + 1) COPY (f(ARG1) + 1)
+0 INT_EQUAL [(f(ARG1) + 1)] [(ARG2 + 1)]
+(f() + 2) INT_ADD f() 2
+ CBRANCH ((1 & ([(Symbol + (([f(ARG2)] / 32) * 4))] >> ([f(ARG2)] & 31))) INT_EQUAL 0)
+1 COPY 1
+ CBRANCH (f() INT_NOTEQUAL 0)
+0 INT_NOTEQUAL f() 0
+[f(ARG2)] LOAD 433 f(ARG2)
+(RSP + -324) PTRSUB RSP -324
+f() CALL libcall_mbsinit_thunk (RSP + -324)
+[f(ARG2)] CAST [f(ARG2)]
+1 COPY 1
+1 COPY 1
+[f(ARG2)] INT_SEXT [f(ARG2)]
+ CBRANCH (f() INT_NOTEQUAL 0)
+0 COPY 0
+ BRANCH VZERO
+f(ARG2) CAST f(ARG2)
+ BRANCH VZERO
+f() CALL libcall_strlen_thunk f(ARG2)
+0 INT_EQUAL f() 0
+ CBRANCH (f() INT_NOTEQUAL -2)
+ BRANCH VZERO
+0 COPY 0
+ BRANCH VZERO
+ARG2 CAST ARG2
+ CBRANCH (f() INT_EQUAL 0)
+0 INT_EQUAL f() 0
+f() CALL libcall_strlen_thunk ARG2
+ CBRANCH f()
+(RSP + -292) PTRSUB RSP -292
+0 INT_EQUAL f() -1
+f() CALL libcall___ctype_get_mb_cur_max_thunk
+f(ARG2) INDIRECT f(ARG2) CONST
+f() CALL func f(ARG2) f()
+f(ARG2) COPY f(ARG2)
+f() CALL func (RSP + -292) f(ARG2) f()
+1 COPY 1
+0 COPY 0
+ BRANCH VZERO
+0 COPY 0
+ CBRANCH ((f() / 2147483647) INT_EQUAL 0)
+([(Symbol + (([f(ARG1)] / 32) * 4))] >> ([f(ARG1)] & 31)) INT_RIGHT [(Symbol + (([f(ARG1)] / 32) * 4))] ([f(ARG1)] & 31)
+([f(ARG1)] / 32) INT_RIGHT [f(ARG1)] 5
+(1 & ([(Symbol + (([f(ARG1)] / 32) * 4))] >> ([f(ARG1)] & 31))) INT_AND ([(Symbol + (([f(ARG1)] / 32) * 4))] >> ([f(ARG1)] & 31)) 1
+f(ARG1) COPY f(ARG1)
+0 INT_EQUAL f() -1
+f(ARG1) INDIRECT f(ARG1) CONST
+f() CALL libcall___ctype_get_mb_cur_max_thunk
+f() CALL func f(ARG1) f()
+(([f(ARG1)] / 32) * 4) INT_MULT ([f(ARG1)] / 32) 4
+0 INT_EQUAL (1 & ([(Symbol + (([f(ARG1)] / 32) * 4))] >> ([f(ARG1)] & 31))) 0
+(RSP + -164) INT_ADD (RSP + -168) 4
+(RSP + -196) PTRADD (RSP + -200) 4 1
+f() CALL func (RSP + -164) f(ARG1) f() (RSP + -196)
+([f(ARG1)] & 31) INT_AND [f(ARG1)] 31
+(f(ARG1) / 2147483647) SUBPIECE f(ARG1) 1
+([f(ARG1)] / 32) INT_ZEXT ([f(ARG1)] / 32)
+(RSP + -168) PTRSUB RSP -168
+[(Symbol + (([f(ARG1)] / 32) * 4))] LOAD 433 (Symbol + (([f(ARG1)] / 32) * 4))
+(Symbol + (([f(ARG1)] / 32) * 4)) PTRADD Symbol (([f(ARG1)] / 32) * 4) 1
+(Symbol + (([f(ARG1)] / 32) * 4)) CAST (Symbol + (([f(ARG1)] / 32) * 4))
+[f(ARG1)] LOAD 433 f(ARG1)
+Symbol PTRSUB 0 CONST
+(RSP + -168) CAST (RSP + -168)
+(RSP + -200) PTRSUB RSP -200
+ CBRANCH ~(f())
+(f() * 5) INT_MULT f() 5
+ CBRANCH (f() INT_LESS (f() * 5))
+0 INT_LESS f() (f() * 5)
+(f() + -1) INT_ADD f() -1
+0 COPY 0
+0 INT_EQUAL (f() + -1) 0
+(f(ARG2) + f()) PTRADD f(ARG2) f() 1
+ CBRANCH ((f() + -1) INT_EQUAL 0)
+ CBRANCH (f(ARG2) INT_NOTEQUAL 0)
+0 INT_NOTEQUAL f(ARG2) 0
+ CBRANCH ([f(ARG2)] INT_NOTEQUAL 0)
+ CBRANCH (f(ARG2) INT_NOTEQUAL 0)
+0 INT_NOTEQUAL f(ARG2) 0
+f() CALL libcall_mbsinit_thunk (RSP + -388)
+0 INT_EQUAL f() 0
+1 COPY 1
+1 COPY 1
+[ARG2] COPY [ARG2]
+(f() & -256) INT_AND f() -256
+ BRANCH VZERO
+0 INT_EQUAL [(ARG2 + 1)] 0
+[(ARG2 + 1)] LOAD 433 (ARG2 + 1)
+f(ARG1) COPY f(ARG1)
+[(f(ARG1) + 1)] LOAD 433 (f(ARG1) + 1)
+ CBRANCH ([(f(ARG1) + 1)] INT_NOTEQUAL 0)
+0 INT_NOTEQUAL [(f(ARG1) + 1)] 0
+0 INT_NOTEQUAL f() -2
+1 COPY 1
+0 INT_EQUAL f() -1
+([f(ARG2)] / 32) INT_ZEXT ([f(ARG2)] / 32)
+Symbol PTRSUB 0 CONST
+0 INT_EQUAL (1 & ([(Symbol + (([f(ARG2)] / 32) * 4))] >> ([f(ARG2)] & 31))) 0
+([f(ARG2)] & 31) INT_AND [f(ARG2)] 31
+f() CALL libcall___ctype_get_mb_cur_max_thunk
+[f(ARG2)] LOAD 433 f(ARG2)
+f(ARG2) INDIRECT f(ARG2) CONST
+f() CALL func f(ARG2) f()
+f(ARG2) COPY f(ARG2)
+f() CALL func (RSP + -100) f(ARG2) f() (RSP + -132)
+([f(ARG2)] / 32) INT_RIGHT [f(ARG2)] 5
+([(Symbol + (([f(ARG2)] / 32) * 4))] >> ([f(ARG2)] & 31)) INT_RIGHT [(Symbol + (([f(ARG2)] / 32) * 4))] ([f(ARG2)] & 31)
+(1 & ([(Symbol + (([f(ARG2)] / 32) * 4))] >> ([f(ARG2)] & 31))) INT_AND ([(Symbol + (([f(ARG2)] / 32) * 4))] >> ([f(ARG2)] & 31)) 1
+[(Symbol + (([f(ARG2)] / 32) * 4))] LOAD 433 (Symbol + (([f(ARG2)] / 32) * 4))
+(Symbol + (([f(ARG2)] / 32) * 4)) PTRADD Symbol (([f(ARG2)] / 32) * 4) 1
+(([f(ARG2)] / 32) * 4) INT_MULT ([f(ARG2)] / 32) 4
+(Symbol + (([f(ARG2)] / 32) * 4)) CAST (Symbol + (([f(ARG2)] / 32) * 4))
+ CBRANCH ([f(ARG1)] INT_NOTEQUAL 0)
+ CBRANCH (f(ARG1) INT_NOTEQUAL 0)
+0 INT_NOTEQUAL f(ARG1) 0
+ RETURN 0 f(ARG1)
+ RETURN 1
+ CALL libcall___stack_chk_fail_thunk
+ CBRANCH ((f(ARG1) / 2147483647) INT_EQUAL 0)
+(f(ARG1) / 2147483647) SUBPIECE f(ARG1) 4
+0 INT_EQUAL (f(ARG1) / 2147483647) 0
+ CBRANCH ([ARG1] INT_NOTEQUAL 0)
+0 COPY 0
+0 COPY 0
+0 COPY 0
+1 COPY 1
+0 COPY 0
+1 COPY 1
+f() COPY f()
+ BRANCH VZERO
+0 INT_EQUAL f() 0
+f() COPY f()
+(f() * 5) INT_MULT f() 5
+0 INT_LESSEQUAL (f() * 5) f()
+0 INT_EQUAL f() 0
+1 COPY 1
+[ARG2] LOAD 433 ARG2
+0 INT_NOTEQUAL [ARG2] 0
+0 INT_EQUAL f() 0
+1 COPY 1
+[ARG2] COPY [ARG2]
+1 COPY 1
+f() CALL libcall_mbsinit_thunk (RSP + -132)
+ CBRANCH (f() INT_EQUAL 0)
+1 COPY 1
+1 COPY 1
+(RSP + -324) PTRSUB RSP -324
+f() CALL libcall_mbsinit_thunk (RSP + -324)
+0 INT_NOTEQUAL f() 0
+f(ARG1) MULTIEQUAL f(ARG1) f(ARG1) f(ARG1)
+f(ARG2) MULTIEQUAL f(ARG2) f(ARG2) f(ARG2)
+f() MULTIEQUAL f() f() f()
+f() CALL libcall_memcmp_thunk f(ARG1) f(ARG2) f()
+0 INT_NOTEQUAL f() 0
+0 COPY 0
+ BRANCH VZERO
+0 INT_NOTEQUAL f() 0
+(RSP + -260) PTRSUB RSP -260
+(((f() / 2147483647) * 256) + 1) PIECE (f() / 2147483647) 1
+f() CALL libcall_mbsinit_thunk (RSP + -260)
+(Symbol + (([f(ARG1)] / 32) * 4)) PTRADD Symbol (([f(ARG1)] / 32) * 4) 1
+(([f(ARG1)] / 32) * 4) INT_MULT ([f(ARG1)] / 32) 4
+0 INT_EQUAL (1 & ([(Symbol + (([f(ARG1)] / 32) * 4))] >> ([f(ARG1)] & 31))) 0
+[f(ARG1)] LOAD 433 f(ARG1)
+Symbol PTRSUB 0 CONST
+([f(ARG1)] / 32) INT_ZEXT ([f(ARG1)] / 32)
+([f(ARG1)] & 31) INT_AND [f(ARG1)] 31
+(Symbol + (([f(ARG1)] / 32) * 4)) CAST (Symbol + (([f(ARG1)] / 32) * 4))
+([f(ARG1)] / 32) INT_RIGHT [f(ARG1)] 5
+([(Symbol + (([f(ARG1)] / 32) * 4))] >> ([f(ARG1)] & 31)) INT_RIGHT [(Symbol + (([f(ARG1)] / 32) * 4))] ([f(ARG1)] & 31)
+(1 & ([(Symbol + (([f(ARG1)] / 32) * 4))] >> ([f(ARG1)] & 31))) INT_AND ([(Symbol + (([f(ARG1)] / 32) * 4))] >> ([f(ARG1)] & 31)) 1
+[(Symbol + (([f(ARG1)] / 32) * 4))] LOAD 433 (Symbol + (([f(ARG1)] / 32) * 4))
+(f(ARG1) + 1) COPY (f(ARG1) + 1)
+(f() + 1) INT_ADD f() 1
+(f() + 1) COPY (f() + 1)
+0 INT_EQUAL f() -1
+f() CALL libcall___ctype_get_mb_cur_max_thunk
+(RSP + -100) PTRSUB RSP -100
+ARG2 INDIRECT ARG2 CONST
+f() CALL func ARG2 f()
+ARG2 COPY ARG2
+f() CALL func (RSP + -100) ARG2 f() (RSP + -132)
+1 COPY 1
+ CBRANCH (f() INT_EQUAL 0)
+[f(ARG1)] LOAD 433 f(ARG1)
+1 COPY 1
+0 INT_NOTEQUAL [f(ARG1)] 0
+(f(ARG1) + f()) PTRADD f(ARG1) f() 1
+(f(ARG2) + f()) PTRADD f(ARG2) f() 1
+(f() & -1095216660481) INT_AND f() CONST
+ BRANCH VZERO
+ CBRANCH (f(ARG2) INT_NOTEQUAL 0)
+0 INT_NOTEQUAL f(ARG2) 0
+0 INT_EQUAL [(f(ARG1) + ((~(f()) + 1) + f()))] 0
+[(f(ARG1) + ((~(f()) + 1) + f()))] LOAD 433 (f(ARG1) + ((~(f()) + 1) + f()))
+((~(f()) + 1) + f()) INT_ADD f() (~(f()) + 1)
+(f(ARG1) + ((~(f()) + 1) + f())) PTRADD f(ARG1) ((~(f()) + 1) + f()) 1
+ CBRANCH ([(f(ARG1) + ((~(f()) + 1) + f()))] INT_EQUAL 0)
+(f(ARG1) + 1) COPY (f(ARG1) + 1)
+ CBRANCH ([(ARG2 + ((~(f()) + 1) + f()))] INT_EQUAL [(f(ARG1) + ((~(f()) + 1) + f()))])
+0 INT_EQUAL [(ARG2 + ((~(f()) + 1) + f()))] [(f(ARG1) + ((~(f()) + 1) + f()))]
+(f() + 1) COPY (f() + 1)
+(f() + 1) INT_ADD f() 1
+0 INT_EQUAL f() 0
+f(ARG2) CAST f(ARG2)
+0 COPY 0
+f() CALL libcall_strlen_thunk f(ARG2)
+ CBRANCH (f() INT_EQUAL 0)
+ BRANCH VZERO
+ CBRANCH (f() INT_NOTEQUAL 0)
+0 INT_NOTEQUAL f() 0
+f(ARG1) CAST f(ARG1)
+f() CALL libcall_strlen_thunk f(ARG1)
+0 INT_EQUAL f() 0
+1 COPY 1
+[f(ARG2)] INT_SEXT [f(ARG2)]
+1 COPY 1
+[f(ARG2)] LOAD 433 f(ARG2)
+f() CALL libcall_mbsinit_thunk (RSP + -324)
+1 COPY 1
+0 INT_NOTEQUAL f() 0
+[f(ARG2)] CAST [f(ARG2)]
+ CBRANCH (f(ARG2) INT_NOTEQUAL 0)
+ CBRANCH (f() INT_LESS 10)
+~(f()) BOOL_NEGATE f()
+f() COPY f()
+[f(ARG2)] LOAD 433 f(ARG2)
+([f(ARG2)] / 32) INT_RIGHT [f(ARG2)] 5
+([(Symbol + (([f(ARG2)] / 32) * 4))] >> ([f(ARG2)] & 31)) INT_RIGHT [(Symbol + (([f(ARG2)] / 32) * 4))] ([f(ARG2)] & 31)
+(1 & ([(Symbol + (([f(ARG2)] / 32) * 4))] >> ([f(ARG2)] & 31))) INT_AND ([(Symbol + (([f(ARG2)] / 32) * 4))] >> ([f(ARG2)] & 31)) 1
+Symbol PTRSUB 0 CONST
+([f(ARG2)] & 31) INT_AND [f(ARG2)] 31
+[(Symbol + (([f(ARG2)] / 32) * 4))] LOAD 433 (Symbol + (([f(ARG2)] / 32) * 4))
+(Symbol + (([f(ARG2)] / 32) * 4)) CAST (Symbol + (([f(ARG2)] / 32) * 4))
+(Symbol + (([f(ARG2)] / 32) * 4)) PTRADD Symbol (([f(ARG2)] / 32) * 4) 1
+(([f(ARG2)] / 32) * 4) INT_MULT ([f(ARG2)] / 32) 4
+([f(ARG2)] / 32) INT_ZEXT ([f(ARG2)] / 32)
+0 INT_EQUAL (1 & ([(Symbol + (([f(ARG2)] / 32) * 4))] >> ([f(ARG2)] & 31))) 0
+0 INT_NOTEQUAL [ARG1] 0
+0 COPY 0
+ BRANCH VZERO
+(f(ARG1) / 2147483647) SUBPIECE f(ARG1) 0
+(f() / 2147483647) SUBPIECE f() 0
+0 INT_EQUAL (f(ARG1) / 2147483647) 0
+0 INT_EQUAL (f() / 2147483647) 0
+0 INT_LESS f() 10
+f() COPY f()
+1 COPY 1
+(f() / 2147483647) SUBPIECE f() 1
+(((f() / 2147483647) * 256) + 1) PIECE (f() / 2147483647) 1
+[f(ARG2)] LOAD 433 f(ARG2)
+1 COPY 1
+0 INT_NOTEQUAL [f(ARG2)] 0
+0 INT_NOTEQUAL f(ARG2) 0
+0 INT_EQUAL ARG1 0
+[(f() + 40)] LOAD 433 (f() + 40)
+0 COPY 0
+ CBRANCH (f() INT_EQUAL 0)
+ CBRANCH (0 INT_EQUAL [(f() + 40)])
+8192 COPY CONST
+0 INT_EQUAL f() 0
+[(FS_OFFSET + 40)] LOAD 433 (FS_OFFSET + 40)
+(f() + 40) INT_ADD f() 40
+(f() + 40) CAST (f() + 40)
+0 INT_EQUAL 0 [(f() + 40)]
+(RSP + -200) PTRSUB RSP -200
+(FS_OFFSET + 40) CAST (FS_OFFSET + 40)
+Symbol PTRSUB 0 CONST
+f() CALL libcall_sigaltstack_thunk (RSP + -200) 0
+(FS_OFFSET + 40) INT_ADD 0 40
+stack overflow COPY STR
+Symbol PTRSUB 0 CONST
+f() CALL libcall_dcgettext_thunk 0 stack overflow 5
+(RSP + -168) CAST (RSP + -168)
+(RSP + -168) PTRSUB RSP -168
+program error COPY STR
+f() CALL libcall_dcgettext_thunk 0 program error 5
+(RSP + -160) CAST (RSP + -160)
+ CALL libcall_sigemptyset_thunk (RSP + -160)
+ CBRANCH (ARG1 INT_EQUAL 0)
+3355443204 COPY CONST
+4205456 PTRSUB 0 CONST
+ CALL libcall_sigaction_thunk 11 (RSP + -168) 0
+f(ARG1) COPY f(ARG1)
+(RSP + -168) PTRSUB RSP -168
+(RSP + -160) PTRADD (RSP + -168) 8 1
+f() COPY f()
+f(ARG1) COPY f(ARG1)
+f() COPY f()
+f() COPY f()
+ RETURN 1
+f() COPY f()
+ CALL libcall___stack_chk_fail_thunk
+f(ARG1) COPY f(ARG1)
+ RETURN 0
+ CALL func
+[40] LOAD 433 40
+40 INT_ADD 0 40
+0 INT_EQUAL [(FS_OFFSET + 40)] [40]
+40 CAST 40
+(FS_OFFSET + 40) CAST (FS_OFFSET + 40)
+(FS_OFFSET + 40) INT_ADD 0 40
+[(FS_OFFSET + 40)] LOAD 433 (FS_OFFSET + 40)
+ CBRANCH ([(FS_OFFSET + 40)] INT_EQUAL [40])
+ CALL libcall___stack_chk_fail_thunk
+ RETURN 0
+ RETURN 1
+f() CALL func
+0 INT_EQUAL f() 0
+ CBRANCH (f() INT_EQUAL 0)
+ CBRANCH ([f()] INT_EQUAL 12)
+ RETURN 1
+ CALL func
+ RETURN 0 f()
+f() COPY f()
+[f()] LOAD 433 f()
+0 INT_EQUAL [f()] 12
+f() CALL libcall___errno_location_thunk
+ CALLIND [((f() * 8) + 6331920)] ARG1 ARG2 ARG3
+0 COPY 0
+ CBRANCH ((f() + 1) INT_NOTEQUAL 1)
+0 INT_NOTEQUAL (f() + 1) 1
+[((f() * 8) + 6331920)] LOAD 433 ((f() * 8) + 6331920)
+ RETURN 0
+6331920 PTRSUB 0 CONST
+((f() * 8) + 6331920) PTRADD 6331920 f() 8
+[((f() * 8) + 6331920)] CAST [((f() * 8) + 6331920)]
+(f() + 1) INT_ADD f() 1
+ CALL libcall__DT_INIT
+f() CALL func ARG2 2
+(FS_OFFSET + 40) INT_ADD 0 40
+[(FS_OFFSET + 40)] LOAD 433 (FS_OFFSET + 40)
+(RSP + -164) PTRSUB RSP -164
+f() CAST f()
+(RSP + -100) PTRSUB RSP -100
+ CBRANCH ([f(ARG1)] INT_NOTEQUAL 0)
+[f(ARG1)] LOAD 433 f(ARG1)
+(FS_OFFSET + 40) CAST (FS_OFFSET + 40)
+0 INT_NOTEQUAL [f(ARG1)] 0
+ CBRANCH (([([f()] + (f() * 2))] & 8) INT_EQUAL 0)
+ CBRANCH (f() INT_NOTEQUAL 0)
+0 INT_NOTEQUAL f() 0
+[f()] LOAD 433 f()
+ CBRANCH ([f()] INT_EQUAL 0)
+0 INT_EQUAL [f()] 0
+ CBRANCH f()
+f() COPY f()
+f() INDIRECT f() CONST
+f() CALL libcall___ctype_get_mb_cur_max_thunk
+f() CALL func f() f()
+(RSP + -196) PTRSUB RSP -196
+f() CALL func (RSP + -164) f() f() (RSP + -196)
+Symbol PTRSUB 0 CONST
+([f()] / 32) INT_ZEXT ([f()] / 32)
+([f()] / 32) INT_RIGHT [f()] 5
+([(Symbol + (([f()] / 32) * 4))] >> ([f()] & 31)) INT_RIGHT [(Symbol + (([f()] / 32) * 4))] ([f()] & 31)
+ CBRANCH (f() INT_EQUAL -1)
+(Symbol + (([f()] / 32) * 4)) CAST (Symbol + (([f()] / 32) * 4))
+(1 & ([(Symbol + (([f()] / 32) * 4))] >> ([f()] & 31))) INT_AND ([(Symbol + (([f()] / 32) * 4))] >> ([f()] & 31)) 1
+[(Symbol + (([f()] / 32) * 4))] LOAD 433 (Symbol + (([f()] / 32) * 4))
+(Symbol + (([f()] / 32) * 4)) PTRADD Symbol (([f()] / 32) * 4) 1
+0 INT_EQUAL f() -1
+(([f()] / 32) * 4) INT_MULT ([f()] / 32) 4
+([f()] & 31) INT_AND [f()] 31
+0 INT_EQUAL (1 & ([(Symbol + (([f()] / 32) * 4))] >> ([f()] & 31))) 0
+ CBRANCH ((1 & ([(Symbol + (([f()] / 32) * 4))] >> ([f()] & 31))) INT_EQUAL 0)
+[f()] LOAD 433 f()
+ CBRANCH ([(f() + f())] INT_EQUAL 0)
+ BRANCH VZERO
+(f() + 40) INT_ADD f() 40
+f() COPY f()
+ CALL libcall_free_thunk f()
+1 COPY 1
+0 INT_EQUAL f() [(f() + 40)]
+0 INT_EQUAL ([([f()] + (f() * 2))] & 8) 0
+f() INT_ZEXT f()
+([f()] + (f() * 2)) PTRADD [f()] f() 2
+1 COPY 1
+(f() + 40) CAST (f() + 40)
+[(f() + 40)] LOAD 433 (f() + 40)
+[(f() + f())] LOAD 433 (f() + f())
+[([f()] + (f() * 2))] LOAD 433 ([f()] + (f() * 2))
+([f()] + (f() * 2)) CAST ([f()] + (f() * 2))
+(f() + f()) PTRADD f() f() 1
+([([f()] + (f() * 2))] & 8) INT_AND [([f()] + (f() * 2))] 8
+[f()] LOAD 433 f()
+ CBRANCH (f() INT_EQUAL [(f() + 40)])
+f() CALL libcall___ctype_b_loc_thunk
+ CBRANCH (f() INT_EQUAL -1)
+ CBRANCH (f() INT_NOTEQUAL -2)
+0 COPY 0
+0 INT_NOTEQUAL f() -2
+(f(ARG1) + f()) PTRADD f(ARG1) f() 1
+0 INT_LESS (f(ARG1) + f()) f()
+ BRANCH VZERO
+0 COPY 0
+ CBRANCH ((f(ARG1) + f()) INT_LESS f())
+f(ARG1) COPY f(ARG1)
+1 COPY 1
+ CBRANCH (f() INT_NOTEQUAL 0)
+iter->cur.wc == 0 COPY STR
+mbuiter.h COPY STR
+0 COPY STR
+ CALL libcall___assert_fail_thunk iter->cur.wc == 0 mbuiter.h 179 0
+ CBRANCH (f() INT_EQUAL 0)
+0 INT_EQUAL f() 0
+(RSP + -132) PTRSUB RSP -132
+f() CALL libcall_mbsinit_thunk (RSP + -132)
+f() COPY f()
+1 COPY 1
+ CBRANCH (f() INT_NOTEQUAL 0)
+0 INT_NOTEQUAL f() 0
+1 COPY 1
+ RETURN 1
+ CBRANCH (f(ARG1) INT_EQUAL 0)
+ CALL libcall_abort_thunk
+ RETURN 1
+ CBRANCH ([f()] INT_NOTEQUAL 0)
+ RETURN 1
+ CBRANCH (f(ARG1) INT_NOTEQUAL 0)
+0 COPY STR
+0 INT_NOTEQUAL f(ARG1) 0
+*iter->cur.ptr == '\0' COPY STR
+mbuiter.h COPY STR
+ CALL libcall___assert_fail_thunk *iter->cur.ptr == '\0' mbuiter.h 178 0
+ CBRANCH ([(f() + 1)] INT_EQUAL 0)
+[(f() + 1)] LOAD 433 (f() + 1)
+0 INT_EQUAL [(f() + 1)] 0
+0 COPY 0
+(f() + 1) PTRADD f() 1 1
+ CBRANCH (f(ARG1) INT_NOTEQUAL 0)
+1 COPY 1
+(RSP + -196) PTRSUB RSP -196
+f() CALL libcall_mbsinit_thunk (RSP + -196)
+ CBRANCH (f() INT_EQUAL 0)
+0 INT_EQUAL f() 0
+ CBRANCH ((1 & ([(Symbol + (([f()] / 32) * 4))] >> ([f()] & 31))) INT_EQUAL 0)
+[f()] LOAD 433 f()
+[f()] CAST [f()]
+1 COPY 1
+(RSP + -196) PTRSUB RSP -196
+f() CALL libcall_mbsinit_thunk (RSP + -196)
+1 COPY 1
+ CBRANCH (f(ARG1) INT_EQUAL 0)
+0 INT_EQUAL f(ARG1) 0
+f() COPY f()
+[f()] INT_SEXT [f()]
+f() COPY f()
+ CBRANCH (f() INT_EQUAL 0)
+0 INT_EQUAL f() 0
+1 COPY 1
+ CBRANCH ([f()] INT_NOTEQUAL 0)
+ CBRANCH (f(ARG1) INT_NOTEQUAL 0)
+0 INT_NOTEQUAL f(ARG1) 0
+ CBRANCH (f() INT_EQUAL 0)
+[f()] LOAD 433 f()
+1 COPY 1
+1 COPY 1
+(RSP + -196) PTRSUB RSP -196
+ CALL libcall_mbsinit_thunk (RSP + -196)
+1 COPY 1
+f(ARG1) COPY f(ARG1)
+1 COPY 1
+0 INT_NOTEQUAL [f()] 0
+f() COPY f()
+ CBRANCH (f() INT_NOTEQUAL 0)
+0 INT_NOTEQUAL f() 0
+1 COPY 1
+ CBRANCH (f() INT_NOTEQUAL 0)
+0 INT_NOTEQUAL f() 0
+0 INT_NOTEQUAL f() 0
+1 COPY 1
+f() COPY f()
+[f()] LOAD 433 f()
+[f()] CAST [f()]
+f() CALL libcall_mbsinit_thunk (RSP + -196)
+1 COPY 1
+ CBRANCH (f() INT_NOTEQUAL 0)
+[f()] INT_SEXT [f()]
+1 COPY 1
+ CBRANCH (f() INT_EQUAL 0)
+ BRANCH VZERO
+0 COPY 0
+f(ARG1) COPY f(ARG1)
+ CBRANCH (f() INT_NOTEQUAL 0)
+mbsinit (&iter->state) COPY STR
+mbuiter.h COPY STR
+ RETURN 1
+0 INT_EQUAL f() -1
+f() CALL libcall___ctype_get_mb_cur_max_thunk
+(RSP + -196) PTRSUB RSP -196
+0 COPY STR
+ CALL libcall___assert_fail_thunk mbsinit (&iter->state) mbuiter.h 150 0
+f() INDIRECT f() 885
+f() CALL func f() f()
+f(ARG1) COPY f(ARG1)
+f() COPY f()
+f() CALL func (RSP + -164) f() f() (RSP + -196)
+ CBRANCH (f() INT_EQUAL -1)
+f(ARG1) COPY f(ARG1)
+f() COPY f()
+f() COPY f()
+f() COPY f()
+ CBRANCH (f() INT_EQUAL 0)
+ CBRANCH (f() INT_EQUAL 0)
+0 INT_EQUAL f() 0
+1 COPY 1
+0 INT_EQUAL f() 0
+ CBRANCH (f() INT_NOTEQUAL 0)
+ BRANCH VZERO
+f(ARG1) MULTIEQUAL f(ARG1) f(ARG1) f(ARG1)
+f() CALL libcall_iswalnum_thunk f(ARG1)
+0 INT_EQUAL f() 0
+1 COPY 1
+0 INT_EQUAL f(ARG1) 0
+1 COPY 1
+1 COPY 1
+ CBRANCH ((1 & ([(Symbol + (([f(ARG1)] / 32) * 4))] >> ([f(ARG1)] & 31))) INT_EQUAL 0)
+1 COPY 1
+[f(ARG1)] COPY [f(ARG1)]
+1 COPY 1
+[f(ARG1)] CAST [f(ARG1)]
+[f(ARG1)] INT_SEXT [f(ARG1)]
+[f(ARG1)] LOAD 433 f(ARG1)
+f() CALL libcall_mbsinit_thunk (RSP + -196)
+ CBRANCH (f() INT_NOTEQUAL 0)
+0 INT_NOTEQUAL f() 0
+ CBRANCH (f(ARG1) INT_EQUAL 0)
+ CBRANCH f()
+ CBRANCH (f() INT_EQUAL 0)
+0 INT_EQUAL f() 0
+f(ARG1) COPY f(ARG1)
+0 COPY 0
+f(ARG1) CAST f(ARG1)
+f() CALL libcall_strlen_thunk f(ARG1)
+ BRANCH VZERO
+ CBRANCH (f() INT_EQUAL 0)
+f(ARG1) COPY f(ARG1)
+0 INT_EQUAL f() 0
+ CBRANCH (f() INT_EQUAL 0)
+ BRANCH VZERO
+f() INDIRECT f() CONST
+f() CALL libcall___ctype_get_mb_cur_max_thunk
+f() CALL func f() f()
+f() COPY f()
+f() CALL func (RSP + -100) f() f() (RSP + -132)
+1 COPY 1
+ CBRANCH (f() INT_EQUAL -1)
+0 INT_EQUAL f() -1
+(RSP + -196) PTRSUB RSP -196
+1 COPY 1
+ CALL libcall_mbsinit_thunk (RSP + -196)
+ CBRANCH (f() INT_EQUAL 0)
+f() CAST f()
+f(ARG1) MULTIEQUAL f(ARG1) (f() + 1)
+f() CALL func f(ARG1) f()
+0 INT_EQUAL f() 0
+0 INT_EQUAL f() -2
+1 COPY 1
+0 COPY 0
+ CBRANCH (f() INT_EQUAL -2)
+ CBRANCH (f(ARG1) INT_LESS f())
+([f()] / 32) INT_ZEXT ([f()] / 32)
+([f()] & 31) INT_AND [f()] 31
+0 COPY 0
+0 COPY 0
+[(Symbol + (([f()] / 32) * 4))] LOAD 433 (Symbol + (([f()] / 32) * 4))
+0 COPY 0
+(Symbol + (([f()] / 32) * 4)) PTRADD Symbol (([f()] / 32) * 4) 1
+ CBRANCH f()
+0 COPY 0
+[f()] LOAD 433 f()
+0 COPY 0
+0 COPY 0
+f() COPY f()
+([f()] / 32) INT_RIGHT [f()] 5
+([(Symbol + (([f()] / 32) * 4))] >> ([f()] & 31)) INT_RIGHT [(Symbol + (([f()] / 32) * 4))] ([f()] & 31)
+(1 & ([(Symbol + (([f()] / 32) * 4))] >> ([f()] & 31))) INT_AND ([(Symbol + (([f()] / 32) * 4))] >> ([f()] & 31)) 1
+f() COPY f()
+(([f()] / 32) * 4) INT_MULT ([f()] / 32) 4
+Symbol PTRSUB 0 CONST
+0 COPY 0
+0 INT_NOTEQUAL (1 & ([(Symbol + (([f()] / 32) * 4))] >> ([f()] & 31))) 0
+ CBRANCH ((1 & ([(Symbol + (([f()] / 32) * 4))] >> ([f()] & 31))) INT_NOTEQUAL 0)
+(Symbol + (([f()] / 32) * 4)) CAST (Symbol + (([f()] / 32) * 4))
+ CBRANCH ([f()] INT_NOTEQUAL 0)
+0 INT_NOTEQUAL f(ARG1) 0
+ CBRANCH (f(ARG1) INT_NOTEQUAL 0)
+0 INT_EQUAL f(ARG1) 0
+ CBRANCH ((1 & ([(Symbol + (([f()] / 32) * 4))] >> ([f()] & 31))) INT_EQUAL 0)
+[f()] INT_SEXT [f()]
+1 COPY 1
+(RSP + -196) PTRSUB RSP -196
+f() CALL libcall_mbsinit_thunk (RSP + -196)
+[f()] CAST [f()]
+[f()] LOAD 433 f()
+[f()] COPY [f()]
+0 INT_NOTEQUAL f() 0
+1 COPY 1
+1 COPY 1
+ CBRANCH (f(ARG1) INT_LESS f())
+f() CAST f()
+([f()] + ([(f() + -1)] * 2)) PTRADD [f()] [(f() + -1)] 2
+[([f()] + ([(f() + -1)] * 2))] LOAD 433 ([f()] + ([(f() + -1)] * 2))
+0 INT_EQUAL [(f() + f())] 0
+[(f() + -1)] INT_ZEXT [(f() + -1)]
+([([f()] + ([(f() + -1)] * 2))] / 8) INT_RIGHT [([f()] + ([(f() + -1)] * 2))] 3
+([([f()] + ([(f() + -1)] * 2))] / 17179869176) SUBPIECE ([([f()] + ([(f() + -1)] * 2))] / 8) 0
+[f()] LOAD 433 f()
+0 INT_AND 0 1
+f() CAST f()
+f() CALL libcall_strlen_thunk f()
+ CBRANCH ([(f() + f())] INT_NOTEQUAL 0)
+0 INT_NOTEQUAL [(f() + f())] 0
+[(f() + -1)] LOAD 433 (f() + -1)
+[(f() + f())] LOAD 433 (f() + f())
+(f() + -1) PTRADD f() -1 1
+f() CALL libcall___ctype_b_loc_thunk
+(f() + f()) PTRADD f() f() 1
+0 INT_XOR ([([f()] + ([(f() + -1)] * 2))] / 17179869176) 1
+f() CALL libcall_strlen_thunk f()
+1 COPY 1
+0 COPY 0
+ CBRANCH (f() INT_EQUAL -2)
+0 INT_EQUAL f() -2
+ BRANCH VZERO
+ CBRANCH (f() INT_EQUAL -2)
+ BRANCH VZERO
+f() CAST f()
+f() CALL libcall_strlen_thunk f()
+ CBRANCH (f() INT_EQUAL 0)
+(f() + f()) PTRADD f() f() 1
+0 INT_EQUAL f() 0
+ CBRANCH (f(ARG1) INT_EQUAL 0)
+(f() + f()) PTRADD f() f() 1
+0 COPY 0
+ CBRANCH (f() INT_NOTEQUAL 0)
+0 COPY 0
+0 INT_NOTEQUAL f() 0
+(f() + f()) PTRADD f() f() 1
+ CBRANCH (f() INT_EQUAL 0)
+1 COPY 1
+[f()] LOAD 433 f()
+ CBRANCH ([f()] INT_NOTEQUAL 0)
+0 INT_NOTEQUAL [f()] 0
+ CBRANCH f()
+(f() + f()) PTRADD f() f() 1
+ BRANCH VZERO
+ CBRANCH (1 INT_LESS f())
+f() CALL libcall___ctype_get_mb_cur_max_thunk
+0 INT_LESS 1 f()
+[(Symbol + (([f(ARG1)] / 32) * 4))] LOAD 433 (Symbol + (([f(ARG1)] / 32) * 4))
+Symbol PTRSUB 0 CONST
+(Symbol + (([f(ARG1)] / 32) * 4)) PTRADD Symbol (([f(ARG1)] / 32) * 4) 1
+(([f(ARG1)] / 32) * 4) INT_MULT ([f(ARG1)] / 32) 4
+f(ARG1) COPY f(ARG1)
+0 INT_EQUAL (1 & ([(Symbol + (([f(ARG1)] / 32) * 4))] >> ([f(ARG1)] & 31))) 0
+f(ARG1) COPY f(ARG1)
+f() CALL libcall___ctype_get_mb_cur_max_thunk
+f(ARG1) COPY f(ARG1)
+0 INT_EQUAL f() -1
+[f(ARG1)] LOAD 433 f(ARG1)
+(Symbol + (([f(ARG1)] / 32) * 4)) CAST (Symbol + (([f(ARG1)] / 32) * 4))
+f(ARG1) INDIRECT f(ARG1) CONST
+f() CALL func f(ARG1) f()
+([f(ARG1)] / 32) INT_RIGHT [f(ARG1)] 5
+([f(ARG1)] & 31) INT_AND [f(ARG1)] 31
+([(Symbol + (([f(ARG1)] / 32) * 4))] >> ([f(ARG1)] & 31)) INT_RIGHT [(Symbol + (([f(ARG1)] / 32) * 4))] ([f(ARG1)] & 31)
+(1 & ([(Symbol + (([f(ARG1)] / 32) * 4))] >> ([f(ARG1)] & 31))) INT_AND ([(Symbol + (([f(ARG1)] / 32) * 4))] >> ([f(ARG1)] & 31)) 1
+f() CALL func (RSP + -164) f(ARG1) f() (RSP + -196)
+([f(ARG1)] / 32) INT_ZEXT ([f(ARG1)] / 32)
+0 INT_EQUAL f() 0
+f(ARG1) MULTIEQUAL f(ARG1) f(ARG1)
+f() CALL libcall_iswalnum_thunk f(ARG1)
+ CBRANCH (f() INT_EQUAL 0)
+0 INT_EQUAL f(ARG1) 0
+ CBRANCH (f() INT_EQUAL -1)
+0 INT_EQUAL f() -2
+ BRANCH VZERO
+1 COPY 1
+(f() + 1) PTRADD f() 1 1
+0 COPY 0
+ BRANCH VZERO
+[f(ARG1)] LOAD 433 f(ARG1)
+1 COPY 1
+f(ARG1) COPY f(ARG1)
+0 INT_NOTEQUAL [f(ARG1)] 0
+f() CALL libcall_mbsinit_thunk (RSP + -196)
+0 INT_EQUAL f() 0
+1 COPY 1
+ CBRANCH ([f(ARG1)] INT_NOTEQUAL 0)
+ CALL libcall___stack_chk_fail_thunk
+ RETURN 0 f()
+ RETURN 1
+ BRANCH VZERO
+f() CAST f()
+f() CALL libcall_strlen_thunk f()
+0 INT_EQUAL f() 0
+1 COPY 1
+ BRANCH VZERO
+f() CALL libcall_mbsinit_thunk (RSP + -196)
+1 COPY 1
+ CBRANCH (f() INT_NOTEQUAL 0)
+0 INT_NOTEQUAL f() 0
+1 COPY 1
+0 INT_NOTEQUAL f() 0
+ CBRANCH (f() INT_EQUAL 0)
+[f()] LOAD 433 f()
+1 COPY 1
+0 INT_NOTEQUAL [f()] 0
+1 COPY 1
+([(Symbol + (([f()] / 32) * 4))] >> ([f()] & 31)) INT_RIGHT [(Symbol + (([f()] / 32) * 4))] ([f()] & 31)
+([f()] / 32) INT_ZEXT ([f()] / 32)
+([f()] / 32) INT_RIGHT [f()] 5
+(1 & ([(Symbol + (([f()] / 32) * 4))] >> ([f()] & 31))) INT_AND ([(Symbol + (([f()] / 32) * 4))] >> ([f()] & 31)) 1
+0 COPY 0
+([f()] & 31) INT_AND [f()] 31
+(([f()] / 32) * 4) INT_MULT ([f()] / 32) 4
+0 INT_EQUAL (1 & ([(Symbol + (([f()] / 32) * 4))] >> ([f()] & 31))) 0
+[(Symbol + (([f()] / 32) * 4))] LOAD 433 (Symbol + (([f()] / 32) * 4))
+(Symbol + (([f()] / 32) * 4)) PTRADD Symbol (([f()] / 32) * 4) 1
+[f()] LOAD 433 f()
+Symbol PTRSUB 0 CONST
+0 COPY 0
+(Symbol + (([f()] / 32) * 4)) CAST (Symbol + (([f()] / 32) * 4))
+ CBRANCH (f() INT_EQUAL -2)
+0 COPY 0
+f() CAST f()
+f() CALL libcall_strlen_thunk f()
+f(ARG1) COPY f(ARG1)
+0 INT_EQUAL f() 0
+ BRANCH VZERO
+0 INT_NOTEQUAL f(ARG1) 0
+0 INT_EQUAL (1 & ([(Symbol + (([f()] / 32) * 4))] >> ([f()] & 31))) 0
+Symbol PTRSUB 0 CONST
+[f()] LOAD 433 f()
+(Symbol + (([f()] / 32) * 4)) CAST (Symbol + (([f()] / 32) * 4))
+([f()] / 32) INT_ZEXT ([f()] / 32)
+([(Symbol + (([f()] / 32) * 4))] >> ([f()] & 31)) INT_RIGHT [(Symbol + (([f()] / 32) * 4))] ([f()] & 31)
+([f()] / 32) INT_RIGHT [f()] 5
+(1 & ([(Symbol + (([f()] / 32) * 4))] >> ([f()] & 31))) INT_AND ([(Symbol + (([f()] / 32) * 4))] >> ([f()] & 31)) 1
+([f()] & 31) INT_AND [f()] 31
+[(Symbol + (([f()] / 32) * 4))] LOAD 433 (Symbol + (([f()] / 32) * 4))
+(Symbol + (([f()] / 32) * 4)) PTRADD Symbol (([f()] / 32) * 4) 1
+(([f()] / 32) * 4) INT_MULT ([f()] / 32) 4
+ BRANCH VZERO
+0 COPY 0
+1 COPY 1
+[f()] LOAD 433 f()
+0 INT_NOTEQUAL [f()] 0
+0 INT_LESS f(ARG1) f()
+0 INT_LESS f(ARG1) f()
+0 COPY 0
+0 COPY 0
+f(ARG1) COPY f(ARG1)
+1 COPY 1
+f() CALL libcall_mbsinit_thunk (RSP + -132)
+0 INT_EQUAL f() 0
+[f()] INT_SEXT [f()]
+[f()] LOAD 433 f()
+1 COPY 1
+[f()] CAST [f()]
+f() COPY f()
+f() INDIRECT f() 687
+f() CALL libcall___ctype_get_mb_cur_max_thunk
+f() CALL func f() f()
+f() CALL func (RSP + -164) f() f()
+0 INT_EQUAL f() -1
+ BRANCH VZERO
+0 COPY 0
+0 INT_EQUAL f() 0
+f() CAST f()
+f() CALL libcall_strlen_thunk f()
+0 INT_NOTEQUAL f() 0
+1 COPY 1
+ BRANCH VZERO
+0 INT_EQUAL f() -2
+0 COPY 0
+f() CAST f()
+f() CALL libcall_strcmp_thunk f() ARG1
+f() CALL func f() ARG1
+ARG1 COPY ARG1
+f() CALL libcall_dcgettext_thunk 0 ARG1 5
+f() CALL libcall_strcmp_thunk f() ARG1
+f() CALL func f() ARG1
+ARG2 COPY ARG2
+ARG2 COPY ARG2
+UTF-8 COPY STR
+f() CAST f()
+f() CALL func ARG2 UTF-8 f()
+0 INT_EQUAL ARG2 0
+UTF-8 COPY STR
+f() CAST f()
+f() CALL libcall_strlen_thunk f()
+f() CALL libcall_memcpy_thunk f() f() f()
+f() CALL func ARG2 UTF-8 f()
+f() CALL func
+UTF-8 COPY STR
+f() COPY f()
+ CBRANCH (f() INT_EQUAL 0)
+f() CALL func f() UTF-8
+0 INT_EQUAL f() 0
+ CBRANCH (f() INT_EQUAL 0)
+ BRANCH VZERO
+0 INT_EQUAL f() 0
+ CBRANCH (f() INT_EQUAL 0)
+0 INT_EQUAL f() 0
+0 COPY 0
+f() COPY f()
+f(ARG1 , ARG2) COPY f(ARG1 , ARG2)
+ CBRANCH (f() INT_EQUAL 0)
+ CBRANCH (f() INT_NOTEQUAL 0)
+f() MULTIEQUAL f() f()
+ CALL libcall_free_thunk f()
+ CBRANCH (f() INT_EQUAL 0)
+0 INT_NOTEQUAL f() 0
+((f() + 4) + f()) INT_ADD (f() + 4) f()
+f() COPY f()
+(f() + 4) INT_ADD f() 4
+ CBRANCH (f() INT_EQUAL 0)
+f() CALL func ((f() + 4) + f())
+f() CALL libcall_strlen_thunk f()
+0 INT_EQUAL f() 0
+%s (%s) COPY STR
+f() CAST f()
+f() COPY f()
+f(ARG1 , ARG2) MULTIEQUAL f(ARG1 , ARG2) f()
+ CALL libcall___sprintf_chk_thunk f() 1 -1 %s (%s) f() f(ARG1 , ARG2)
+f() CALL libcall_strlen_thunk f(ARG1 , ARG2)
+f() COPY f()
+ CBRANCH (f(ARG2) INT_EQUAL 0)
+0 INT_EQUAL f() 0
+f(ARG2) MULTIEQUAL f(ARG2) f()
+f() CALL func f() f(ARG2)
+f() COPY f()
+f() MULTIEQUAL f() f()
+ CALL libcall_free_thunk f()
+f() COPY f()
+ CBRANCH (f() INT_NOTEQUAL 0)
+f() MULTIEQUAL f() f() f() f()
+ CALL libcall_free_thunk f()
+ CBRANCH (f() INT_EQUAL f())
+f() COPY f()
+ RETURN 0 f()
+f() COPY f()
+ RETURN 0 f()
+ RETURN 0 f()
+f() CAST f()
+ CALL libcall_free_thunk f()
+((f() + f()) + 10) INT_ADD (f() + f()) 10
+f() COPY f()
+(f() + f()) CAST (f() + f())
+f() COPY f()
+f() CAST f()
+ STORE 433 ((f() + f()) + 10) 0
+ CBRANCH (f() INT_EQUAL 0)
+0 INT_EQUAL f() 0
+ STORE 433 ((f() + f()) + 8) CONST
+((f() + f()) + 10) CAST ((f() + f()) + 10)
+(f() + 11) INT_ADD f() 11
+f() CALL func (f() + 11)
+(f() + f()) CAST (f() + f())
+ CALL libcall_free_thunk f()
+((f() + f()) + 8) PTRADD (f() + f()) 1 8
+((f() + f()) + 8) CAST ((f() + f()) + 8)
+ STORE 433 (f() + f()) CONST
+ CBRANCH (ARG2 INT_EQUAL 0)
+(f() + f()) INT_ADD f() f()
+f() CAST f()
+ CBRANCH (f() INT_EQUAL 0)
+ CBRANCH (f(ARG2) INT_EQUAL 0)
+0 INT_EQUAL f(ARG2) 0
+f(ARG2) COPY f(ARG2)
+f() COPY f()
+0 INT_EQUAL f() 0
+0 INT_NOTEQUAL f() 0
+f() COPY f()
+f() COPY f()
+ RETURN 0 f(ARG1 , ARG2)
+f(ARG1 , ARG2) COPY f(ARG1 , ARG2)
+ CBRANCH (f() INT_EQUAL 0)
+ CBRANCH (f() INT_NOTEQUAL 0)
+f() COPY f()
+0 INT_EQUAL f() 0
+ CALL libcall_free_thunk f()
+ CBRANCH (f() INT_EQUAL 0)
+0 INT_EQUAL f() 0
+ CBRANCH (f() INT_EQUAL 0)
+0 INT_EQUAL f(ARG2) 0
+f() CALL libcall_strchr_thunk f() 63
+0 INT_NOTEQUAL f() 0
+f() COPY f()
+f(ARG2) MULTIEQUAL f(ARG2) f()
+f() CALL func f() f(ARG2)
+0 INT_EQUAL f() 0
+0 COPY 0
+0 COPY 0
+ARG2 COPY ARG2
+0 COPY 0
+0 COPY 0
+ BRANCH VZERO
+0 COPY 0
+0 COPY 0
+0 COPY 0
+0 COPY 0
+0 COPY 0
+0 COPY 0
+ BRANCH VZERO
+0 COPY 0
+0 COPY 0
+0 COPY 0
+0 COPY 0
+0 COPY 0
+0 COPY 0
+f() COPY f()
+0 COPY 0
+ BRANCH VZERO
+0 INT_EQUAL f() 0
+0 INT_EQUAL f() f()
+4200608 PTRSUB 0 CONST
+(RSP + 8) PTRSUB RSP 8
+4225920 PTRSUB 0 CONST
+4226032 PTRSUB 0 CONST
+(RSP + -8) PTRSUB RSP -8
+ CALL libcall___libc_start_main_thunk 4200608 A_Stack[0x0]:8 (RSP + 8) 4225920 4226032 ARG3 (RSP + -8)
+ BRANCH VZERO
+f() CALL libcall_strlen_thunk ARG1
+f() CAST f()
+%s (%s) COPY STR
+f() CAST f()
+ CALL libcall___sprintf_chk_thunk f() 1 -1 %s (%s) f() ARG1
+f() CALL func f() ARG1
+f() CALL libcall_dcgettext_thunk 0 ARG1 5
+0 INT_NOTEQUAL ARG1 f()
+ARG1 COPY ARG1
+ CBRANCH (ARG1 INT_NOTEQUAL f())
+ CBRANCH (f() INT_EQUAL 0)
+(f() + 4) INT_ADD f() 4
+((f() + 4) + f()) INT_ADD (f() + 4) f()
+f() CALL func ((f() + 4) + f())
+f() CALL libcall_strlen_thunk f()
+f() COPY f()
+f(ARG1) COPY f(ARG1)
+ RETURN 0 f()
+ RETURN 0 f(ARG1)
+f() COPY f()
+0 INT_EQUAL f() 0
+(ARG2 + ((f() + 1) * 8)) PTRADD ARG2 (f() + 1) 8
+(ARG2 + (f() * 8)) PTRADD ARG2 f() 8
+[ARG2] LOAD 433 ARG2
+(ARG2 + ((f() + 1) * 8)) PTRADD ARG2 (f() + 1) 8
+bci:ln:sv COPY STR
+4228384 PTRSUB 0 CONST
+f() CALL libcall_getopt_long_thunk ARG1 ARG2 bci:ln:sv 4228384 0
+(ARG2 + (f() * 8)) PTRADD ARG2 f() 8
+(ARG2 + ((ARG1 + -1) * 8)) PTRADD ARG2 (ARG1 + -1) 8
+ARG1 INT_SEXT ARG1
+0 INT_SLESS (f() + 1) ARG1
+0 INT_EQUAL ARG1 f()
+0 INT_SLESSEQUAL ARG1 f()
+0 INT_SLESS (f() + 1) ARG1
+diffutils COPY STR
+[(FS_OFFSET + 40)] LOAD 433 (FS_OFFSET + 40)
+VZERO COPY VZERO
+ CALL func 0
+f() COPY f()
+diffutils COPY STR
+ CBRANCH (f() INT_EQUAL 4294967295)
+0 INT_EQUAL f() CONST
+ CALL func [ARG2]
+4227718 COPY CONST
+ CALL libcall_textdomain_thunk diffutils
+2 COPY 2
+/home/ericlee/projects/input3/binaries/share/locale COPY STR
+(FS_OFFSET + 40) CAST (FS_OFFSET + 40)
+ CALL libcall_bindtextdomain_thunk diffutils /home/ericlee/projects/input3/binaries/share/locale
+(FS_OFFSET + 40) INT_ADD 0 40
+VZERO COPY VZERO
+Symbol PTRSUB 0 CONST
+ CALL libcall_setlocale_thunk 6 4227718
+VZERO COPY VZERO
+ CBRANCH (f() INT_EQUAL 3)
+0 COPY 0
+(f() + 15) INT_ADD f() 15
+(-8 & (f() + 15)) INT_AND (f() + 15) -8
+((-8 & (f() + 15)) + f()) CAST ((-8 & (f() + 15)) + f())
+f() CAST f()
+(f() + 15) CAST (f() + 15)
+0 INT_EQUAL f() 1
+((-8 & (f() + 15)) + f()) COPY ((-8 & (f() + 15)) + f())
+((-8 & (f() + 15)) + f()) INT_ADD f() (-8 & (f() + 15))
+f() COPY f()
+[((f() * 8) + 6333120)] LOAD 433 ((f() * 8) + 6333120)
+[((f() * 8) + 6333120)] CAST [((f() * 8) + 6333120)]
+ CBRANCH (f() INT_NOTEQUAL 3)
+f() MULTIEQUAL f() f() f() f() f() f()
+f() MULTIEQUAL f() f() f() f() f() f()
+f() CALL func f() f() CONST
+(RSP + -440) PTRSUB RSP -440
+f() CAST f()
+0 INT_NOTEQUAL f() 3
+ CBRANCH (f() INT_EQUAL 1)
+(f() + 15) CAST (f() + 15)
+((f() + 15) / 8) INT_RIGHT (f() + 15) 3
+(((f() + 15) / 8) * 16) INT_LEFT ((f() + 15) / 8) 4
+f() CALL func (((f() + 15) / 8) * 16)
+ CBRANCH (f() INT_NOTEQUAL 0)
+((f() * 8) + 6333120) PTRADD 6333120 f() 8
+0 INT_NOTEQUAL f() 0
+f() COPY f()
+(f() + 15) CAST (f() + 15)
+f() CAST f()
+ CBRANCH ([((f() * 8) + 6333120)] INT_NOTEQUAL 0)
+0 INT_NOTEQUAL [((f() * 8) + 6333120)] 0
+f() CAST f()
+(f() / 2147483647) INT_SEXT (f() / 2147483647)
+f() COPY f()
+f() CALL libcall___fxstat_thunk 1 1 (RSP + -440)
+(f() / 2147483647) SUBPIECE f() 0
+6333120 PTRSUB 0 CONST
+ CBRANCH ((f() + 1) INT_SLESS ARG1)
+extra operand '%s' COPY STR
+[(ARG2 + ((f() + 1) * 8))] LOAD 433 (ARG2 + ((f() + 1) * 8))
+ CALL func extra operand '%s' [(ARG2 + ((f() + 1) * 8))]
+ CBRANCH (f() INT_NOTEQUAL 0)
+ BRANCH VZERO
+f() COPY f()
+f() COPY f()
+3 COPY 3
+ CBRANCH (f() INT_NOTEQUAL 3)
+0 INT_NOTEQUAL f() 3
+f() COPY f()
+ CBRANCH (f() INT_NOTEQUAL 0)
+ CBRANCH (f() INT_EQUAL f())
+0 INT_EQUAL f() f()
+ CBRANCH (f() INT_EQUAL f())
+ CBRANCH (f() INT_EQUAL f())
+f() CALL func 1
+0 INT_EQUAL f() f()
+f() CALL func 0
+ CBRANCH (f() INT_NOTEQUAL 3)
+0 INT_NOTEQUAL f() 3
+ CBRANCH ((f() & 61440) INT_EQUAL 32768)
+(f() - f()) INT_SUB f() f()
+f() CAST f()
+(f() - f()) CAST (f() - f())
+f() CALL func 0
+ CBRANCH ((f() - f()) INT_SLESS f())
+(f() - f()) COPY (f() - f())
+f() COPY f()
+(f() - f()) CAST (f() - f())
+0 INT_SLESS (f() - f()) f()
+ CBRANCH (f() INT_EQUAL 0)
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+invalid --bytes value '%s' COPY STR
+f() COPY f()
+f() INDIRECT f() CONST
+ CALL func invalid --bytes value '%s' f()
+f() COPY f()
+f() COPY f()
+options -l and -s are incompatible COPY STR
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+ CBRANCH (f() INT_LESS f())
+f() COPY f()
+0 INT_LESS f() f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f(ARG2 , Symbol) COPY f(ARG2 , Symbol)
+f() COPY f()
+[f()] LOAD 433 f()
+f() COPY f()
+6333488 PTRSUB 0 CONST
+f() COPY f()
+f() COPY f()
+[((f() * 8) + 6333488)] LOAD 433 ((f() * 8) + 6333488)
+f() COPY f()
+f() COPY f()
+f() CALL libcall___errno_location_thunk
+f() COPY f()
+f(ARG2) COPY f(ARG2)
+4227596 PTRSUB 0 CONST
+ BRANCH VZERO
+f() COPY f()
+f() COPY f()
+ RETURN 1
+1 COPY 1
+f() COPY f()
+ CALL libcall_error_thunk 2 [f()] 4227596 [((f() * 8) + 6333488)]
+f() COPY f()
+f() COPY f()
+((f() * 8) + 6333488) PTRADD 6333488 f() 8
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+ CALL func options -l and -s are incompatible 0
+ CBRANCH (f() INT_EQUAL f())
+0 INT_EQUAL f() f()
+ CBRANCH ((f() & 61440) INT_NOTEQUAL 24576)
+0 INT_NOTEQUAL (f() & 61440) CONST
+ CBRANCH (f() INT_EQUAL f())
+(f() & 61440) INT_AND f() CONST
+ CBRANCH (f() INT_EQUAL f())
+ CBRANCH ((f() & 61440) INT_EQUAL 32768)
+f() COPY f()
+ CBRANCH (f() INT_NOTEQUAL f())
+0 INT_NOTEQUAL f() f()
+(f() - f()) CAST (f() - f())
+f() CALL func 0
+0 COPY 0
+(f() - f()) CAST (f() - f())
+(f() - f()) CAST (f() - f())
+(f() - f()) COPY (f() - f())
+0 COPY 0
+0 COPY 0
+(f() - f()) COPY (f() - f())
+(f() - f()) CAST (f() - f())
+(f() - f()) INT_SUB f() f()
+f() CALL func 1
+ CBRANCH (-1 INT_SLESS (f() - f()))
+(f() - f()) INT_SUB f() f()
+0 INT_SLESS -1 (f() - f())
+ CBRANCH ((f() - f()) INT_SLESS 0)
+0 INT_SLESS (f() - f()) 0
+ CBRANCH ([f()] INT_EQUAL 58)
+f() COPY f()
+ BRANCH VZERO
+6333016 PTRSUB 0 CONST
+ CALL func 1 6333016 0
+0 INT_SLESS f() f()
+(f() + 1) COPY (f() + 1)
+f() COPY f()
+(f() + 1) COPY (f() + 1)
+ CBRANCH (f() INT_SLESS f())
+ CBRANCH ((f() & 61440) INT_EQUAL 32768)
+0 INT_SLESS (f() - f()) f()
+(f() - f()) INT_SUB f() f()
+(f() - f()) CAST (f() - f())
+(f() - f()) COPY (f() - f())
+f() COPY f()
+f() CALL func 1
+ CBRANCH ((f() - f()) INT_SLESS f())
+f() CAST f()
+(f() - f()) CAST (f() - f())
+ CBRANCH ((f() - f()) INT_NOTEQUAL 0)
+ BRANCH VZERO
+(f() + f()) INT_ADD f() f()
+((f() - f()) + f()) COPY ((f() - f()) + f())
+ STORE 433 (f() + f()) 10
+(f() + f()) CAST (f() + f())
+0 INT_LESS f() f()
+f() CAST f()
+f() CAST f()
+0 INT_LESSEQUAL f() (f() - f())
+(f() + f()) INT_ADD f() f()
+ CBRANCH (f() INT_LESS f())
+f() COPY f()
+f() COPY f()
+((f() + -1) + f()) CAST ((f() + -1) + f())
+f() CAST f()
+ CBRANCH (f() INT_LESSEQUAL (f() - f()))
+f() CAST f()
+ CBRANCH ((f() + f()) INT_NOTEQUAL f())
+0 INT_NOTEQUAL (f() + f()) f()
+f() COPY f()
+0 COPY 0
+f() CAST f()
+f() MULTIEQUAL f() (f() + 1)
+f() CALL libcall_rawmemchr_thunk f() 10
+f() COPY f()
+((f() + -1) + f()) INT_ADD (f() + -1) f()
+0 INT_EQUAL [((f() + -1) + f())] 10
+(f() + -1) INT_ADD f() -1
+[((f() + -1) + f())] LOAD 433 ((f() + -1) + f())
+ CBRANCH (f() INT_EQUAL 0)
+cmp: EOF on %s after byte %s, in line %s  COPY STR
+ BRANCH VZERO
+f() CALL libcall_dcgettext_thunk 0 cmp: EOF on %s after byte %s, in line %s  5
+cmp: EOF on %s after byte %s, line %s  COPY STR
+f() CALL libcall_dcgettext_thunk 0 cmp: EOF on %s after byte %s, line %s  5
+0 INT_EQUAL (f() & 61440) CONST
+(f() & 61440) INT_AND f() CONST
+0 INT_EQUAL f() f()
+ CBRANCH ((f() & 61440) INT_EQUAL 24576)
+ CBRANCH (f() INT_EQUAL f())
+ CBRANCH (f() INT_EQUAL 0)
+[(((-8 & (f() + 15)) + f()) + f())] LOAD 433 (((-8 & (f() + 15)) + f()) + f())
+(RSP + -136) PTRSUB RSP -136
+ CALL func (RSP + -136) [(((-8 & (f() + 15)) + f()) + f())]
+%s %s differ: byte %s, line %s COPY STR
+%s %s differ: byte %s, line %s is %3o %s %3o %s  COPY STR
+f() CALL libcall_dcgettext_thunk 0 %s %s differ: byte %s, line %s is %3o %s %3o %s  5
+%s %s differ: byte %s, line %s  COPY STR
+(f() + f()) INT_ADD f() f()
+f() CALL libcall_dcgettext_thunk 0 %s %s differ: byte %s, line %s  5
+f(ARG2 , Symbol) COPY f(ARG2 , Symbol)
+f(ARG2) COPY f(ARG2)
+(((-8 & (f() + 15)) + f()) + f()) CAST (((-8 & (f() + 15)) + f()) + f())
+f() CAST f()
+((-8 & (f() + 15)) + f()) CAST ((-8 & (f() + 15)) + f())
+[(f() + f())] LOAD 433 (f() + f())
+(RSP + -152) PTRSUB RSP -152
+f() CAST f()
+ CALL func (RSP + -152) [(f() + f())]
+(f() + f()) CAST (f() + f())
+f() CAST f()
+f() CAST f()
+ BRANCH VZERO
+(((-8 & (f() + 15)) + f()) + f()) INT_ADD ((-8 & (f() + 15)) + f()) f()
+ CBRANCH (f() INT_EQUAL %s %s differ: byte %s, line %s)
+ BRANCH VZERO
+f(%s %s differ: char %s, line %s) MULTIEQUAL %s %s differ: char %s, line %s f() f()
+f(ARG2) MULTIEQUAL f(ARG2) f(ARG2) f(ARG2)
+f(ARG2 , Symbol) MULTIEQUAL f(ARG2 , Symbol) f(ARG2 , Symbol) f(ARG2 , Symbol)
+f() MULTIEQUAL f() ((f() - f()) + f())
+(RSP + -120) PTRSUB RSP -120
+f() CALL func f() (RSP + -120)
+f() MULTIEQUAL (f() + f()) f()
+(RSP + -88) PTRSUB RSP -88
+f() CALL func f() (RSP + -88)
+ CALL libcall___printf_chk_thunk 1 f(%s %s differ: char %s, line %s) f(ARG2) f(ARG2 , Symbol) f() f()
+ CALL libcall___printf_chk_thunk 1 f() f(ARG2) f(ARG2 , Symbol) f() f() [(f() + f())] (RSP + -152) [(((-8 & (f() + 15)) + f()) + f())] (RSP + -136)
+0 INT_EQUAL f() %s %s differ: byte %s, line %s
+f() COPY f()
+ BRANCH VZERO
+f() COPY f()
+f() COPY f()
+ CBRANCH (ARG1 INT_EQUAL f())
+f() COPY f()
+ CBRANCH (f() INT_NOTEQUAL 0)
+0 INT_NOTEQUAL f() 0
+0 INT_XOR 0 f()
+f() COPY f()
+f() INT_SEXT f()
+f(ARG2 , Symbol) COPY f(ARG2 , Symbol)
+f() COPY f()
+f(ARG2) COPY f(ARG2)
+[(ARG2 + (f() * 8))] CAST [(ARG2 + (f() * 8))]
+4227596 PTRSUB 0 CONST
+f() COPY f()
+f() COPY f()
+0 INT_ZEXT 0
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+(ARG1 + -1) INT_ADD ARG1 -1
+0 INT_EQUAL f(ARG2 , Symbol) 0
+f() COPY f()
+f() COPY f()
+[f(ARG2 , Symbol)] INT_ZEXT [f(ARG2 , Symbol)]
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+[(ARG2 + ((ARG1 + -1) * 8))] LOAD 433 (ARG2 + ((ARG1 + -1) * 8))
+f() COPY f()
+f(ARG2 , Symbol) COPY f(ARG2 , Symbol)
+f() COPY f()
+Symbol PTRSUB 0 CONST
+f() COPY f()
+ CBRANCH (ARG1 INT_SLESSEQUAL f())
+f() COPY f()
+0 COPY 0
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+(f() + 1) INT_ADD f() 1
+f() COPY f()
+[f(ARG2 , Symbol)] LOAD 433 f(ARG2 , Symbol)
+f() COPY f()
+[f()] LOAD 433 f()
+f() CALL libcall___errno_location_thunk
+f() COPY f()
+f() COPY f()
+[(ARG2 + (f() * 8))] LOAD 433 (ARG2 + (f() * 8))
+(f() + 1) COPY (f() + 1)
+missing operand after '%s' COPY STR
+f() COPY f()
+ CALL func missing operand after '%s' [(ARG2 + ((ARG1 + -1) * 8))]
+f() INT_SEXT f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+ RETURN 1
+0 COPY 0
+f() COPY f()
+ CALL libcall_error_thunk 2 [f()] 4227596 f(ARG2 , Symbol)
+ CBRANCH ((f() + 1) INT_SLESS ARG1)
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+(45 - [f(ARG2 , Symbol)]) INT_SUB 45 [f(ARG2 , Symbol)]
+ CBRANCH ((45 - [f(ARG2 , Symbol)]) INT_EQUAL 0)
+0 COPY 0
+f() COPY f()
+0 INT_EQUAL (45 - [f(ARG2 , Symbol)]) 0
+f() COPY f()
+0 INT_EQUAL f() -1
+ CBRANCH ((f() + 1) INT_NOTEQUAL 2)
+(f() & 4294967295) INT_AND f() CONST
+0 INT_NOTEQUAL (f() + 1) 2
+ CBRANCH (f() INT_EQUAL -1)
+(f() + 1) INT_ADD f() 1
+f() CALL func (f() & 4294967295)
+ CBRANCH (f() INT_EQUAL 0)
+(f() - f()) COPY (f() - f())
+0 INT_NOTEQUAL (f() - f()) 0
+((f() - f()) + f()) COPY ((f() - f()) + f())
+ CBRANCH ((f() & 61440) INT_EQUAL 24576)
+0 INT_EQUAL f() 3
+0 INT_EQUAL f() f()
+ CBRANCH ((f() & 61440) INT_EQUAL 32768)
+0 INT_EQUAL (f() & 61440) CONST
+(f() & 61440) INT_AND f() CONST
+ CBRANCH (f() INT_EQUAL 0)
+ BRANCH VZERO
+(RSP + -136) PTRSUB RSP -136
+(RSP + -120) PTRSUB RSP -120
+(RSP + -120) PTRSUB RSP -120
+[(((-8 & (f() + 15)) + f()) + f())] LOAD 433 (((-8 & (f() + 15)) + f()) + f())
+ CALL func (RSP + -120) [(((-8 & (f() + 15)) + f()) + f())]
+%*s %3o %3o  COPY STR
+f() MULTIEQUAL A_Stack[-0x1e0]:4 f()
+(f() + f()) INT_ADD f() f()
+(RSP + -88) PTRSUB RSP -88
+f() CALL func (f() + f()) (RSP + -88)
+[(f() + f())] LOAD 433 (f() + f())
+ CALL libcall___printf_chk_thunk 1 %*s %3o %3o  f() f() [(f() + f())]
+%*s %3o %-4s %3o %s  COPY STR
+(RSP + -136) PTRSUB RSP -136
+ CALL libcall___printf_chk_thunk 1 %*s %3o %-4s %3o %s  f() f() [(f() + f())] (RSP + -136) [(((-8 & (f() + 15)) + f()) + f())] (RSP + -120)
+ CALL func (RSP + -136) [(f() + f())]
+ CBRANCH (f() INT_EQUAL -1)
+f() COPY f()
+f() COPY f()
+f() CAST f()
+f() CALL libcall_memcmp_thunk f() ((-8 & (f() + 15)) + f()) f()
+0 INT_LESSEQUAL f() f()
+ CBRANCH (f() INT_LESSEQUAL f())
+ CBRANCH (f() INT_EQUAL 0)
+0 INT_EQUAL f() 0
+ BRANCH VZERO
+f() COPY f()
+(f() + 1) COPY (f() + 1)
+ CBRANCH ((f() & 61440) INT_EQUAL 8192)
+ CBRANCH ((f() & 61440) INT_EQUAL 8192)
+0 INT_EQUAL (f() & 61440) CONST
+(f() & 61440) INT_AND f() CONST
+ CBRANCH (f() INT_EQUAL -1)
+ RETURN 1
+f() COPY f()
+[f()] LOAD 433 f()
+4227596 PTRSUB 0 CONST
+[(Symbol + ((f() / 2147483647) * 8))] LOAD 433 (Symbol + ((f() / 2147483647) * 8))
+ CALL libcall_error_thunk 2 [f()] 4227596 [(Symbol + ((f() / 2147483647) * 8))]
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+Symbol PTRSUB 0 CONST
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f(ARG2) COPY f(ARG2)
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+(Symbol + ((f() / 2147483647) * 8)) PTRADD Symbol (f() / 2147483647) 8
+f() COPY f()
+f() COPY f()
+f() CALL libcall___errno_location_thunk
+f() COPY f()
+f() COPY f()
+f(ARG2 , Symbol) COPY f(ARG2 , Symbol)
+f() COPY f()
+ CBRANCH ([f()] INT_EQUAL [f()])
+0 INT_EQUAL [f()] [f()]
+f() CAST f()
+(f() + 1) INT_ADD f() 1
+f() CAST f()
+ BRANCH VZERO
+(f() + 1) CAST (f() + 1)
+f() CAST f()
+[f()] LOAD 433 f()
+(f() + 1) CAST (f() + 1)
+f() CAST f()
+(f() + 1) INT_ADD f() 1
+[f()] LOAD 433 f()
+ CBRANCH (f() INT_EQUAL f())
+0 INT_EQUAL f() f()
+ CBRANCH (f() INT_EQUAL f())
+ CBRANCH ((f() - f()) INT_NOTEQUAL 0)
+[(Symbol + (f() * 4))] LOAD 433 (Symbol + (f() * 4))
+f() MULTIEQUAL f() f()
+f() CALL func [(Symbol + (f() * 4))] f() f()
+(Symbol + (f() * 4)) PTRADD Symbol f() 4
+0 INT_LESSEQUAL f() f()
+ CBRANCH (f() INT_NOTEQUAL f())
+0 INT_NOTEQUAL f() f()
+f() COPY f()
+f() COPY f()
+ CBRANCH (f() INT_LESSEQUAL f())
+f() CAST f()
+Symbol PTRSUB 0 CONST
+ BRANCH VZERO
+0 INT_EQUAL f() 0
+f() MULTIEQUAL f() f() f()
+f() CALL libcall_close_thunk f()
+f() COPY f()
+0 INT_EQUAL f() 0
+ CBRANCH (f() INT_EQUAL f())
+0 INT_EQUAL f() f()
+1 COPY 1
+ CBRANCH (f() INT_EQUAL 0)
+ CBRANCH (f() INT_EQUAL f())
+2 COPY 2
+ BRANCH VZERO
+0 INT_NOTEQUAL (f() - f()) 0
+0 INT_EQUAL f() -1
+(f() - f()) INT_SUB f() f()
+(f() - f()) CAST (f() - f())
+f() CAST f()
+f() CAST f()
+0 INT_EQUAL (f() & 61440) CONST
+(f() & 61440) INT_AND f() CONST
+f() COPY f()
+0 INT_EQUAL (f() & 61440) CONST
+(f() & 61440) INT_AND f() CONST
+0 INT_EQUAL (f() & 61440) CONST
+ CBRANCH (f() INT_NOTEQUAL 3)
+ CBRANCH (f() INT_EQUAL 3)
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+[f()] LOAD 433 f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+ RETURN 1
+f() COPY f()
+f() COPY f()
+f() COPY f()
+ CALL libcall_exit_thunk 2
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+ RETURN 1
+f() COPY f()
+f() COPY f()
+f(ARG2) COPY f(ARG2)
+f() COPY f()
+4227596 PTRSUB 0 CONST
+[6333488] LOAD 433 6333488
+ CALL libcall_error_thunk 2 [f()] 4227596 [6333488]
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f(ARG2 , Symbol) COPY f(ARG2 , Symbol)
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() CALL libcall___errno_location_thunk
+f() COPY f()
+f(ARG2 , Symbol) COPY f(ARG2 , Symbol)
+f() COPY f()
+6333488 PTRADD 6333488 0 8
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+6333488 PTRSUB 0 CONST
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f(ARG2) COPY f(ARG2)
+f() COPY f()
+ CBRANCH ([f()] INT_EQUAL [f()])
+0 INT_EQUAL [f()] [f()]
+(f() + 8) PTRADD f() 1 8
+[f()] LOAD 433 f()
+(f() + 8) PTRADD f() 1 8
+ BRANCH VZERO
+[f()] LOAD 433 f()
+ CBRANCH ((f() + 1) INT_NOTEQUAL 2)
+(f() + 1) INT_SEXT (f() + 1)
+ CBRANCH ([(f() + f())] INT_NOTEQUAL [(((-8 & (f() + 15)) + f()) + f())])
+0 INT_EQUAL f() 0
+(f() / 10) INT_SDIV f() 10
+0 INT_EQUAL (f() & 61440) CONST
+0 INT_SLESS -1 f()
+(f() & 61440) INT_AND f() CONST
+f() COPY f()
+f() COPY f()
+9223372036854775807 COPY CONST
+ CBRANCH ((f() / 10) INT_NOTEQUAL 0)
+f() COPY f()
+f() CAST f()
+0 INT_NOTEQUAL (f() / 10) 0
+9223372036854775807 COPY 9223372036854775807
+0 INT_EQUAL (f() & 61440) CONST
+(f() & 61440) INT_AND f() CONST
+(f() / 10) CAST (f() / 10)
+f() CAST f()
+ CBRANCH (-1 INT_SLESS f())
+f() COPY f()
+1 COPY 1
+ CBRANCH (f() INT_NOTEQUAL f())
+f() CAST f()
+0 INT_NOTEQUAL f() 0
+ CBRANCH (f() INT_NOTEQUAL -1)
+f() MULTIEQUAL f() f()
+f() MULTIEQUAL f() f()
+f() CALL func f() f() f()
+0 INT_NOTEQUAL f() -1
+0 INT_ZEXT 0
+f(ARG2) COPY f(ARG2)
+ CBRANCH (f() INT_EQUAL -1)
+f() COPY f()
+0 INT_EQUAL f() -1
+ CBRANCH ([([6333488] + 1)] INT_EQUAL 0)
+6333472 PTRSUB 0 CONST
+0 INT_SLESS f() 0
+0 INT_MULT 0 144
+6333184 PTRSUB 0 CONST
+ CBRANCH (f() INT_NOTEQUAL 0)
+0 INT_NOTEQUAL f() 0
+6333472 PTRADD 6333472 0 4
+0 COPY 0
+6333184 PTRADD 6333184 0 1
+[6333488] LOAD 433 6333488
+f() CALL libcall_open_thunk [6333488] 0 0
+6333472 PTRADD 6333472 0 4
+ CBRANCH (f() INT_SLESS 0)
+6333184 CAST 6333184
+f() MULTIEQUAL 0 f()
+f() CALL libcall___fxstat_thunk 1 f() 6333184
+6333472 PTRSUB 0 CONST
+ STORE 433 6333472 f()
+ STORE 433 6333472 0
+0 INT_EQUAL f() f()
+f() COPY f()
+f() COPY f()
+0 INT_EQUAL f() -1
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() INDIRECT f() 762
+f() CALL func f() ((-8 & (f() + 15)) + f()) f()
+f() COPY f()
+f() COPY f()
+[f()] LOAD 433 f()
+f() CALL libcall___errno_location_thunk
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f(ARG2) COPY f(ARG2)
+4227596 PTRSUB 0 CONST
+f() COPY f()
+f() COPY f()
+ RETURN 1
+f() COPY f()
+ CALL libcall_error_thunk 2 [f()] 4227596 f(ARG2)
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() CAST f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f(ARG2 , Symbol) COPY f(ARG2 , Symbol)
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+ CBRANCH (f() INT_EQUAL 0)
+(f() - f()) INT_SUB f() f()
+(RSP + -88) PTRSUB RSP -88
+f() CALL func (f() - f()) (RSP + -88)
+cmp: EOF on %s after byte %s  COPY STR
+ BRANCH VZERO
+0 INT_EQUAL f() 0
+f() CALL libcall_dcgettext_thunk 0 cmp: EOF on %s after byte %s  5
+f() INDIRECT f() CONST
+[Symbol] LOAD 433 Symbol
+(f() + -1) INT_ADD f() -1
+(RSP + -120) PTRSUB RSP -120
+f() CALL func (f() + -1) (RSP + -120)
+ CALL libcall___fprintf_chk_thunk f() 1 f() [Symbol] f()
+ BRANCH VZERO
+f() MULTIEQUAL f() f()
+f() MULTIEQUAL f() f()
+ CALL libcall___fprintf_chk_thunk f() 1 f() [Symbol] f() f()
+f() INT_ZEXT f()
+ CBRANCH (f() INT_NOTEQUAL 3)
+0 INT_NOTEQUAL f() 3
+0 INT_NOTEQUAL f() f()
+ CBRANCH ([[6333488]] INT_EQUAL 45)
+[([6333488] + 1)] LOAD 433 ([6333488] + 1)
+0 INT_EQUAL [([6333488] + 1)] 0
+([6333488] + 1) PTRADD [6333488] 1 1
+0 INT_SEXT 0
+0 INT_EQUAL [[6333488]] 45
+ CBRANCH (f() INT_EQUAL f())
+6333488 PTRSUB 0 CONST
+0 INT_EQUAL f() f()
+0 CAST 0
+[[6333488]] LOAD 433 [6333488]
+6333488 PTRADD 6333488 0 8
+ CBRANCH (f() INT_NOTEQUAL 0)
+f() COPY f()
+0 INT_EQUAL f() 0
+ CBRANCH (f() INT_EQUAL 0)
+(f() + f()) COPY (f() + f())
+(f() + f()) COPY (f() + f())
+ CBRANCH (f() INT_EQUAL 1)
+ BRANCH VZERO
+f() CAST f()
+(((-8 & (f() + 15)) + f()) + f()) CAST (((-8 & (f() + 15)) + f()) + f())
+f() CAST f()
+((-8 & (f() + 15)) + f()) CAST ((-8 & (f() + 15)) + f())
+ CBRANCH (f() INT_NOTEQUAL (f() + 1))
+0 INT_NOTEQUAL f() (f() + 1)
+(f() + f()) CAST (f() + f())
+f() CAST f()
+f() CAST f()
+(f() + 1) CAST (f() + 1)
+f() CAST f()
+(f() + f()) INT_ADD f() f()
+(f() + 1) INT_ADD f() 1
+0 INT_NOTEQUAL [(f() + f())] [(((-8 & (f() + 15)) + f()) + f())]
+((f() - f()) + f()) COPY ((f() - f()) + f())
+(((-8 & (f() + 15)) + f()) + f()) INT_ADD ((-8 & (f() + 15)) + f()) f()
+f() CAST f()
+(f() + f()) INT_ADD f() f()
+4294967295 COPY CONST
+(f() + f()) COPY (f() + f())
+ CBRANCH (f() INT_EQUAL 0)
+f() COPY f()
+ CBRANCH (f() INT_LESS f())
+(f() - f()) CAST (f() - f())
+f() CAST f()
+f() CAST f()
+0 INT_LESS f() f()
+(f() - f()) INT_SUB f() f()
+ CBRANCH (f() INT_SLESS f())
+0 INT_SLESS f() f()
+f() COPY f()
+f() COPY f()
+f() CAST f()
+f() CAST f()
+ CBRANCH (f() INT_EQUAL f())
+0 INT_EQUAL f() f()
+ CBRANCH (f() INT_EQUAL f())
+0 INT_EQUAL f() f()
+ CBRANCH (f() INT_EQUAL f())
+ CBRANCH (f() INT_LESS f())
+0 INT_LESS f() f()
+ CBRANCH (f() INT_LESS 2)
+ BRANCH VZERO
+ CALL func
+0 INT_EQUAL f() 1
+0 INT_EQUAL f() 0
+(f() + 1) INT_ADD f() 1
+(f() + 1) CAST (f() + 1)
+(f() + 1) PTRADD f() 1 1
+ BRANCHIND f()
+ CBRANCH (f() INT_EQUAL 0)
+ BRANCH VZERO
+%s %s differ: char %s, line %s COPY STR
+ CBRANCH (f() INT_EQUAL 0)
+f(ARG2) MULTIEQUAL f(ARG2) f(ARG2)
+f(ARG2 , Symbol) CAST f(ARG2 , Symbol)
+f() CALL libcall_strcmp_thunk f(ARG2) f(ARG2 , Symbol)
+0 INT_EQUAL f() 0
+ CBRANCH (f() INT_EQUAL 2)
+((f() - f()) + f()) COPY ((f() - f()) + f())
+0 INT_EQUAL f() f()
+0 INT_NOTEQUAL f() 3
+ CBRANCH (f() INT_EQUAL f())
+/dev/null COPY STR
+(RSP + -296) PTRSUB RSP -296
+f() CALL libcall___xstat_thunk 1 /dev/null (RSP + -296)
+0 INT_NOTEQUAL f() 0
+0 INT_EQUAL f() f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f(ARG2 , Symbol) COPY f(ARG2 , Symbol)
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f(ARG2) COPY f(ARG2)
+f() COPY f()
+ RETURN 1
+f() COPY f()
+ CALL libcall_exit_thunk 1
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+0 INT_EQUAL f() 3
+ CBRANCH ((f() & 61440) INT_EQUAL 8192)
+0 INT_EQUAL f() f()
+ CBRANCH (f() INT_NOTEQUAL 1)
+1 COPY 1
+0 INT_EQUAL f() 0
+cmp: EOF on %s which is empty  COPY STR
+ BRANCH VZERO
+f() CALL libcall_dcgettext_thunk 0 cmp: EOF on %s which is empty  5
+f() INDIRECT f() CONST
+ CALL libcall___fprintf_chk_thunk f() 1 f() [Symbol]
+[(ARG2 + (f() * 8))] CAST [(ARG2 + (f() * 8))]
+(f() + 1) COPY (f() + 1)
+f() MULTIEQUAL 0 (f() + 1)
+(RSP + -448) PTRSUB RSP -448
+ CALL func f() (RSP + -448) 0
+0 INT_NOTEQUAL (f() + 1) 2
+[(ARG2 + (f() * 8))] LOAD 433 (ARG2 + (f() * 8))
+(f() + 1) INT_ADD f() 1
+(f() + 1) INT_ADD f() 1
+0 INT_EQUAL f() 2
+Symbol PTRSUB 0 CONST
+Symbol PTRADD Symbol 0 8
+0 INT_ZEXT 0
+0 INT_LESS f() f()
+0 INT_NOTEQUAL f() 1
+ CBRANCH (f() INT_LESS 2)
+1 COPY 1
+f() COPY f()
+ BRANCH VZERO
+f() COPY f()
+ CBRANCH ((f() + 1) INT_NOTEQUAL 2)
+0 INT_NOTEQUAL (f() + 1) 2
+(f() + 1) INT_ADD f() 1
+0 INT_EQUAL f() f()
+ CBRANCH (f() INT_EQUAL f())
+1 COPY 1
+1 COPY 1
+0 COPY 0
+1 COPY 1
+[(f() + 40)] LOAD 433 (f() + 40)
+(f() + 40) INT_ADD f() 40
+0 INT_EQUAL f() [(f() + 40)]
+0 COPY 0
+ CBRANCH (f() INT_EQUAL [(f() + 40)])
+(f() + 40) CAST (f() + 40)
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f(ARG2 , Symbol) COPY f(ARG2 , Symbol)
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+ RETURN 1
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f(ARG2) COPY f(ARG2)
+ CALL libcall___stack_chk_fail_thunk
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f(ARG2 , Symbol) COPY f(ARG2 , Symbol)
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+ RETURN 0 0
+f() COPY f()
+f(ARG2) COPY f(ARG2)
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+0 COPY 0
+f() INDIRECT f() CONST
+f() CALL libcall_close_thunk f()
+ CBRANCH (f() INT_EQUAL 0)
+0 INT_EQUAL f() 0
+ CBRANCH ((f() & 61440) INT_EQUAL 8192)
+0 INT_EQUAL (f() & 61440) CONST
+(f() & 61440) INT_AND f() CONST
+0 INT_EQUAL f() f()
+ CBRANCH (f() INT_NOTEQUAL 0)
+0 INT_LESS f() 2
+ CBRANCH ((f() & 61440) INT_EQUAL 24576)
+0 INT_EQUAL f() f()
+ BRANCH VZERO
+(f() + 1) INT_ADD f() 1
+[(ARG2 + ((f() + 1) * 8))] CAST [(ARG2 + ((f() + 1) * 8))]
+[(ARG2 + ((f() + 1) * 8))] LOAD 433 (ARG2 + ((f() + 1) * 8))
+ BRANCH VZERO
+(f() + 1) INT_ADD f() 1
+(f() + 2) INT_ADD f() 2
+(f() + 2) COPY (f() + 2)
+1 COPY 1
+ BRANCH VZERO
+(((-8 & (f() + 15)) + f()) + f()) CAST (((-8 & (f() + 15)) + f()) + f())
+f() CAST f()
+((-8 & (f() + 15)) + f()) CAST ((-8 & (f() + 15)) + f())
+(f() + f()) INT_ADD f() f()
+~([(((-8 & (f() + 15)) + f()) + f())]) INT_NEGATE [(((-8 & (f() + 15)) + f()) + f())]
+f() COPY f()
+0 INT_NOTEQUAL f() 0
+[(f() + f())] LOAD 433 (f() + f())
+((f() - f()) + f()) INT_ADD f() (f() - f())
+ STORE 433 (f() + f()) ~([(((-8 & (f() + 15)) + f()) + f())])
+(f() + f()) INT_ADD f() f()
+((-8 & (f() + 15)) + f()) COPY ((-8 & (f() + 15)) + f())
+(f() + f()) COPY (f() + f())
+(((-8 & (f() + 15)) + f()) + f()) INT_ADD ((-8 & (f() + 15)) + f()) f()
+(((-8 & (f() + 15)) + f()) + f()) CAST (((-8 & (f() + 15)) + f()) + f())
+f() CAST f()
+((-8 & (f() + 15)) + f()) CAST ((-8 & (f() + 15)) + f())
+(f() - f()) INT_SUB f() f()
+(f() - f()) CAST (f() - f())
+(f() + f()) CAST (f() + f())
+f() CAST f()
+f() CAST f()
+[(((-8 & (f() + 15)) + f()) + f())] LOAD 433 (((-8 & (f() + 15)) + f()) + f())
+(f() + f()) CAST (f() + f())
+(((-8 & (f() + 15)) + f()) + f()) INT_ADD ((-8 & (f() + 15)) + f()) f()
+f() CAST f()
+f() CAST f()
+f() CAST f()
+(f() - f()) CAST (f() - f())
+~([(f() + f())]) INT_NEGATE [(f() + f())]
+f() CAST f()
+f() CAST f()
+0 INT_EQUAL f() 0
+ STORE 433 (((-8 & (f() + 15)) + f()) + f()) ~([(f() + f())])
+(f() + f()) INT_ADD f() f()
+0 INT_EQUAL f() 0
+f() CALL func 5
+[(f(ARG2 , Symbol) + 1)] LOAD 433 (f(ARG2 , Symbol) + 1)
+(~([(f(ARG2 , Symbol) + 1)]) + 1) INT_2COMP [(f(ARG2 , Symbol) + 1)]
+[(f(ARG2 , Symbol) + 1)] INT_ZEXT [(f(ARG2 , Symbol) + 1)]
+(f(ARG2 , Symbol) + 1) PTRADD f(ARG2 , Symbol) 1 1
+ BRANCH VZERO
+f() COPY f()
+ RETURN 1
+f() COPY f()
+f(ARG2 , Symbol) COPY f(ARG2 , Symbol)
+f() MULTIEQUAL 0 1 1
+ CALL libcall_exit_thunk f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f(ARG2) COPY f(ARG2)
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+0 INT_NOTEQUAL f() 0
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+f() COPY f()
+(f() & 61440) INT_AND f() CONST
+0 INT_EQUAL (f() & 61440) CONST
+0 INT_EQUAL (f() & 61440) CONST
+0 INT_NOTEQUAL f() 0
+0 INT_EQUAL f() 0
+f() INDIRECT f() 95
+(RSP + -448) PTRSUB RSP -448
+f() CALL func f() 0 0 (RSP + -448)
+0 INT_EQUAL [f()] 58
+(f() + 1) PTRADD f() 1 1
+6333016 PTRSUB 0 CONST
+ CALL func 0 6333016 58
+[f()] LOAD 433 f()
+1 COPY 1
+0 INT_LESS f() 2
+ BRANCH VZERO
+Usage: %s [OPTION]... FILE1 [FILE2 [SKIP1 [SKIP2]]]  COPY STR
+ CALL func 0 0
+Compare two files byte by byte. COPY STR
+Mandatory arguments to long options are mandatory for short options too.  COPY STR
+The optional SKIP1 and SKIP2 specify the number of bytes to skip at the beginning of each file (zero by default). COPY STR
+(f(Symbol) + 8) PTRADD f(Symbol) 1 8
+Symbol PTRSUB 0 CONST
+f() CAST f()
+ CALL libcall_puts_thunk f()
+f() CALL libcall_dcgettext_thunk 0 Compare two files byte by byte. 5
+SKIP values may be followed by the following multiplicative suffixes: kB 1000, K 1024, MB 1,000,000, M 1,048,576, GB 1,000,000,000, G 1,073,741,824, and so on for T, P, E, Z, Y. COPY STR
+%s  %s %s  COPY STR
+f() CALL libcall_dcgettext_thunk 0 The optional SKIP1 and SKIP2 specify the number of bytes to skip at the beginning of each file (zero by default). 5
+Exit status is 0 if inputs are the same, 1 if different, 2 if trouble. COPY STR
+%s  COPY STR
+f() COPY f()
+f() CALL libcall_dcgettext_thunk 0 Usage: %s [OPTION]... FILE1 [FILE2 [SKIP1 [SKIP2]]]  5
+4227713 PTRSUB 0 CONST
+If a FILE is '-' or missing, read standard input. COPY STR
+ CALL libcall___printf_chk_thunk 1 f() f()
+4227658 PTRSUB 0 CONST
+f() CAST f()
+ CALL libcall_fputs_unlocked_thunk f() f()
+-b, --print-bytes          print differing bytes COPY STR
+ CALL libcall___printf_chk_thunk 1 4227713 f()
+Torbjorn Granlund COPY STR
+David MacKenzie COPY STR
+f() CALL libcall_dcgettext_thunk 0 Mandatory arguments to long options are mandatory for short options too.  5
+GNU diffutils COPY STR
+ CBRANCH ([(f(Symbol) + 8)] INT_NOTEQUAL 0)
+0 INT_NOTEQUAL [(f(Symbol) + 8)] 0
+[(f(Symbol) + 8)] LOAD 433 (f(Symbol) + 8)
+f() CALL libcall_dcgettext_thunk 0 Exit status is 0 if inputs are the same, 1 if different, 2 if trouble. 5
+f(-b, --print-bytes          print differing bytes , Symbol) MULTIEQUAL -b, --print-bytes          print differing bytes [(f(Symbol) + 8)]
+f() CALL libcall_dcgettext_thunk 0 f(-b, --print-bytes          print differing bytes , Symbol) 5
+4227709 PTRSUB 0 CONST
+ CALL libcall___printf_chk_thunk 1 %s  f()
+ CALL func
+f() CALL libcall_dcgettext_thunk 0 SKIP values may be followed by the following multiplicative suffixes: kB 1000, K 1024, MB 1,000,000, M 1,048,576, GB 1,000,000,000, G 1,073,741,824, and so on for T, P, E, Z, Y. 5
+f() CALL libcall_dcgettext_thunk 0 If a FILE is '-' or missing, read standard input. 5
+ CALL libcall___printf_chk_thunk 1 %s  %s %s  f() f() f()
+f() CALL func David MacKenzie
+ BRANCH VZERO
+ CALL func
+ CALL func
+f() INDIRECT f() CONST
+f() INDIRECT f() CONST
+f() CALL func Torbjorn Granlund 4227658
+Symbol INDIRECT Symbol CONST
+ CALL func f() 4227709 GNU diffutils f() f() f() 0 Symbol

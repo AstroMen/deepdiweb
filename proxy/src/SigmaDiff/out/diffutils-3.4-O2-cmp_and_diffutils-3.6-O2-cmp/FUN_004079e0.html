@@ -1,0 +1,196 @@
+
+<div class="diff-content">
+  <script type="application/javascript">
+    $(document).ready(function(){
+      $('.diff_normal').on('mouseover', function(){
+        $cur_id = $(this).prop("id");
+        $.each($('table tr td #' + $cur_id), function (index, domEle) {
+            $(domEle).addClass('is-hover');
+        });
+      }).on('mouseout', function(){
+        $cur_id = $(this).prop("id");
+        $.each($('table tr td #' + $cur_id), function (index, domEle) {
+            $(domEle).removeClass('is-hover');
+        });
+      });
+      
+    });
+  </script>
+  
+  <style>
+  table.diff_tab {
+    font-family: Courier, monospace;
+    table-layout: fixed;
+    width: 100%;
+  }
+  table td {
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  .diff_add {
+    background-color: #aaffaa;
+  }
+  .diff_chg {
+    background-color: #ffff77;
+  }
+  .diff_sub {
+    background-color: #ffaaaa;
+  }
+  .diff_lineno {
+    text-align: right;
+    background-color: #e0e0e0;
+  }
+  table.diff_tab {
+    font-family: Courier, monospace;
+    table-layout: fixed;
+    width: 100%;
+  }
+  table td {
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  .diff_add {
+    background-color: #aaffaa;
+  }
+  .diff_chg {
+    background-color: #ffff77;
+  }
+  .diff_sub {
+    background-color: #ffaaaa;
+  }
+  .diff_lineno {
+    text-align: right;
+    background-color: #e0e0e0;
+  }
+  .diff_normal {
+    margin-top: 0px;
+  }
+  .is-hover {
+    background-color: yellow;
+  }
+  </style>
+  
+    <table class="diff_tab" cellspacing=0>
+    
+  <tr>
+      <td class="diff_lineno" width="auto">1</td>
+      <td class="diff_play" nowrap width="45%"></td>
+      <td class="diff_lineno" width="auto">1</td>
+      <td class="diff_play" nowrap width="45%"></td>
+  </tr>
+  
+
+  <tr>
+      <td class="diff_lineno" width="auto">2</td>
+      <td class="diff_play" nowrap width="45%">void&nbsp;FUN_004079e0(undefined4&nbsp;param_1,undefined8&nbsp;param_2,undefined8&nbsp;param_3)</td>
+      <td class="diff_lineno" width="auto">2</td>
+      <td class="diff_play" nowrap width="45%">void&nbsp;FUN_00407b80(undefined4&nbsp;param_1,undefined8&nbsp;param_2,undefined8&nbsp;param_3)</td>
+  </tr>
+  
+
+  <tr>
+      <td class="diff_lineno" width="auto">3</td>
+      <td class="diff_play" nowrap width="45%"></td>
+      <td class="diff_lineno" width="auto">3</td>
+      <td class="diff_play" nowrap width="45%"></td>
+  </tr>
+  
+
+  <tr>
+      <td class="diff_lineno" width="auto">4</td>
+      <td class="diff_play" nowrap width="45%">{</td>
+      <td class="diff_lineno" width="auto">4</td>
+      <td class="diff_play" nowrap width="45%">{</td>
+  </tr>
+  
+
+  <tr>
+      <td class="diff_lineno" width="auto">5</td>
+      <td class="diff_play" nowrap width="45%">&nbsp;&nbsp;&nbsp;&nbsp;long&nbsp;lVar1;</td>
+      <td class="diff_lineno" width="auto">5</td>
+      <td class="diff_play" nowrap width="45%">&nbsp;&nbsp;&nbsp;&nbsp;long&nbsp;lVar1;</td>
+  </tr>
+  
+
+  <tr>
+      <td class="diff_lineno" width="auto">6</td>
+      <td class="diff_play" nowrap width="45%"></td>
+      <td class="diff_lineno" width="auto">6</td>
+      <td class="diff_play" nowrap width="45%"></td>
+  </tr>
+  
+
+  <tr>
+      <td class="diff_lineno" width="auto">7</td>
+      <td class="diff_play" nowrap width="45%">&nbsp;&nbsp;&nbsp;&nbsp;<span class="diff_sub">_DT_INIT</span>();</td>
+      <td class="diff_lineno" width="auto">7</td>
+      <td class="diff_play" nowrap width="45%">&nbsp;&nbsp;&nbsp;&nbsp;<span class="diff_add">_DT_INIT</span>();</td>
+  </tr>
+  
+
+  <tr>
+      <td class="diff_lineno" width="auto">8</td>
+      <td class="diff_play" nowrap width="45%">&nbsp;&nbsp;&nbsp;&nbsp;<span class="diff_sub">lVar1</span>&nbsp;<span class="diff_sub">=</span>&nbsp;<span class="diff_sub">0</span>;</td>
+      <td class="diff_lineno" width="auto">8</td>
+      <td class="diff_play" nowrap width="45%">&nbsp;&nbsp;&nbsp;&nbsp;<span class="diff_add">lVar1</span>&nbsp;<span class="diff_add">=</span>&nbsp;<span class="diff_add">0</span>;</td>
+  </tr>
+  
+
+  <tr>
+      <td class="diff_lineno" width="auto">9</td>
+      <td class="diff_play" nowrap width="45%">&nbsp;&nbsp;&nbsp;&nbsp;do&nbsp;{</td>
+      <td class="diff_lineno" width="auto">9</td>
+      <td class="diff_play" nowrap width="45%">&nbsp;&nbsp;&nbsp;&nbsp;do&nbsp;{</td>
+  </tr>
+  
+
+  <tr>
+      <td class="diff_lineno" width="auto">10</td>
+      <td class="diff_play" nowrap width="45%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<span class="diff_sub">*</span>(code&nbsp;*)(<span class="diff_sub">&__DT_INIT_ARRAY</span>)[<span class="diff_sub">lVar1</span>])(<span class="diff_sub">param_1,param_2,param_3</span>);</td>
+      <td class="diff_lineno" width="auto">10</td>
+      <td class="diff_play" nowrap width="45%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<span class="diff_add">*</span>(code&nbsp;*)(<span class="diff_add">&__DT_INIT_ARRAY</span>)[<span class="diff_add">lVar1</span>])(<span class="diff_add">param_1,param_2,param_3</span>);</td>
+  </tr>
+  
+
+  <tr>
+      <td class="diff_lineno" width="auto">11</td>
+      <td class="diff_play" nowrap width="45%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="diff_sub">lVar1</span>&nbsp;<span class="diff_sub">=</span>&nbsp;<span class="diff_sub">lVar1</span>&nbsp;<span class="diff_sub">+</span>&nbsp;<span class="diff_sub">1</span>;</td>
+      <td class="diff_lineno" width="auto">11</td>
+      <td class="diff_play" nowrap width="45%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="diff_add">lVar1</span>&nbsp;<span class="diff_add">=</span>&nbsp;<span class="diff_add">lVar1</span>&nbsp;<span class="diff_add">+</span>&nbsp;<span class="diff_add">1</span>;</td>
+  </tr>
+  
+
+  <tr>
+      <td class="diff_lineno" width="auto">12</td>
+      <td class="diff_play" nowrap width="45%">&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="diff_sub">while</span>&nbsp;(<span class="diff_sub">lVar1</span>&nbsp;<span class="diff_sub">!=</span>&nbsp;<span class="diff_sub">1</span>);</td>
+      <td class="diff_lineno" width="auto">12</td>
+      <td class="diff_play" nowrap width="45%">&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="diff_add">while</span>&nbsp;(<span class="diff_add">lVar1</span>&nbsp;<span class="diff_add">!=</span>&nbsp;<span class="diff_add">1</span>);</td>
+  </tr>
+  
+
+  <tr>
+      <td class="diff_lineno" width="auto">13</td>
+      <td class="diff_play" nowrap width="45%">&nbsp;&nbsp;&nbsp;&nbsp;<span class="diff_sub">return</span>;</td>
+      <td class="diff_lineno" width="auto">13</td>
+      <td class="diff_play" nowrap width="45%">&nbsp;&nbsp;&nbsp;&nbsp;<span class="diff_add">return</span>;</td>
+  </tr>
+  
+
+  <tr>
+      <td class="diff_lineno" width="auto">14</td>
+      <td class="diff_play" nowrap width="45%">}</td>
+      <td class="diff_lineno" width="auto">14</td>
+      <td class="diff_play" nowrap width="45%">}</td>
+  </tr>
+  
+
+  <tr>
+      <td class="diff_lineno" width="auto">15</td>
+      <td class="diff_play" nowrap width="45%"></td>
+      <td class="diff_lineno" width="auto">15</td>
+      <td class="diff_play" nowrap width="45%"></td>
+  </tr>
+  
+    </table>
+</div>
+  

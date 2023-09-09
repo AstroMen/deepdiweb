@@ -1,0 +1,300 @@
+
+<div class="diff-content">
+  <script type="application/javascript">
+    $(document).ready(function(){
+      $('.diff_normal').on('mouseover', function(){
+        $cur_id = $(this).prop("id");
+        $.each($('table tr td #' + $cur_id), function (index, domEle) {
+            $(domEle).addClass('is-hover');
+        });
+      }).on('mouseout', function(){
+        $cur_id = $(this).prop("id");
+        $.each($('table tr td #' + $cur_id), function (index, domEle) {
+            $(domEle).removeClass('is-hover');
+        });
+      });
+      
+    });
+  </script>
+  
+  <style>
+  table.diff_tab {
+    font-family: Courier, monospace;
+    table-layout: fixed;
+    width: 100%;
+  }
+  table td {
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  .diff_add {
+    background-color: #aaffaa;
+  }
+  .diff_chg {
+    background-color: #ffff77;
+  }
+  .diff_sub {
+    background-color: #ffaaaa;
+  }
+  .diff_lineno {
+    text-align: right;
+    background-color: #e0e0e0;
+  }
+  table.diff_tab {
+    font-family: Courier, monospace;
+    table-layout: fixed;
+    width: 100%;
+  }
+  table td {
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  .diff_add {
+    background-color: #aaffaa;
+  }
+  .diff_chg {
+    background-color: #ffff77;
+  }
+  .diff_sub {
+    background-color: #ffaaaa;
+  }
+  .diff_lineno {
+    text-align: right;
+    background-color: #e0e0e0;
+  }
+  .diff_normal {
+    margin-top: 0px;
+  }
+  .is-hover {
+    background-color: yellow;
+  }
+  </style>
+  
+    <table class="diff_tab" cellspacing=0>
+    
+  <tr>
+      <td class="diff_lineno" width="auto">1</td>
+      <td class="diff_play" nowrap width="45%"></td>
+      <td class="diff_lineno" width="auto">1</td>
+      <td class="diff_play" nowrap width="45%"></td>
+  </tr>
+  
+
+  <tr>
+      <td class="diff_lineno" width="auto">2</td>
+      <td class="diff_play" nowrap width="45%">void&nbsp;FUN_00402880(int&nbsp;param_1,char&nbsp;**param_2,char&nbsp;param_3)</td>
+      <td class="diff_lineno" width="auto">2</td>
+      <td class="diff_play" nowrap width="45%">void&nbsp;FUN_00402990(int&nbsp;param_1,char&nbsp;**param_2,char&nbsp;param_3)</td>
+  </tr>
+  
+
+  <tr>
+      <td class="diff_lineno" width="auto">3</td>
+      <td class="diff_play" nowrap width="45%"></td>
+      <td class="diff_lineno" width="auto">3</td>
+      <td class="diff_play" nowrap width="45%"></td>
+  </tr>
+  
+
+  <tr>
+      <td class="diff_lineno" width="auto">4</td>
+      <td class="diff_play" nowrap width="45%">{</td>
+      <td class="diff_lineno" width="auto">4</td>
+      <td class="diff_play" nowrap width="45%">{</td>
+  </tr>
+  
+
+  <tr>
+      <td class="diff_lineno" width="auto">5</td>
+      <td class="diff_play" nowrap width="45%">&nbsp;&nbsp;&nbsp;&nbsp;char&nbsp;*pcVar1;</td>
+      <td class="diff_lineno" width="auto">5</td>
+      <td class="diff_play" nowrap width="45%">&nbsp;&nbsp;&nbsp;&nbsp;char&nbsp;*pcVar1;</td>
+  </tr>
+  
+
+  <tr>
+      <td class="diff_lineno" width="auto">6</td>
+      <td class="diff_play" nowrap width="45%">&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;iVar2;</td>
+      <td class="diff_lineno" width="auto">6</td>
+      <td class="diff_play" nowrap width="45%">&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;iVar2;</td>
+  </tr>
+  
+
+  <tr>
+      <td class="diff_lineno" width="auto">7</td>
+      <td class="diff_play" nowrap width="45%">&nbsp;&nbsp;&nbsp;&nbsp;long&nbsp;in_FS_OFFSET;</td>
+      <td class="diff_lineno" width="auto">7</td>
+      <td class="diff_play" nowrap width="45%">&nbsp;&nbsp;&nbsp;&nbsp;long&nbsp;in_FS_OFFSET;</td>
+  </tr>
+  
+
+  <tr>
+      <td class="diff_lineno" width="auto">8</td>
+      <td class="diff_play" nowrap width="45%">&nbsp;&nbsp;&nbsp;&nbsp;ulong&nbsp;local_38;</td>
+      <td class="diff_lineno" width="auto">8</td>
+      <td class="diff_play" nowrap width="45%">&nbsp;&nbsp;&nbsp;&nbsp;ulong&nbsp;local_38;</td>
+  </tr>
+  
+
+  <tr>
+      <td class="diff_lineno" width="auto">9</td>
+      <td class="diff_play" nowrap width="45%">&nbsp;&nbsp;&nbsp;&nbsp;long&nbsp;local_30;</td>
+      <td class="diff_lineno" width="auto">9</td>
+      <td class="diff_play" nowrap width="45%">&nbsp;&nbsp;&nbsp;&nbsp;long&nbsp;local_30;</td>
+  </tr>
+  
+
+  <tr>
+      <td class="diff_lineno" width="auto">10</td>
+      <td class="diff_play" nowrap width="45%"></td>
+      <td class="diff_lineno" width="auto">10</td>
+      <td class="diff_play" nowrap width="45%"></td>
+  </tr>
+  
+
+  <tr>
+      <td class="diff_lineno" width="auto">11</td>
+      <td class="diff_play" nowrap width="45%">&nbsp;&nbsp;&nbsp;&nbsp;<span class="diff_normal" id="token_6">pcVar1</span>&nbsp;<span class="diff_normal" id="token_7">=</span>&nbsp;<span class="diff_normal" id="token_8">*</span><span class="diff_normal" id="token_9">param_2</span>;</td>
+      <td class="diff_lineno" width="auto">11</td>
+      <td class="diff_play" nowrap width="45%">&nbsp;&nbsp;&nbsp;&nbsp;<span class="diff_normal" id="token_6">pcVar1</span>&nbsp;<span class="diff_normal" id="token_7">=</span>&nbsp;<span class="diff_normal" id="token_8">*</span><span class="diff_normal" id="token_9">param_2</span>;</td>
+  </tr>
+  
+
+  <tr>
+      <td class="diff_lineno" width="auto">12</td>
+      <td class="diff_play" nowrap width="45%">&nbsp;&nbsp;&nbsp;&nbsp;<span class="diff_normal" id="token_28">local_30</span>&nbsp;<span class="diff_normal" id="token_29">=</span>&nbsp;<span class="diff_normal" id="token_30">*</span>(long&nbsp;*)(<span class="diff_normal" id="token_25">in_FS_OFFSET</span>&nbsp;<span class="diff_normal" id="token_26">+</span>&nbsp;<span class="diff_normal" id="token_27">0x28</span>);</td>
+      <td class="diff_lineno" width="auto">12</td>
+      <td class="diff_play" nowrap width="45%">&nbsp;&nbsp;&nbsp;&nbsp;<span class="diff_normal" id="token_28">local_30</span>&nbsp;<span class="diff_normal" id="token_29">=</span>&nbsp;<span class="diff_normal" id="token_30">*</span>(long&nbsp;*)(<span class="diff_normal" id="token_25">in_FS_OFFSET</span>&nbsp;<span class="diff_normal" id="token_26">+</span>&nbsp;<span class="diff_normal" id="token_27">0x28</span>);</td>
+  </tr>
+  
+
+  <tr>
+      <td class="diff_lineno" width="auto">13</td>
+      <td class="diff_play" nowrap width="45%">&nbsp;&nbsp;&nbsp;&nbsp;<span class="diff_normal" id="token_13">iVar2</span>&nbsp;<span class="diff_normal" id="token_14">=</span>&nbsp;<span class="diff_normal" id="token_15">FUN_00404900</span>(<span class="diff_normal" id="token_16">pcVar1</span><span class="diff_normal" id="token_17">,</span><span class="diff_normal" id="token_18">param_2</span><span class="diff_normal" id="token_19">,</span><span class="diff_normal" id="token_20">0</span><span class="diff_normal" id="token_21">,</span><span class="diff_normal" id="token_10">&</span><span class="diff_normal" id="token_11">local_38</span><span class="diff_normal" id="token_22">,</span><span class="diff_normal" id="token_12">"kKMGTPEZY0"</span>);</td>
+      <td class="diff_lineno" width="auto">13</td>
+      <td class="diff_play" nowrap width="45%">&nbsp;&nbsp;&nbsp;&nbsp;<span class="diff_normal" id="token_13">iVar2</span>&nbsp;<span class="diff_normal" id="token_14">=</span>&nbsp;<span class="diff_normal" id="token_15">FUN_00404a70</span>(<span class="diff_normal" id="token_16">pcVar1</span><span class="diff_normal" id="token_17">,</span><span class="diff_normal" id="token_18">param_2</span><span class="diff_normal" id="token_19">,</span><span class="diff_normal" id="token_20">0</span><span class="diff_normal" id="token_21">,</span><span class="diff_normal" id="token_10">&</span><span class="diff_normal" id="token_11">local_38</span><span class="diff_normal" id="token_22">,</span><span class="diff_normal" id="token_12">"kKMGTPEZY0"</span>);</td>
+  </tr>
+  
+
+  <tr>
+      <td class="diff_lineno" width="auto">14</td>
+      <td class="diff_play" nowrap width="45%">&nbsp;&nbsp;&nbsp;&nbsp;<span class="diff_normal" id="token_36">if</span>&nbsp;(((<span class="diff_normal" id="token_31">iVar2</span>&nbsp;<span class="diff_normal" id="token_32">==</span>&nbsp;<span class="diff_normal" id="token_33">0</span>)&nbsp;||&nbsp;((<span class="diff_normal" id="token_46">iVar2</span>&nbsp;<span class="diff_normal" id="token_47">==</span>&nbsp;<span class="diff_normal" id="token_48">2</span>&nbsp;&&&nbsp;(<span class="diff_normal" id="token_45">*</span><span class="diff_normal" id="token_23">*</span><span class="diff_normal" id="token_24">param_2</span>&nbsp;<span class="diff_normal" id="token_4">==</span>&nbsp;<span class="diff_normal" id="token_5">param_3</span>))))&nbsp;&&&nbsp;(<span class="diff_normal" id="token_37">-1</span>&nbsp;<span class="diff_normal" id="token_38">&lt;</span>&nbsp;(long)<span class="diff_normal" id="token_35">local_38</span>))&nbsp;{</td>
+      <td class="diff_lineno" width="auto">14</td>
+      <td class="diff_play" nowrap width="45%">&nbsp;&nbsp;&nbsp;&nbsp;<span class="diff_normal" id="token_36">if</span>&nbsp;(((<span class="diff_normal" id="token_31">iVar2</span>&nbsp;<span class="diff_normal" id="token_32">==</span>&nbsp;<span class="diff_normal" id="token_33">0</span>)&nbsp;||&nbsp;((<span class="diff_normal" id="token_46">iVar2</span>&nbsp;<span class="diff_normal" id="token_47">==</span>&nbsp;<span class="diff_normal" id="token_48">2</span>&nbsp;&&&nbsp;(<span class="diff_normal" id="token_45">*</span><span class="diff_normal" id="token_23">*</span><span class="diff_normal" id="token_24">param_2</span>&nbsp;<span class="diff_normal" id="token_4">==</span>&nbsp;<span class="diff_normal" id="token_5">param_3</span>))))&nbsp;&&&nbsp;(<span class="diff_normal" id="token_37">-1</span>&nbsp;<span class="diff_normal" id="token_38">&lt;</span>&nbsp;(long)<span class="diff_normal" id="token_35">local_38</span>))&nbsp;{</td>
+  </tr>
+  
+
+  <tr>
+      <td class="diff_lineno" width="auto">15</td>
+      <td class="diff_play" nowrap width="45%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="diff_normal" id="token_64">if</span>&nbsp;((ulong)(<span class="diff_normal" id="token_49">&</span><span class="diff_normal" id="token_50">DAT_0060a2c0</span>)[<span class="diff_normal" id="token_1">param_1</span>]&nbsp;<span class="diff_normal" id="token_56">&lt;=</span>&nbsp;<span class="diff_normal" id="token_57">local_38</span>&nbsp;<span class="diff_normal" id="token_58">&&</span>&nbsp;<span class="diff_normal" id="token_53">local_38</span>&nbsp;<span class="diff_normal" id="token_54">!=</span>&nbsp;(<span class="diff_normal" id="token_51">&</span><span class="diff_normal" id="token_52">DAT_0060a2c0</span>)[<span class="diff_normal" id="token_2">param_1</span>])&nbsp;{</td>
+      <td class="diff_lineno" width="auto">15</td>
+      <td class="diff_play" nowrap width="45%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="diff_normal" id="token_64">if</span>&nbsp;((ulong)(<span class="diff_normal" id="token_49">&</span><span class="diff_normal" id="token_50">DAT_0060a2c0</span>)[<span class="diff_normal" id="token_1">param_1</span>]&nbsp;<span class="diff_normal" id="token_56">&lt;=</span>&nbsp;<span class="diff_normal" id="token_57">local_38</span>&nbsp;<span class="diff_normal" id="token_58">&&</span>&nbsp;<span class="diff_normal" id="token_53">local_38</span>&nbsp;<span class="diff_normal" id="token_54">!=</span>&nbsp;(<span class="diff_normal" id="token_51">&</span><span class="diff_normal" id="token_52">DAT_0060a2c0</span>)[<span class="diff_normal" id="token_2">param_1</span>])&nbsp;{</td>
+  </tr>
+  
+
+  <tr>
+      <td class="diff_lineno" width="auto">16</td>
+      <td class="diff_play" nowrap width="45%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<span class="diff_normal" id="token_65">&</span><span class="diff_normal" id="token_66">DAT_0060a2c0</span>)[<span class="diff_normal" id="token_3">param_1</span>]&nbsp;<span class="diff_normal" id="token_67">=</span>&nbsp;<span class="diff_normal" id="token_68">local_38</span>;</td>
+      <td class="diff_lineno" width="auto">16</td>
+      <td class="diff_play" nowrap width="45%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<span class="diff_normal" id="token_65">&</span><span class="diff_normal" id="token_66">DAT_0060a2c0</span>)[<span class="diff_normal" id="token_3">param_1</span>]&nbsp;<span class="diff_normal" id="token_67">=</span>&nbsp;<span class="diff_normal" id="token_68">local_38</span>;</td>
+  </tr>
+  
+
+  <tr>
+      <td class="diff_lineno" width="auto">17</td>
+      <td class="diff_play" nowrap width="45%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+      <td class="diff_lineno" width="auto">17</td>
+      <td class="diff_play" nowrap width="45%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+  </tr>
+  
+
+  <tr>
+      <td class="diff_lineno" width="auto">18</td>
+      <td class="diff_play" nowrap width="45%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="diff_normal" id="token_43">if</span>&nbsp;(<span class="diff_normal" id="token_62">local_30</span>&nbsp;<span class="diff_normal" id="token_63">==</span>&nbsp;<span class="diff_normal" id="token_55">*</span>(long&nbsp;*)(<span class="diff_normal" id="token_59">in_FS_OFFSET</span>&nbsp;<span class="diff_normal" id="token_60">+</span>&nbsp;<span class="diff_normal" id="token_61">0x28</span>))&nbsp;{</td>
+      <td class="diff_lineno" width="auto">18</td>
+      <td class="diff_play" nowrap width="45%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="diff_normal" id="token_43">if</span>&nbsp;(<span class="diff_normal" id="token_62">local_30</span>&nbsp;<span class="diff_normal" id="token_63">==</span>&nbsp;<span class="diff_normal" id="token_55">*</span>(long&nbsp;*)(<span class="diff_normal" id="token_59">in_FS_OFFSET</span>&nbsp;<span class="diff_normal" id="token_60">+</span>&nbsp;<span class="diff_normal" id="token_61">0x28</span>))&nbsp;{</td>
+  </tr>
+  
+
+  <tr>
+      <td class="diff_lineno" width="auto">19</td>
+      <td class="diff_play" nowrap width="45%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="diff_normal" id="token_44">return</span>;</td>
+      <td class="diff_lineno" width="auto">19</td>
+      <td class="diff_play" nowrap width="45%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="diff_normal" id="token_44">return</span>;</td>
+  </tr>
+  
+
+  <tr>
+      <td class="diff_lineno" width="auto">20</td>
+      <td class="diff_play" nowrap width="45%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+      <td class="diff_lineno" width="auto">20</td>
+      <td class="diff_play" nowrap width="45%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+  </tr>
+  
+
+  <tr>
+      <td class="diff_lineno" width="auto">21</td>
+      <td class="diff_play" nowrap width="45%">&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+      <td class="diff_lineno" width="auto">21</td>
+      <td class="diff_play" nowrap width="45%">&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+  </tr>
+  
+
+  <tr>
+      <td class="diff_lineno" width="auto">22</td>
+      <td class="diff_play" nowrap width="45%">&nbsp;&nbsp;&nbsp;&nbsp;else&nbsp;{</td>
+      <td class="diff_lineno" width="auto">22</td>
+      <td class="diff_play" nowrap width="45%">&nbsp;&nbsp;&nbsp;&nbsp;else&nbsp;{</td>
+  </tr>
+  
+
+  <tr>
+      <td class="diff_lineno" width="auto">23</td>
+      <td class="diff_play" nowrap width="45%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="diff_normal" id="token_40">FUN_00402820</span>(<span class="diff_normal" id="token_39">"invalid&nbsp;--ignore-initial&nbsp;value&nbsp;\'%s\'"</span><span class="diff_normal" id="token_41">,</span><span class="diff_normal" id="token_42">pcVar1</span>);</td>
+      <td class="diff_lineno" width="auto">23</td>
+      <td class="diff_play" nowrap width="45%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="diff_normal" id="token_40">FUN_00402930</span>(<span class="diff_normal" id="token_39">"invalid&nbsp;--ignore-initial&nbsp;value&nbsp;\'%s\'"</span><span class="diff_normal" id="token_41">,</span><span class="diff_normal" id="token_42">pcVar1</span>);</td>
+  </tr>
+  
+
+  <tr>
+      <td class="diff_lineno" width="auto">24</td>
+      <td class="diff_play" nowrap width="45%">&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+      <td class="diff_lineno" width="auto">24</td>
+      <td class="diff_play" nowrap width="45%">&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+  </tr>
+  
+
+  <tr>
+      <td class="diff_lineno" width="auto">25</td>
+      <td class="diff_play" nowrap width="45%">&nbsp;&nbsp;&nbsp;&nbsp;/*&nbsp;WARNING:&nbsp;Subroutine&nbsp;does&nbsp;not&nbsp;return&nbsp;*/</td>
+      <td class="diff_lineno" width="auto">25</td>
+      <td class="diff_play" nowrap width="45%">&nbsp;&nbsp;&nbsp;&nbsp;/*&nbsp;WARNING:&nbsp;Subroutine&nbsp;does&nbsp;not&nbsp;return&nbsp;*/</td>
+  </tr>
+  
+
+  <tr>
+      <td class="diff_lineno" width="auto">26</td>
+      <td class="diff_play" nowrap width="45%">&nbsp;&nbsp;&nbsp;&nbsp;<span class="diff_normal" id="token_34">__stack_chk_fail</span>();</td>
+      <td class="diff_lineno" width="auto">26</td>
+      <td class="diff_play" nowrap width="45%">&nbsp;&nbsp;&nbsp;&nbsp;<span class="diff_normal" id="token_34">__stack_chk_fail</span>();</td>
+  </tr>
+  
+
+  <tr>
+      <td class="diff_lineno" width="auto">27</td>
+      <td class="diff_play" nowrap width="45%">}</td>
+      <td class="diff_lineno" width="auto">27</td>
+      <td class="diff_play" nowrap width="45%">}</td>
+  </tr>
+  
+
+  <tr>
+      <td class="diff_lineno" width="auto">28</td>
+      <td class="diff_play" nowrap width="45%"></td>
+      <td class="diff_lineno" width="auto">28</td>
+      <td class="diff_play" nowrap width="45%"></td>
+  </tr>
+  
+    </table>
+</div>
+  
