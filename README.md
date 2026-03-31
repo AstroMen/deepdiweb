@@ -118,14 +118,13 @@ If you only want the shortest path from upload to diff result, follow this minim
 
 ### Diff effect preview (token highlight)
 
-You can place the preview right before or inside the **Code-diff (SigmaDiff) flow** section so readers see the visual expectation before API details.
+Place the two screenshots near this section to quickly show the full path from disassembly to token-level comparison:
 
-```diff
-- if (score > 0x40) { grant_access(user); }
-+ if (score >= 0x40) { grant_access(admin_user); }
-```
+1. **Disassembly workspace overview** (entry context before selecting function pairs).
+<img width="733" height="929" alt="image" src="https://github.com/user-attachments/assets/afb1167e-e499-49c1-9347-8b34d40587f4" />
 
-The `>` → `>=` and `user` → `admin_user` parts represent the kind of token-level highlights users can quickly spot in the diff view.
+2. **Code Diff token highlight view** (inline token/line differences for matched functions; comments are ignored and not diffed).
+<img width="1688" height="265" alt="image" src="https://github.com/user-attachments/assets/f5826c16-cde9-43bd-a26b-a2afbd667d51" />
 
 ---
 
