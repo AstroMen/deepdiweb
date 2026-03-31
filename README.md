@@ -106,6 +106,29 @@ Responsibilities:
 
 ---
 
+## Quick workflow
+
+If you only want the shortest path from upload to diff result, follow this minimal workflow:
+
+1. Upload binary **A** and binary **B** in the **Code Diff** tab.
+2. Click **Run SigmaDiff** and wait for backend task completion.
+3. Open **Function List** and choose one matched function pair.
+4. View **Code Diff Result** to inspect line-level/token-level differences.
+5. Save or revisit this run in **Diff History**.
+
+### Diff effect preview (token highlight)
+
+You can place the preview right before or inside the **Code-diff (SigmaDiff) flow** section so readers see the visual expectation before API details.
+
+```diff
+- if (score > 0x40) { grant_access(user); }
++ if (score >= 0x40) { grant_access(admin_user); }
+```
+
+The `>` → `>=` and `user` → `admin_user` parts represent the kind of token-level highlights users can quickly spot in the diff view.
+
+---
+
 ## Local development
 
 ### Prerequisites
