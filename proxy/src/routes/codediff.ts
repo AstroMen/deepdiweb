@@ -65,14 +65,14 @@ const addUploadRecord = (
     const history = readJsonFile(HISTORY_JSON_PATH);
     const timestamp = new Date().toISOString();
 
-    // 查找是否已经存在一个与 combinedDirectoryName 匹配的记录
+    // Find an existing record matching combinedDirectoryName
     const existingRecord = history.find(record => record.directoryName === combinedDirectoryName);
 
     if (existingRecord) {
-        // 如果记录存在，更新它的 timestamp
+        // Update the existing record's timestamp
         existingRecord.timestamp = timestamp;
     } else {
-        // 否则，创建一个新记录并将其推入 history 数组
+        // Otherwise, create a record and add it to history
         const newRecord = {
             directoryName: combinedDirectoryName,
             file1: {
@@ -164,7 +164,7 @@ async function getCodeDiffResult(req: Request, res: Response) {
         const sigmaDiffOutDir = `${rootDir}/SigmaDiff/out/`;
         let latestModifiedDir = null;
 
-        // 如果 diffItem 为 null 或未定义
+        // If diffItem is null or undefined
         if (!diffItem) {
             const directories = fs.readdirSync(sigmaDiffOutDir, { withFileTypes: true })
                 .filter(dirent => dirent.isDirectory())
@@ -172,15 +172,15 @@ async function getCodeDiffResult(req: Request, res: Response) {
                     name: dirent.name,
                     time: fs.statSync(path.join(sigmaDiffOutDir, dirent.name)).mtime.getTime()
                 }))
-                .sort((a, b) => b.time - a.time);  // 按时间戳排序，最新的目录在前
+                .sort((a, b) => b.time - a.time);  // Sort by timestamp, newest first
 
-            latestModifiedDir = directories[0].name;  // 获取最新修改的目录名
+            latestModifiedDir = directories[0].name;  // Get the latest modified directory name
 
-            // 现在你可以使用 latestModifiedDir
+            // latestModifiedDir is now ready to use
             // ...
 
         } else {
-            // 使用 diffItem
+            // Use diffItem
             latestModifiedDir = `${diffItem.file1.projectName}_and_${diffItem.file2.projectName}`;
         }
 

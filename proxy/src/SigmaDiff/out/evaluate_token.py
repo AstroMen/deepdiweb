@@ -158,7 +158,7 @@ def draw_html(save_folder, folder1, folder2, result_dir, func1, func2, filter=Tr
         l = l.strip().split()
         matched_functions[l[0]] = l[1]
 
-    # TODO: 如果没有要求说需要一定按照这个表格里对应的function组合做diff的话，就先禁用这部分代码
+    # TODO: Keep this disabled unless diffs must use the function pairs in this table
     # if func1 in matched_functions:
     #     func2 = matched_functions[func1]
     # else:
@@ -171,7 +171,7 @@ def draw_html(save_folder, folder1, folder2, result_dir, func1, func2, filter=Tr
             else:
                 suffix = "-Initial_match_result.txt"
             if result.endswith(suffix):
-                # TODO: 确定v1和bin1，v2和bin2之间是 "-" 还是 "_"
+                # TODO: Confirm whether v1/bin1 and v2/bin2 use "-" or "_"
                 srclines1, nodefeatures1, func_features1 = load_nodelabel(os.path.join(workspace_dir, comp_folder, v1 + "-" + bin1 + "_nodelabel.txt"))
                 srclines2, nodefeatures2, func_features2 = load_nodelabel(os.path.join(workspace_dir, comp_folder, v2 + "-" + bin2 + "_nodelabel.txt"))
                 decompiled1 = read_decompiled_lines(os.path.join(workspace_dir, folder1, 'decompiled', func1 + '.c'))
@@ -191,7 +191,7 @@ def draw_html(save_folder, folder1, folder2, result_dir, func1, func2, filter=Tr
                 for n1 in func_features1[func1]:
                     toklst1 = nodefeatures1[n1][-2].split('@*@')
                     # toklst1 ==> ['14:0', 'iVar1', '14:6', '=', '14:8', 'fclose', '14:15', 'stdout', '']
-                    # 14:0 指的是token iVar1 出现在代码里第14行第0位
+                    # 14:0 means token iVar1 appears at line 14, column 0
                     for i in range(0, len(toklst1), 2):  # toklst1: ["line:col_index", token, "line:col_index", token, ...]
                         if i + 1 < len(toklst1):  # not process the last empty str
                             line_num, col_num = toklst1[i].split(':') 

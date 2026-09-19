@@ -41,8 +41,8 @@ server.use(session({
     saveUninitialized: true,
     cookie: {
         httpOnly: true,
-        secure: false, // 设为 false，除非你用 HTTPS
-        maxAge: 60000 // 例如，1分钟。你可以根据需要调整。
+        secure: false, // Keep false unless using HTTPS
+        maxAge: 60000 // One minute; adjust as needed
     }
 }));
 

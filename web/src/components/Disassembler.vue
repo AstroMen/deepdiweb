@@ -256,15 +256,15 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-  /* 在 <style scoped> 标签内增加以下内容 */
+  /* Add the following inside <style scoped> */
   ::v-deep .nav-item {
-    min-width: 120px; /* 设置一个合适的最小宽度，你可以根据需要调整 */
+    min-width: 120px; /* Set a suitable minimum width; adjust as needed */
   }
 
   ::v-deep .nav-link {
-    white-space: nowrap; /* 防止标题文本换行 */
+    white-space: nowrap; /* Prevent title text from wrapping */
     overflow: hidden;
-    text-overflow: ellipsis; /* 当标题文本超出最大长度时显示省略号 */
+    text-overflow: ellipsis; /* Show an ellipsis when title text is too long */
   /*}*/
 
   /*::v-deep .nav-link {*/

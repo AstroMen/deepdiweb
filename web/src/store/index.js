@@ -110,11 +110,11 @@ export default new Vuex.Store({
       //   Vue.set(state.displayUnits, i, du)
       // })
     },
-    // 保存第一个文件名字
+    // Save the first file name
     [types.SET_SHORTNAME] (state, { shortName }) {
       state.shortName = shortName
     },
-    // 保存第二个文件名字
+    // Save the second file name
     [types.SET_SHORTNAME2] (state, { shortName2 }) {
       state.shortName2 = shortName2
     },
