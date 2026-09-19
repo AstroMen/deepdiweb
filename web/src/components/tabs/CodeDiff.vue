@@ -125,11 +125,11 @@
       async loadDiff(newItem) {
         try {
           console.log('[loadDiff] newItem: ' + newItem)
-          // let function_list = await getFunctionList(newItem);  // 获取函数列表
-          let function_list = await getFunctionList(newItem.file1.projectName, newItem.file2.projectName);  // 获取函数列表
-          this.$store.commit(SET_CODE_DIFF_FUNCTION_LIST, { list: function_list.functions });  // 更新 Vuex store 的状态
-          this.loading_state = false;  // 更新 loading_state 数据属性
-          this.$store.commit(SET_CODE_DIFF_LOADING, { loadingState: false });  // 更新 Vuex store 的状态
+          // let function_list = await getFunctionList(newItem);  // Get the function list
+          let function_list = await getFunctionList(newItem.file1.projectName, newItem.file2.projectName);  // Get the function list
+          this.$store.commit(SET_CODE_DIFF_FUNCTION_LIST, { list: function_list.functions });  // Update the Vuex store state
+          this.loading_state = false;  // Update the loading_state property
+          this.$store.commit(SET_CODE_DIFF_LOADING, { loadingState: false });  // Update the Vuex store state
         } catch (error) {
           console.error("Error loading code diff:", error);
         }
